@@ -1,0 +1,5859 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121e39">
+  <meta
+    name="description"
+    content="VTM Brand & Design System 4.2 – Luminous Editorial Edition für das VersicherungsTech Magazin."
+  >
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light">
+  <title>VTM Brand &amp; Design System 4.2</title>
+
+  <!--
+    Vorschau-Einbindung der Markenschriften.
+    Für öffentliche Produktionssysteme lokal als WOFF2 hosten.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    /* =========================================================
+       VTM BRAND & DESIGN SYSTEM 4.2
+       LUMINOUS EDITORIAL EDITION
+    ========================================================= */
+
+    :root {
+      /* -------------------------------------------------------
+         Primitive Farben
+      ------------------------------------------------------- */
+      --c-cobalt-950: #121e39;
+      --c-cobalt-900: #172645;
+      --c-cobalt-800: #203255;
+      --c-cobalt-700: #2c4065;
+
+      --c-blue-800: #0e3387;
+      --c-blue-700: #123fa6;
+      --c-blue-600: #2468e8;
+      --c-blue-500: #427ef0;
+      --c-blue-100: #dce8ff;
+      --c-blue-050: #f2f6ff;
+
+      --c-brass-700: #9b7017;
+      --c-brass-600: #b48220;
+      --c-brass-500: #c99b32;
+      --c-brass-300: #e4c36e;
+      --c-brass-100: #f8edcf;
+
+      --c-white: #ffffff;
+      --c-paper: #fbfcfe;
+      --c-paper-blue: #f7f9fd;
+      --c-neutral-100: #edf0f5;
+      --c-neutral-200: #dce1e9;
+      --c-neutral-300: #c7ced9;
+      --c-neutral-500: #6e7888;
+      --c-neutral-700: #3f4958;
+      --c-black: #080d18;
+
+      --c-success: #17663a;
+      --c-success-bg: #e8f6ee;
+      --c-warning: #7a5200;
+      --c-warning-bg: #fff3d2;
+      --c-danger: #a52626;
+      --c-danger-bg: #fdeaea;
+
+      /* -------------------------------------------------------
+         Semantische Farben
+      ------------------------------------------------------- */
+      --surface-page: var(--c-white);
+      --surface-soft: var(--c-paper);
+      --surface-muted: var(--c-paper-blue);
+      --surface-dark: var(--c-cobalt-950);
+
+      --text-primary: var(--c-cobalt-950);
+      --text-secondary: var(--c-neutral-700);
+      --text-muted: var(--c-neutral-500);
+      --text-inverse: var(--c-white);
+
+      --border-soft: rgb(18 30 57 / 0.10);
+      --border-medium: rgb(18 30 57 / 0.18);
+      --border-electric: rgb(18 63 166 / 0.24);
+      --border-brass: rgb(155 112 23 / 0.26);
+
+      --action: var(--c-blue-700);
+      --action-hover: var(--c-blue-800);
+      --action-soft: var(--c-blue-050);
+      --focus: var(--c-blue-600);
+      --research: var(--c-brass-700);
+
+      /* -------------------------------------------------------
+         Typografie
+      ------------------------------------------------------- */
+      --font-display:
+        "Plus Jakarta Sans",
+        "Aptos Display",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      --font-body:
+        "Inter",
+        "Aptos",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      --font-editorial:
+        "Source Serif 4",
+        "Iowan Old Style",
+        "Palatino Linotype",
+        Georgia,
+        serif;
+
+      --font-mono:
+        "IBM Plex Mono",
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+      --step--1: clamp(0.76rem, 0.73rem + 0.10vw, 0.82rem);
+      --step-0: clamp(1rem, 0.97rem + 0.16vw, 1.08rem);
+      --step-1: clamp(1.18rem, 1.10rem + 0.35vw, 1.38rem);
+      --step-2: clamp(1.45rem, 1.28rem + 0.74vw, 1.88rem);
+      --step-3: clamp(1.86rem, 1.56rem + 1.20vw, 2.56rem);
+      --step-4: clamp(2.35rem, 1.84rem + 2.08vw, 3.55rem);
+      --step-5: clamp(3rem, 2.12rem + 3.55vw, 5.05rem);
+      --step-hero: clamp(3.25rem, 1.75rem + 6vw, 7.6rem);
+
+      /* -------------------------------------------------------
+         Layout
+      ------------------------------------------------------- */
+      --content-max: 1200px;
+      --reading-max: 720px;
+      --wide-max: 1440px;
+      --nav-height: 76px;
+
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.5rem;
+      --space-6: 2rem;
+      --space-7: 3rem;
+      --space-8: 4rem;
+      --space-9: 6rem;
+      --space-10: 8rem;
+
+      --radius-s: 4px;
+      --radius-m: 6px;
+      --radius-l: 8px;
+
+      /* -------------------------------------------------------
+         Schatten und Licht
+      ------------------------------------------------------- */
+      --shadow-soft:
+        0 1px 2px rgb(18 30 57 / 0.04),
+        0 12px 32px rgb(18 30 57 / 0.055);
+
+      --shadow-medium:
+        0 2px 4px rgb(18 30 57 / 0.05),
+        0 18px 48px rgb(18 30 57 / 0.10);
+
+      --glow-electric:
+        0 0 0 1px rgb(18 63 166 / 0.08),
+        0 14px 44px rgb(18 63 166 / 0.13);
+
+      --glow-electric-strong:
+        0 0 0 1px rgb(18 63 166 / 0.13),
+        0 20px 60px rgb(18 63 166 / 0.18);
+
+      --glow-brass:
+        0 0 0 1px rgb(155 112 23 / 0.13),
+        0 14px 42px rgb(155 112 23 / 0.13);
+
+      /* -------------------------------------------------------
+         Verläufe
+      ------------------------------------------------------- */
+      --gradient-brand:
+        linear-gradient(
+          135deg,
+          var(--c-cobalt-950) 0%,
+          var(--c-blue-700) 58%,
+          var(--c-blue-600) 100%
+        );
+
+      --gradient-brand-deep:
+        linear-gradient(
+          125deg,
+          var(--c-cobalt-950) 0%,
+          #172f64 42%,
+          var(--c-blue-700) 76%,
+          var(--c-blue-600) 100%
+        );
+
+      --gradient-signature:
+        linear-gradient(
+          135deg,
+          var(--c-brass-300),
+          var(--c-brass-500) 46%,
+          var(--c-brass-700)
+        );
+
+      --gradient-electric-beam:
+        linear-gradient(
+          90deg,
+          transparent 0%,
+          rgb(18 63 166 / 0.08) 18%,
+          rgb(36 104 232 / 0.82) 47%,
+          rgb(255 255 255 / 0.92) 52%,
+          rgb(36 104 232 / 0.44) 59%,
+          transparent 100%
+        );
+
+      --gradient-brass-beam:
+        linear-gradient(
+          105deg,
+          transparent 0%,
+          rgb(201 155 50 / 0.07) 32%,
+          rgb(255 235 172 / 0.88) 48%,
+          rgb(155 112 23 / 0.42) 55%,
+          transparent 70%
+        );
+
+      --gradient-hero-atmosphere:
+        radial-gradient(
+          circle at 78% 18%,
+          rgb(36 104 232 / 0.15),
+          transparent 31%
+        ),
+        radial-gradient(
+          circle at 92% 68%,
+          rgb(18 63 166 / 0.09),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 16% 86%,
+          rgb(201 155 50 / 0.065),
+          transparent 25%
+        ),
+        linear-gradient(
+          180deg,
+          #f2f6ff 0%,
+          #fafcff 52%,
+          #ffffff 100%
+        );
+
+      /* -------------------------------------------------------
+         Bewegung
+      ------------------------------------------------------- */
+      --motion-fast: 160ms;
+      --motion-medium: 320ms;
+      --motion-slow: 780ms;
+      --motion-atmosphere: 14s;
+
+      --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+      --ease-signal: cubic-bezier(0.22, 1, 0.36, 1);
+
+      /* -------------------------------------------------------
+         Ebenen
+      ------------------------------------------------------- */
+      --z-base: 1;
+      --z-nav: 100;
+      --z-skip: 1000;
+    }
+
+    /* =========================================================
+       RESET UND DOKUMENTGRUNDLAGE
+    ========================================================= */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-height) + 24px);
+      background: var(--surface-page);
+    }
+
+    body {
+      min-width: 320px;
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--text-primary);
+      background:
+        linear-gradient(
+          180deg,
+          rgb(18 63 166 / 0.018),
+          transparent 420px
+        ),
+        var(--surface-page);
+      font-family: var(--font-body);
+      font-size: var(--step-0);
+      font-weight: 400;
+      line-height: 1.72;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      display: block;
+    }
+
+    img,
+    svg,
+    picture,
+    video,
+    canvas {
+      display: block;
+      max-width: 100%;
+    }
+
+    img {
+      height: auto;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      color: inherit;
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a {
+      color: var(--action);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover {
+      color: var(--action-hover);
+    }
+
+    p,
+    ul,
+    ol,
+    blockquote,
+    figure,
+    pre,
+    table {
+      margin-top: 0;
+    }
+
+    p:last-child,
+    ul:last-child,
+    ol:last-child,
+    blockquote:last-child {
+      margin-bottom: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin-top: 0;
+      color: var(--text-primary);
+      font-family: var(--font-display);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+    }
+
+    h1 {
+      font-size: var(--step-hero);
+      font-weight: 800;
+      line-height: 0.94;
+      letter-spacing: -0.065em;
+    }
+
+    h2 {
+      font-size: var(--step-4);
+    }
+
+    h3 {
+      font-size: var(--step-2);
+      letter-spacing: -0.025em;
+    }
+
+    h4 {
+      font-size: var(--step-1);
+      letter-spacing: -0.018em;
+    }
+
+    code,
+    pre,
+    kbd,
+    samp {
+      font-family: var(--font-mono);
+    }
+
+    code {
+      font-size: 0.88em;
+    }
+
+    ::selection {
+      color: var(--c-white);
+      background: var(--c-blue-700);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    [id] {
+      scroll-margin-top: calc(var(--nav-height) + 28px);
+    }
+
+    /* =========================================================
+       UTILITIES
+    ========================================================= */
+
+    .wrap {
+      width: min(
+        calc(100% - clamp(2rem, 7vw, 7rem)),
+        var(--content-max)
+      );
+      margin-inline: auto;
+    }
+
+    .wrap-wide {
+      width: min(
+        calc(100% - clamp(2rem, 5vw, 5rem)),
+        var(--wide-max)
+      );
+      margin-inline: auto;
+    }
+
+    .reading-width {
+      max-width: var(--reading-max);
+    }
+
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: var(--z-skip);
+      padding: 0.75rem 1rem;
+      color: var(--c-white);
+      background: var(--c-blue-700);
+      border-radius: var(--radius-s);
+      font-weight: 700;
+      transform: translateY(-180%);
+      transition: transform var(--motion-fast) ease;
+    }
+
+    .skip-link:focus {
+      color: var(--c-white);
+      transform: translateY(0);
+    }
+
+    .meta,
+    .kicker {
+      margin-bottom: var(--space-3);
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: var(--step--1);
+      font-weight: 600;
+      line-height: 1.45;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: var(--action);
+    }
+
+    .kicker::before {
+      content: "";
+      width: 1.9rem;
+      height: 2px;
+      flex: none;
+      background:
+        linear-gradient(
+          90deg,
+          var(--c-blue-700),
+          var(--c-blue-600)
+        );
+      box-shadow: 0 0 12px rgb(36 104 232 / 0.25);
+    }
+
+    .lead {
+      max-width: 66ch;
+      color: var(--text-secondary);
+      font-size: var(--step-1);
+      line-height: 1.65;
+      text-wrap: pretty;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: var(--space-4);
+      color: var(--action);
+      font-family: var(--font-mono);
+      font-size: var(--step--1);
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: var(--c-blue-600);
+      border: 2px solid var(--c-white);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 4px rgb(36 104 232 / 0.09),
+        0 0 16px rgb(36 104 232 / 0.30);
+    }
+
+    /* =========================================================
+       LOGO
+    ========================================================= */
+
+    .brand-logo {
+      display: block;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-logo-nav {
+      height: 32px;
+      max-width: min(280px, 34vw);
+    }
+
+    .brand-logo-footer {
+      height: 42px;
+      max-width: min(360px, 80vw);
+    }
+
+    .brand-logo-specimen {
+      width: auto;
+      max-width: min(420px, 84%);
+      max-height: 92px;
+    }
+
+    .logo-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      flex: none;
+      text-decoration: none;
+    }
+
+    .logo-link::after {
+      content: "";
+      position: absolute;
+      right: 42%;
+      bottom: -10px;
+      left: 0;
+      height: 1px;
+      background:
+        linear-gradient(
+          90deg,
+          var(--c-blue-700),
+          rgb(36 104 232 / 0.30),
+          transparent
+        );
+      opacity: 0.54;
+      transform: scaleX(0.34);
+      transform-origin: left;
+      transition:
+        transform var(--motion-slow) var(--ease-signal),
+        opacity var(--motion-medium) ease;
+    }
+
+    .logo-link:hover::after,
+    .logo-link:focus-visible::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    /* =========================================================
+       BRAND RAIL
+    ========================================================= */
+
+    .brand-rail {
+      position: relative;
+      height: 4px;
+      overflow: hidden;
+      background: var(--c-cobalt-950);
+    }
+
+    .brand-rail::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          var(--c-cobalt-950) 0%,
+          var(--c-blue-700) 48%,
+          var(--c-blue-600) 78%,
+          var(--c-brass-500) 96%,
+          var(--c-brass-300) 100%
+        );
+    }
+
+    .brand-rail::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -28%;
+      width: 24%;
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgb(255 255 255 / 0.88),
+          transparent
+        );
+      filter: blur(2px);
+      opacity: 0;
+      animation: vtm-rail-pass 10s 1.4s ease-in-out infinite;
+    }
+
+    @keyframes vtm-rail-pass {
+      0%,
+      68% {
+        left: -28%;
+        opacity: 0;
+      }
+
+      74% {
+        opacity: 0.92;
+      }
+
+      90% {
+        opacity: 0.42;
+      }
+
+      100% {
+        left: 108%;
+        opacity: 0;
+      }
+    }
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: var(--z-nav);
+      height: var(--nav-height);
+      border-bottom: 1px solid rgb(18 30 57 / 0.08);
+      background: rgb(255 255 255 / 0.90);
+      box-shadow: 0 8px 30px rgb(18 30 57 / 0.035);
+      backdrop-filter: blur(16px) saturate(130%);
+      -webkit-backdrop-filter: blur(16px) saturate(130%);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      gap: var(--space-6);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(0.75rem, 1.5vw, 1.45rem);
+      min-width: 0;
+      margin: 0;
+      padding: 0.5rem 0;
+      overflow-x: auto;
+      list-style: none;
+      scrollbar-width: thin;
+      scrollbar-color: var(--c-blue-100) transparent;
+    }
+
+    .nav-links li {
+      flex: none;
+    }
+
+    .nav-links a {
+      position: relative;
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.055em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color var(--motion-fast) ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 5px;
+      left: 0;
+      height: 2px;
+      background:
+        linear-gradient(
+          90deg,
+          var(--c-blue-700),
+          var(--c-blue-600)
+        );
+      box-shadow: 0 0 12px rgb(36 104 232 / 0.24);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform var(--motion-medium) var(--ease-signal);
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="true"] {
+      color: var(--action);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after,
+    .nav-links a[aria-current="true"]::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      min-height: min(860px, calc(100svh - var(--nav-height)));
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      background: var(--gradient-hero-atmosphere);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .hero > .wrap {
+      position: relative;
+      z-index: 2;
+      padding-block: clamp(5rem, 11vw, 9.5rem);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.42fr) minmax(290px, 0.58fr);
+      align-items: end;
+      gap: clamp(3rem, 7vw, 7rem);
+    }
+
+    .hero-copy {
+      position: relative;
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      max-width: 10.8ch;
+      margin-bottom: var(--space-6);
+    }
+
+    .hero .lead {
+      max-width: 61ch;
+      margin-bottom: var(--space-6);
+    }
+
+    .hero-claim {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      max-width: 44rem;
+      margin-top: var(--space-7);
+      padding-top: var(--space-5);
+      border-top: 1px solid rgb(18 30 57 / 0.13);
+      color: var(--text-primary);
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 0.94rem + 0.3vw, 1.2rem);
+      font-weight: 700;
+    }
+
+    .hero-claim::before {
+      content: "";
+      width: 38px;
+      height: 3px;
+      flex: none;
+      background: var(--gradient-signature);
+      box-shadow: 0 0 14px rgb(201 155 50 / 0.28);
+    }
+
+    .hero-panel {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(1.5rem, 3vw, 2.25rem);
+      color: var(--text-inverse);
+      background:
+        linear-gradient(
+          145deg,
+          rgb(255 255 255 / 0.055),
+          transparent 40%
+        ),
+        var(--gradient-brand-deep);
+      border: 1px solid rgb(255 255 255 / 0.14);
+      border-radius: var(--radius-l);
+      box-shadow:
+        0 24px 70px rgb(18 30 57 / 0.22),
+        inset 0 1px 0 rgb(255 255 255 / 0.12);
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      top: -45%;
+      right: -25%;
+      width: 260px;
+      aspect-ratio: 1;
+      border: 1px solid rgb(255 255 255 / 0.10);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 34px rgb(255 255 255 / 0.025),
+        0 0 0 70px rgb(255 255 255 / 0.018);
+    }
+
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -52%;
+      width: 36%;
+      height: 100%;
+      opacity: 0;
+      background:
+        linear-gradient(
+          105deg,
+          transparent,
+          rgb(255 255 255 / 0.11),
+          transparent
+        );
+      transform: skewX(-14deg);
+      animation: vtm-panel-glint 11s 2.2s ease-in-out infinite;
+    }
+
+    .hero-panel > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-panel h2 {
+      margin-bottom: var(--space-5);
+      color: var(--c-white);
+      font-size: var(--step-2);
+    }
+
+    .hero-principles {
+      display: grid;
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: principles;
+    }
+
+    .hero-principles li {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      align-items: start;
+      gap: 0.8rem;
+      padding-block: 0.9rem;
+      border-top: 1px solid rgb(255 255 255 / 0.12);
+      color: rgb(255 255 255 / 0.82);
+      counter-increment: principles;
+    }
+
+    .hero-principles li::before {
+      content: "0" counter(principles);
+      color: var(--c-brass-300);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    @keyframes vtm-panel-glint {
+      0%,
+      72% {
+        left: -52%;
+        opacity: 0;
+      }
+
+      78% {
+        opacity: 0.7;
+      }
+
+      92% {
+        opacity: 0.28;
+      }
+
+      100% {
+        left: 122%;
+        opacity: 0;
+      }
+    }
+
+    /* =========================================================
+       HERO ATMOSPHERE
+    ========================================================= */
+
+    .hero-atmosphere {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .hero-atmosphere::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.30;
+      background-image:
+        linear-gradient(
+          rgb(18 30 57 / 0.052) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgb(18 30 57 / 0.052) 1px,
+          transparent 1px
+        );
+      background-size: 72px 72px;
+      -webkit-mask-image:
+        linear-gradient(
+          90deg,
+          transparent 0%,
+          rgb(0 0 0 / 0.46) 42%,
+          #000 100%
+        );
+      mask-image:
+        linear-gradient(
+          90deg,
+          transparent 0%,
+          rgb(0 0 0 / 0.46) 42%,
+          #000 100%
+        );
+    }
+
+    .hero-atmosphere::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          115deg,
+          transparent 0 56%,
+          rgb(36 104 232 / 0.045) 56.1% 56.25%,
+          transparent 56.35% 100%
+        );
+    }
+
+    .hero-orbit {
+      position: absolute;
+      border: 1px solid rgb(18 63 166 / 0.12);
+      border-radius: 50%;
+      transform: rotate(-12deg);
+    }
+
+    .hero-orbit-a {
+      top: -46%;
+      right: -18%;
+      width: min(62vw, 840px);
+      aspect-ratio: 1;
+      animation:
+        vtm-orbit-drift var(--motion-atmosphere)
+        var(--ease-signal) infinite alternate;
+    }
+
+    .hero-orbit-b {
+      top: 10%;
+      right: 7%;
+      width: min(38vw, 540px);
+      aspect-ratio: 1;
+      border-color: rgb(155 112 23 / 0.12);
+      animation:
+        vtm-orbit-drift 18s var(--ease-signal)
+        infinite alternate-reverse;
+    }
+
+    .hero-signal {
+      position: absolute;
+      top: 18%;
+      right: -10%;
+      width: min(62vw, 900px);
+      height: 1px;
+      background: var(--gradient-electric-beam);
+      box-shadow: 0 0 18px rgb(36 104 232 / 0.28);
+      transform: rotate(-17deg);
+      transform-origin: center;
+      animation: vtm-signal-breathe 7s ease-in-out infinite;
+    }
+
+    .hero-node {
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      background: var(--c-blue-600);
+      border: 2px solid var(--c-white);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 5px rgb(36 104 232 / 0.09),
+        0 0 24px rgb(36 104 232 / 0.38);
+    }
+
+    .hero-node-a {
+      top: 32%;
+      right: 18%;
+      animation: vtm-node-pulse 3.8s ease-in-out infinite;
+    }
+
+    .hero-node-b {
+      right: 8%;
+      bottom: 25%;
+      width: 6px;
+      height: 6px;
+      background: var(--c-brass-500);
+      box-shadow:
+        0 0 0 5px rgb(201 155 50 / 0.08),
+        0 0 20px rgb(201 155 50 / 0.28);
+      animation: vtm-node-pulse 4.6s 1.2s ease-in-out infinite;
+    }
+
+    @keyframes vtm-orbit-drift {
+      from {
+        opacity: 0.5;
+        transform:
+          translate3d(0, 0, 0)
+          rotate(-12deg)
+          scale(1);
+      }
+
+      to {
+        opacity: 0.92;
+        transform:
+          translate3d(-18px, 14px, 0)
+          rotate(-9deg)
+          scale(1.025);
+      }
+    }
+
+    @keyframes vtm-signal-breathe {
+      0%,
+      100% {
+        opacity: 0.34;
+        transform: rotate(-17deg) translateX(-3%);
+      }
+
+      50% {
+        opacity: 0.92;
+        transform: rotate(-17deg) translateX(3%);
+      }
+    }
+
+    @keyframes vtm-node-pulse {
+      0%,
+      100% {
+        opacity: 0.58;
+        transform: scale(0.85);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.14);
+      }
+    }
+
+    /* =========================================================
+       GRADIENT HEADLINE
+    ========================================================= */
+
+    .gradient-text {
+      color: var(--action);
+    }
+
+    @supports (
+      (background-clip: text) or
+      (-webkit-background-clip: text)
+    ) {
+      .gradient-text {
+        color: transparent;
+        background:
+          linear-gradient(
+            105deg,
+            var(--c-blue-700) 0%,
+            var(--c-blue-700) 28%,
+            var(--c-blue-600) 42%,
+            #789eff 49%,
+            var(--c-blue-700) 58%,
+            var(--c-cobalt-950) 100%
+          );
+        background-position: 100% 50%;
+        background-size: 240% 100%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation:
+          vtm-headline-glint 1.55s 280ms
+          var(--ease-signal) both;
+      }
+    }
+
+    @keyframes vtm-headline-glint {
+      from {
+        background-position: 100% 50%;
+      }
+
+      to {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* =========================================================
+       SIGNAL LINE
+    ========================================================= */
+
+    .signal-line {
+      position: relative;
+      height: 2px;
+      overflow: visible;
+      background:
+        linear-gradient(
+          90deg,
+          var(--c-cobalt-950) 0 16%,
+          var(--c-blue-700) 16% 74%,
+          var(--c-brass-500) 74% 77%,
+          transparent 77%
+        );
+    }
+
+    .signal-line::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 16%;
+      width: 9px;
+      height: 9px;
+      background: var(--c-blue-600);
+      border: 2px solid var(--c-white);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 4px rgb(36 104 232 / 0.10),
+        0 0 18px rgb(36 104 232 / 0.32);
+      transform: translate(-50%, -50%);
+    }
+
+    .signal-line::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -20%;
+      width: 26%;
+      height: 12px;
+      opacity: 0;
+      background: var(--gradient-electric-beam);
+      filter: blur(3px);
+      transform: translateY(-50%);
+      animation: vtm-signal-pass 9s 1.2s ease-in-out infinite;
+    }
+
+    @keyframes vtm-signal-pass {
+      0%,
+      68% {
+        left: -20%;
+        opacity: 0;
+      }
+
+      74% {
+        opacity: 0.82;
+      }
+
+      88% {
+        opacity: 0.48;
+      }
+
+      100% {
+        left: 94%;
+        opacity: 0;
+      }
+    }
+    /* =========================================================
+       KAPITEL UND EDITORIAL OPENER
+    ========================================================= */
+
+    .chapter {
+      position: relative;
+      isolation: isolate;
+      padding-block: clamp(5.5rem, 10vw, 9rem);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .chapter:nth-of-type(even) {
+      background:
+        linear-gradient(
+          180deg,
+          rgb(18 63 166 / 0.026),
+          transparent 190px
+        ),
+        var(--surface-page);
+    }
+
+    .chapter::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+      height: 220px;
+      opacity: 0.28;
+      background-image:
+        linear-gradient(
+          90deg,
+          transparent 0 49.9%,
+          rgb(18 63 166 / 0.055) 50%,
+          transparent 50.1%
+        );
+      background-size: 144px 100%;
+      pointer-events: none;
+    }
+
+    .chapter-head {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
+      align-items: end;
+      gap: clamp(2rem, 6vw, 6rem);
+      margin-bottom: clamp(3rem, 7vw, 5.5rem);
+      padding-top: clamp(2.5rem, 6vw, 5rem);
+    }
+
+    .chapter-head::before {
+      content: attr(data-index);
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+      color: transparent;
+      font-family: var(--font-display);
+      font-size: clamp(5.5rem, 15vw, 12.5rem);
+      font-weight: 800;
+      line-height: 0.78;
+      letter-spacing: -0.09em;
+      -webkit-text-stroke: 1px rgb(18 63 166 / 0.085);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .chapter-head h2 {
+      max-width: 13ch;
+      margin-bottom: 0;
+    }
+
+    .chapter-head .lead {
+      margin-bottom: 0;
+    }
+
+    .chapter-head::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: calc(-1 * var(--space-6));
+      left: 0;
+      height: 2px;
+      background:
+        linear-gradient(
+          90deg,
+          var(--c-cobalt-950) 0 14%,
+          var(--c-blue-700) 14% 46%,
+          var(--c-brass-500) 46% 48%,
+          rgb(18 30 57 / 0.08) 48% 100%
+        );
+    }
+
+    .section-stack {
+      display: grid;
+      gap: clamp(2rem, 5vw, 4rem);
+    }
+
+    .subsection {
+      padding-top: var(--space-5);
+    }
+
+    .subsection-head {
+      max-width: 760px;
+      margin-bottom: var(--space-6);
+    }
+
+    /* =========================================================
+       GRIDS
+    ========================================================= */
+
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .bento,
+    .logo-specimens,
+    .compare-grid,
+    .image-grid {
+      display: grid;
+      gap: clamp(1rem, 2.5vw, 1.75rem);
+    }
+
+    .grid-2,
+    .logo-specimens,
+    .compare-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3,
+    .image-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .bento {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+
+    .bento > * {
+      grid-column: span 6;
+    }
+
+    .bento > .bento-wide {
+      grid-column: span 8;
+    }
+
+    .bento > .bento-narrow {
+      grid-column: span 4;
+    }
+
+    .bento > .bento-full {
+      grid-column: 1 / -1;
+    }
+
+    /* =========================================================
+       CARDS
+    ========================================================= */
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(1.35rem, 3vw, 2rem);
+      background:
+        linear-gradient(
+          180deg,
+          rgb(255 255 255 / 0.99),
+          var(--c-white)
+        );
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-m);
+      box-shadow: var(--shadow-soft);
+      transition:
+        transform var(--motion-medium) var(--ease-signal),
+        border-color var(--motion-medium) ease,
+        box-shadow var(--motion-medium) ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: clamp(64px, 24%, 148px);
+      height: 2px;
+      opacity: 0.68;
+      background:
+        linear-gradient(
+          90deg,
+          var(--c-blue-700),
+          var(--c-blue-600),
+          transparent
+        );
+      transition:
+        width var(--motion-slow) var(--ease-signal),
+        opacity var(--motion-medium) ease;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      width: 22px;
+      height: 22px;
+      background:
+        linear-gradient(
+          225deg,
+          rgb(18 63 166 / 0.09) 0 48%,
+          transparent 49%
+        );
+      pointer-events: none;
+    }
+
+    .card:hover {
+      z-index: 2;
+      border-color: var(--border-electric);
+      box-shadow: var(--glow-electric);
+      transform: translateY(-3px);
+    }
+
+    .card:hover::before {
+      width: 54%;
+      opacity: 1;
+    }
+
+    .card h3 {
+      margin-bottom: var(--space-4);
+    }
+
+    .card .meta + h3 {
+      margin-top: 0;
+    }
+
+    .card-dark {
+      color: rgb(255 255 255 / 0.78);
+      background:
+        radial-gradient(
+          circle at 90% 0%,
+          rgb(36 104 232 / 0.24),
+          transparent 34%
+        ),
+        var(--gradient-brand-deep);
+      border-color: rgb(255 255 255 / 0.12);
+      box-shadow: 0 22px 54px rgb(18 30 57 / 0.20);
+    }
+
+    .card-dark h3,
+    .card-dark h4 {
+      color: var(--c-white);
+    }
+
+    .card-dark .meta {
+      color: var(--c-brass-300);
+    }
+
+    .card-dark::before {
+      background:
+        linear-gradient(
+          90deg,
+          var(--c-brass-300),
+          var(--c-blue-500),
+          transparent
+        );
+    }
+
+    .card-dark::after {
+      background:
+        linear-gradient(
+          225deg,
+          rgb(255 255 255 / 0.10) 0 48%,
+          transparent 49%
+        );
+    }
+
+    .card-dark:hover {
+      border-color: rgb(255 255 255 / 0.24);
+      box-shadow:
+        0 0 0 1px rgb(36 104 232 / 0.12),
+        0 28px 68px rgb(18 30 57 / 0.28);
+    }
+
+    .card-research {
+      border-color: var(--border-brass);
+      box-shadow: var(--glow-brass);
+    }
+
+    .card-research::before {
+      width: 38%;
+      background:
+        linear-gradient(
+          90deg,
+          var(--c-brass-700),
+          var(--c-brass-500),
+          transparent
+        );
+    }
+
+    .card-research::after {
+      top: 0;
+      right: auto;
+      left: -45%;
+      width: 34%;
+      height: 100%;
+      opacity: 0;
+      background: var(--gradient-brass-beam);
+      transform: skewX(-14deg);
+    }
+
+    .card-research:hover {
+      border-color: rgb(155 112 23 / 0.38);
+      box-shadow:
+        0 0 0 1px rgb(155 112 23 / 0.08),
+        0 20px 54px rgb(155 112 23 / 0.16);
+    }
+
+    .card-research:hover::after {
+      animation: vtm-research-glint 900ms var(--ease-signal);
+    }
+
+    @keyframes vtm-research-glint {
+      0% {
+        left: -45%;
+        opacity: 0;
+      }
+
+      22% {
+        opacity: 0.52;
+      }
+
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
+    }
+
+    /* =========================================================
+       BUTTONS UND TAGS
+    ========================================================= */
+
+    .button-row,
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      margin-block: var(--space-5);
+    }
+
+    .button {
+      position: relative;
+      isolation: isolate;
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      overflow: hidden;
+      padding: 0.7rem 1.1rem;
+      border: 1px solid transparent;
+      border-radius: var(--radius-s);
+      font-family: var(--font-body);
+      font-size: 0.94rem;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition:
+        color var(--motion-fast) ease,
+        background var(--motion-fast) ease,
+        border-color var(--motion-fast) ease,
+        box-shadow var(--motion-medium) ease,
+        transform var(--motion-fast) var(--ease-signal);
+    }
+
+    .button-primary {
+      color: var(--c-white);
+      background: var(--c-blue-700);
+      box-shadow:
+        0 8px 22px rgb(18 63 166 / 0.16),
+        inset 0 1px 0 rgb(255 255 255 / 0.16);
+    }
+
+    .button-primary::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(
+          105deg,
+          transparent 0 34%,
+          rgb(255 255 255 / 0.25) 46%,
+          transparent 58% 100%
+        );
+      transform: translateX(-120%);
+      transition: transform 620ms var(--ease-signal);
+    }
+
+    .button-primary:hover {
+      color: var(--c-white);
+      background: var(--c-blue-800);
+      box-shadow:
+        0 12px 30px rgb(18 63 166 / 0.25),
+        0 0 0 1px rgb(36 104 232 / 0.18);
+      transform: translateY(-2px);
+    }
+
+    .button-primary:hover::before {
+      transform: translateX(120%);
+    }
+
+    .button-secondary {
+      color: var(--action);
+      background: var(--c-white);
+      border-color: rgb(18 63 166 / 0.30);
+    }
+
+    .button-secondary:hover {
+      color: var(--action-hover);
+      background: var(--c-blue-050);
+      border-color: var(--c-blue-700);
+      box-shadow: 0 10px 26px rgb(18 63 166 / 0.10);
+      transform: translateY(-2px);
+    }
+
+    .button-quiet {
+      color: var(--action);
+      background: transparent;
+      border-color: transparent;
+    }
+
+    .button-quiet:hover {
+      color: var(--action-hover);
+      background: var(--c-blue-050);
+    }
+
+    .button:active {
+      transform: translateY(0);
+      transition-duration: 80ms;
+    }
+
+    .button:disabled,
+    .button[aria-disabled="true"] {
+      color: var(--c-neutral-500);
+      background: var(--c-neutral-100);
+      border-color: var(--c-neutral-200);
+      box-shadow: none;
+      cursor: not-allowed;
+      opacity: 0.72;
+      transform: none;
+    }
+
+    .tag,
+    .status {
+      display: inline-flex;
+      min-height: 28px;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.28rem 0.55rem;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-s);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+    }
+
+    .tag {
+      color: var(--text-secondary);
+      background: var(--c-white);
+    }
+
+    .tag-electric {
+      color: var(--c-blue-800);
+      background: var(--c-blue-050);
+      border-color: rgb(18 63 166 / 0.24);
+    }
+
+    .tag-brass {
+      color: #6a4905;
+      background: var(--c-brass-100);
+      border-color: rgb(155 112 23 / 0.28);
+    }
+
+    .status-good {
+      color: var(--c-success);
+      background: var(--c-success-bg);
+      border-color: rgb(23 102 58 / 0.24);
+    }
+
+    .status-warning {
+      color: var(--c-warning);
+      background: var(--c-warning-bg);
+      border-color: rgb(122 82 0 / 0.24);
+    }
+
+    .status-error {
+      color: var(--c-danger);
+      background: var(--c-danger-bg);
+      border-color: rgb(165 38 38 / 0.24);
+    }
+
+    /* =========================================================
+       LISTEN, NOTES UND ZITATE
+    ========================================================= */
+
+    .rule-list {
+      display: grid;
+      gap: 0.75rem;
+      margin-bottom: 0;
+      padding-left: 1.2rem;
+    }
+
+    .rule-list li {
+      padding-left: 0.25rem;
+    }
+
+    .rule-list li::marker {
+      color: var(--c-blue-600);
+      font-weight: 700;
+    }
+
+    .number-list {
+      list-style: none;
+      counter-reset: number-list;
+      padding: 0;
+    }
+
+    .number-list li {
+      position: relative;
+      display: grid;
+      grid-template-columns: 2.6rem 1fr;
+      gap: 1rem;
+      padding-block: 1rem;
+      border-top: 1px solid var(--border-soft);
+      counter-increment: number-list;
+    }
+
+    .number-list li::before {
+      content: "0" counter(number-list);
+      color: var(--action);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+
+    .note {
+      position: relative;
+      margin-top: var(--space-6);
+      padding: 1.2rem 1.3rem 1.2rem 1.5rem;
+      color: var(--text-secondary);
+      background:
+        linear-gradient(
+          90deg,
+          rgb(18 63 166 / 0.055),
+          transparent
+        ),
+        var(--c-blue-050);
+      border: 1px solid rgb(18 63 166 / 0.15);
+      border-left: 3px solid var(--c-blue-700);
+      border-radius: 0 var(--radius-m) var(--radius-m) 0;
+    }
+
+    .note-research {
+      background:
+        linear-gradient(
+          90deg,
+          rgb(155 112 23 / 0.07),
+          transparent
+        ),
+        #fffdf7;
+      border-color: rgb(155 112 23 / 0.18);
+      border-left-color: var(--c-brass-600);
+    }
+
+    blockquote {
+      margin-inline: 0;
+      color: var(--text-primary);
+      font-family: var(--font-editorial);
+      font-size: clamp(1.35rem, 1.12rem + 0.9vw, 2rem);
+      font-style: italic;
+      line-height: 1.4;
+      letter-spacing: -0.015em;
+    }
+
+    blockquote footer {
+      margin-top: 1rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-style: normal;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* =========================================================
+       LOGO-SPEZIFIKATION
+    ========================================================= */
+
+    .logo-stage {
+      min-height: 260px;
+      display: grid;
+      place-items: center;
+      padding: clamp(2rem, 5vw, 4rem);
+      border-radius: var(--radius-l);
+    }
+
+    .logo-stage-light {
+      background:
+        radial-gradient(
+          circle at 80% 10%,
+          rgb(36 104 232 / 0.08),
+          transparent 34%
+        ),
+        var(--c-white);
+      border: 1px solid var(--border-soft);
+    }
+
+    .logo-stage-dark {
+      background:
+        radial-gradient(
+          circle at 88% 12%,
+          rgb(36 104 232 / 0.26),
+          transparent 34%
+        ),
+        var(--gradient-brand-deep);
+      border: 1px solid rgb(255 255 255 / 0.12);
+      box-shadow: 0 20px 58px rgb(18 30 57 / 0.18);
+    }
+
+    .clearspace-demo {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 250px;
+      padding: 3rem;
+      background:
+        repeating-linear-gradient(
+          0deg,
+          transparent 0 23px,
+          rgb(18 63 166 / 0.055) 24px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent 0 23px,
+          rgb(18 63 166 / 0.055) 24px
+        ),
+        var(--c-paper);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-m);
+    }
+
+    .clearspace-box {
+      position: relative;
+      padding: 2rem;
+      border: 1px dashed var(--c-blue-600);
+      background: rgb(255 255 255 / 0.80);
+    }
+
+    /* =========================================================
+       FARBEN
+    ========================================================= */
+
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .swatch {
+      overflow: hidden;
+      background: var(--c-white);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-m);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .swatch-color {
+      min-height: 150px;
+      background: var(--swatch-color);
+    }
+
+    .swatch-info {
+      padding: 1rem;
+    }
+
+    .swatch-info strong,
+    .swatch-info span {
+      display: block;
+    }
+
+    .swatch-info span {
+      margin-top: 0.35rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      line-height: 1.55;
+    }
+
+    .balance-bar {
+      display: flex;
+      min-height: 86px;
+      overflow: hidden;
+      color: var(--c-white);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-m);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .balance-segment {
+      display: grid;
+      place-items: center;
+      min-width: 1.5rem;
+      padding: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .balance-neutral {
+      width: 88%;
+      color: var(--text-primary);
+      background: var(--c-paper);
+    }
+
+    .balance-cobalt {
+      width: 8%;
+      background: var(--c-cobalt-950);
+    }
+
+    .balance-electric {
+      width: 3%;
+      background: var(--c-blue-600);
+    }
+
+    .balance-brass {
+      width: 1%;
+      color: var(--c-cobalt-950);
+      background: var(--c-brass-500);
+    }
+
+    /* =========================================================
+       TYPOGRAFIE
+    ========================================================= */
+
+    .type-specimen {
+      padding-block: clamp(1.5rem, 4vw, 3rem);
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .type-specimen-display {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 7vw, 6.5rem);
+      font-weight: 800;
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+    }
+
+    .type-specimen-body {
+      max-width: 65ch;
+      font-family: var(--font-body);
+      font-size: 1.06rem;
+      line-height: 1.75;
+    }
+
+    .type-specimen-editorial {
+      max-width: 28ch;
+      font-family: var(--font-editorial);
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      font-style: italic;
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+    }
+
+    .type-specimen-mono {
+      font-family: var(--font-mono);
+      font-size: clamp(0.72rem, 1.5vw, 0.92rem);
+      font-weight: 500;
+      line-height: 1.7;
+      letter-spacing: 0.035em;
+      text-transform: uppercase;
+    }
+
+    /* =========================================================
+       EDITORIAL COMPONENTS
+    ========================================================= */
+
+    .story-card {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-height: 100%;
+    }
+
+    .story-visual {
+      position: relative;
+      min-height: 220px;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 75% 20%,
+          rgb(36 104 232 / 0.24),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          var(--c-cobalt-950),
+          var(--c-blue-700)
+        );
+    }
+
+    .story-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.42;
+      background-image:
+        linear-gradient(
+          rgb(255 255 255 / 0.08) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgb(255 255 255 / 0.08) 1px,
+          transparent 1px
+        );
+      background-size: 42px 42px;
+      -webkit-mask-image:
+        linear-gradient(135deg, transparent, #000);
+      mask-image:
+        linear-gradient(135deg, transparent, #000);
+    }
+
+    .story-visual::after {
+      content: "";
+      position: absolute;
+      right: 13%;
+      bottom: 17%;
+      width: 8px;
+      height: 8px;
+      background: var(--c-brass-300);
+      border: 2px solid var(--c-white);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 6px rgb(201 155 50 / 0.10),
+        0 0 22px rgb(201 155 50 / 0.34);
+    }
+
+    .story-index {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1;
+      color: rgb(255 255 255 / 0.82);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+
+    .story-content {
+      padding: 1.35rem;
+      background: var(--c-white);
+      border: 1px solid var(--border-soft);
+      border-top: 0;
+    }
+
+    .story-content h3 {
+      margin-bottom: 0.8rem;
+    }
+
+    .story-content a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .story-content a:hover {
+      color: var(--action);
+    }
+
+    .article-demo {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.34fr) minmax(0, 1fr);
+      gap: clamp(2rem, 6vw, 6rem);
+      padding: clamp(1.5rem, 5vw, 4rem);
+      background: var(--c-white);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .article-aside {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      line-height: 1.7;
+    }
+
+    .article-aside nav {
+      position: sticky;
+      top: calc(var(--nav-height) + 24px);
+    }
+
+    .article-aside ul {
+      display: grid;
+      gap: 0.6rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .article-body {
+      max-width: 720px;
+    }
+
+    .article-body h3 {
+      font-size: var(--step-3);
+    }
+
+    .article-body > p {
+      font-size: 1.04rem;
+      line-height: 1.82;
+    }
+
+    .article-byline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.2rem;
+      margin-block: var(--space-5);
+      padding-block: var(--space-4);
+      color: var(--text-muted);
+      border-block: 1px solid var(--border-soft);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.035em;
+      text-transform: uppercase;
+    }
+
+    .pull-quote {
+      position: relative;
+      margin-block: clamp(2rem, 6vw, 4rem);
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+      background:
+        radial-gradient(
+          circle at 95% 5%,
+          rgb(36 104 232 / 0.10),
+          transparent 30%
+        ),
+        var(--c-blue-050);
+      border-left: 3px solid var(--c-blue-700);
+    }
+
+    /* =========================================================
+       DATENVISUALISIERUNG
+    ========================================================= */
+
+    .chart-card {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      background:
+        radial-gradient(
+          circle at 94% 8%,
+          rgb(36 104 232 / 0.11),
+          transparent 30%
+        ),
+        var(--c-white);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-l);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .chart-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 3px;
+      background:
+        linear-gradient(
+          90deg,
+          var(--c-blue-700),
+          var(--c-blue-600) 72%,
+          var(--c-brass-500) 72% 76%,
+          transparent 76%
+        );
+    }
+
+    .chart {
+      display: grid;
+      gap: 1.15rem;
+      margin-top: var(--space-7);
+    }
+
+    .chart-row {
+      display: grid;
+      grid-template-columns: minmax(145px, 0.42fr) minmax(0, 1fr) 3.4rem;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .chart-label {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .bar-track {
+      position: relative;
+      height: 12px;
+      background: var(--c-neutral-100);
+      border-radius: 2px;
+    }
+
+    .bar-fill {
+      position: relative;
+      width: var(--value);
+      height: 100%;
+      color: var(--c-blue-600);
+      background:
+        linear-gradient(
+          90deg,
+          var(--c-blue-700),
+          var(--c-blue-600)
+        );
+      border-radius: 2px;
+      box-shadow: 0 0 18px rgb(36 104 232 / 0.16);
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .bar-fill::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -4px;
+      width: 8px;
+      height: 8px;
+      background: currentColor;
+      border: 2px solid var(--c-white);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 4px rgb(36 104 232 / 0.08),
+        0 0 14px currentColor;
+      transform: translateY(-50%);
+    }
+
+    .chart-row-research .bar-fill {
+      color: var(--c-brass-600);
+      background: var(--gradient-signature);
+      box-shadow: 0 0 18px rgb(201 155 50 / 0.18);
+    }
+
+    .chart-value {
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .chart-source {
+      margin-top: var(--space-6);
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       BILDSPRACHE
+    ========================================================= */
+
+    .image-placeholder {
+      position: relative;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 0.4rem;
+      overflow: hidden;
+      margin: calc(-1 * clamp(1.35rem, 3vw, 2rem));
+      margin-bottom: 1.5rem;
+      padding: 1.4rem;
+      color: var(--c-white);
+      background:
+        radial-gradient(
+          circle at 72% 20%,
+          rgb(36 104 232 / 0.42),
+          transparent 26%
+        ),
+        linear-gradient(
+          145deg,
+          #283854,
+          var(--c-blue-700)
+        );
+    }
+
+    .image-placeholder::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.34;
+      background:
+        linear-gradient(
+          120deg,
+          transparent 0 52%,
+          rgb(255 255 255 / 0.13) 52.2% 52.5%,
+          transparent 52.7%
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent 0 58px,
+          rgb(255 255 255 / 0.065) 59px
+        );
+    }
+
+    .image-placeholder > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .image-placeholder .meta {
+      color: rgb(255 255 255 / 0.65);
+    }
+
+    .image-placeholder-dark {
+      background:
+        radial-gradient(
+          circle at 78% 24%,
+          rgb(36 104 232 / 0.40),
+          transparent 24%
+        ),
+        linear-gradient(
+          145deg,
+          #080d18,
+          var(--c-cobalt-950)
+        );
+    }
+
+    .image-placeholder-brass {
+      color: var(--c-cobalt-950);
+      background:
+        radial-gradient(
+          circle at 78% 18%,
+          rgb(255 255 255 / 0.34),
+          transparent 26%
+        ),
+        linear-gradient(
+          145deg,
+          var(--c-brass-100),
+          var(--c-brass-500)
+        );
+    }
+
+    .image-placeholder-brass .meta {
+      color: rgb(18 30 57 / 0.65);
+    }
+
+    /* =========================================================
+       VERGLEICH
+    ========================================================= */
+
+    .compare-card {
+      position: relative;
+      padding: clamp(1.35rem, 3vw, 2rem);
+      background: var(--c-white);
+      border: 1px solid var(--border-soft);
+      border-top-width: 3px;
+      border-radius: var(--radius-m);
+    }
+
+    .compare-card.good {
+      border-top-color: var(--c-blue-700);
+    }
+
+    .compare-card.bad {
+      border-top-color: var(--c-danger);
+      background:
+        linear-gradient(
+          180deg,
+          rgb(165 38 38 / 0.035),
+          transparent 50%
+        ),
+        var(--c-white);
+    }
+
+    /* =========================================================
+       TABELLEN
+    ========================================================= */
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: var(--space-5);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-m);
+      background: var(--c-white);
+    }
+
+    table {
+      width: 100%;
+      min-width: 660px;
+      margin: 0;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    caption {
+      padding: 1rem;
+      color: var(--text-secondary);
+      font-weight: 700;
+      text-align: left;
+    }
+
+    th,
+    td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--border-soft);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    thead th {
+      color: var(--text-primary);
+      background: var(--c-paper-blue);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    tbody th {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    tbody tr:last-child th,
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    tbody tr:hover {
+      background: rgb(18 63 166 / 0.025);
+    }
+
+    /* =========================================================
+       FORMULARE
+    ========================================================= */
+
+    .form-specimen {
+      display: grid;
+      gap: 1.3rem;
+      max-width: 720px;
+      margin-top: var(--space-5);
+    }
+
+    .form-field {
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .form-field label {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .form-field input:not([type="checkbox"]),
+    .form-field textarea,
+    .form-field select {
+      width: 100%;
+      min-height: 48px;
+      padding: 0.75rem 0.85rem;
+      color: var(--text-primary);
+      background: var(--c-white);
+      border: 1px solid var(--c-neutral-300);
+      border-radius: var(--radius-s);
+      transition:
+        border-color var(--motion-fast) ease,
+        box-shadow var(--motion-fast) ease;
+    }
+
+    .form-field input:hover,
+    .form-field textarea:hover,
+    .form-field select:hover {
+      border-color: var(--c-neutral-500);
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus,
+    .form-field select:focus {
+      outline: none;
+      border-color: var(--focus);
+      box-shadow:
+        0 0 0 3px rgb(36 104 232 / 0.16);
+    }
+
+    .form-field small {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      line-height: 1.55;
+    }
+
+    .form-check {
+      grid-template-columns: 1.25rem 1fr;
+      align-items: start;
+    }
+
+    .form-check input {
+      width: 1.1rem;
+      height: 1.1rem;
+      margin-top: 0.22rem;
+      accent-color: var(--c-blue-700);
+    }
+
+    .form-check label {
+      font-weight: 400;
+    }
+
+    /* =========================================================
+       CODE
+    ========================================================= */
+
+    pre {
+      max-width: 100%;
+      overflow-x: auto;
+      padding: 1.25rem;
+      color: #e9efff;
+      background:
+        radial-gradient(
+          circle at 94% 4%,
+          rgb(36 104 232 / 0.24),
+          transparent 30%
+        ),
+        var(--c-cobalt-950);
+      border: 1px solid rgb(255 255 255 / 0.10);
+      border-radius: var(--radius-m);
+      font-size: 0.78rem;
+      line-height: 1.72;
+      tab-size: 2;
+      box-shadow: 0 18px 48px rgb(18 30 57 / 0.16);
+    }
+
+    pre code {
+      font-size: inherit;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .site-footer {
+      position: relative;
+      overflow: hidden;
+      padding-block: clamp(4rem, 8vw, 7rem) 2rem;
+      color: rgb(255 255 255 / 0.72);
+      background:
+        radial-gradient(
+          circle at 84% 12%,
+          rgb(36 104 232 / 0.28),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 18% 100%,
+          rgb(201 155 50 / 0.10),
+          transparent 24%
+        ),
+        var(--c-cobalt-950);
+    }
+
+    .site-footer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.22;
+      background-image:
+        linear-gradient(
+          rgb(255 255 255 / 0.07) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgb(255 255 255 / 0.07) 1px,
+          transparent 1px
+        );
+      background-size: 72px 72px;
+      -webkit-mask-image:
+        linear-gradient(90deg, transparent, #000);
+      mask-image:
+        linear-gradient(90deg, transparent, #000);
+      pointer-events: none;
+    }
+
+    .site-footer > .wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr 0.75fr;
+      gap: clamp(2rem, 6vw, 6rem);
+    }
+
+    .footer-grid h2,
+    .footer-grid h3,
+    .footer-grid strong {
+      color: var(--c-white);
+    }
+
+    .site-footer .meta {
+      color: var(--c-brass-300);
+    }
+
+    .site-footer a {
+      color: var(--c-white);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-top: clamp(3rem, 7vw, 6rem);
+      padding-top: 1.5rem;
+      border-top: 1px solid rgb(255 255 255 / 0.12);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.035em;
+      text-transform: uppercase;
+    }
+
+    .footer-bottom p {
+      margin-bottom: 0;
+    }
+
+    .footer-logo-print {
+      display: none;
+    }
+
+    /* =========================================================
+       SCROLL MOTION
+       Inhalte sind ohne JavaScript standardmäßig sichtbar.
+    ========================================================= */
+
+    .motion-item {
+      opacity: 1;
+      transform: none;
+    }
+
+    .motion-enabled .motion-item:not(.is-visible) {
+      opacity: 0;
+      transform: translate3d(0, 12px, 0);
+    }
+
+    .motion-enabled .motion-item.is-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition:
+        opacity 680ms ease,
+        transform 820ms var(--ease-signal);
+    }
+
+    .motion-enabled .chapter-head.motion-item:not(.is-visible) {
+      transform: translate3d(-18px, 0, 0);
+    }
+
+    .motion-enabled .chapter-head.motion-item.is-visible {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .motion-enabled .chart-card:not(.is-visible) .bar-fill {
+      transform: scaleX(0);
+    }
+
+    .motion-enabled .chart-card.is-visible .bar-fill {
+      transform: scaleX(1);
+      transition: transform 1.1s var(--ease-signal);
+    }
+
+    .motion-enabled .chart-card.is-visible .chart-row:nth-child(2) .bar-fill {
+      transition-delay: 90ms;
+    }
+
+    .motion-enabled .chart-card.is-visible .chart-row:nth-child(3) .bar-fill {
+      transition-delay: 180ms;
+    }
+
+    .motion-enabled .chart-card.is-visible .chart-row:nth-child(4) .bar-fill {
+      transition-delay: 270ms;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1080px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+        gap: 3rem;
+      }
+
+      .grid-4,
+      .swatch-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-3,
+      .image-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .image-grid > :last-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 900px) {
+      :root {
+        --nav-height: 70px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid,
+      .chapter-head,
+      .article-demo,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel {
+        max-width: 620px;
+      }
+
+      .chapter-head {
+        align-items: start;
+      }
+
+      .chapter-head .lead {
+        max-width: 720px;
+      }
+
+      .article-aside nav {
+        position: static;
+      }
+
+      .article-aside ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        max-width: 720px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .brand-logo-nav {
+        height: 27px;
+        max-width: 230px;
+      }
+
+      .nav-inner {
+        gap: 1rem;
+      }
+
+      .nav-links {
+        padding-right: 1.5rem;
+      }
+
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .logo-specimens,
+      .compare-grid,
+      .image-grid,
+      .swatch-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .image-grid > :last-child {
+        grid-column: auto;
+      }
+
+      .bento {
+        grid-template-columns: 1fr;
+      }
+
+      .bento > *,
+      .bento > .bento-wide,
+      .bento > .bento-narrow,
+      .bento > .bento-full {
+        grid-column: auto;
+      }
+
+      .chapter-head::before {
+        font-size: clamp(5rem, 28vw, 9rem);
+      }
+
+      .chart-row {
+        grid-template-columns: 1fr 3rem;
+        gap: 0.45rem 0.75rem;
+      }
+
+      .chart-label {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 520px) {
+      :root {
+        --nav-height: 64px;
+      }
+
+      .wrap,
+      .wrap-wide {
+        width: min(calc(100% - 2rem), var(--content-max));
+      }
+
+      .brand-logo-nav {
+        height: 24px;
+        max-width: 190px;
+      }
+
+      .site-nav {
+        background: rgb(255 255 255 / 0.96);
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .nav-links a {
+        font-size: 0.66rem;
+      }
+
+      .hero > .wrap {
+        padding-block: 4.5rem;
+      }
+
+      .hero-grid {
+        gap: 2.5rem;
+      }
+
+      .hero h1 {
+        max-width: 11ch;
+      }
+
+      .hero-orbit-a {
+        top: -22%;
+        right: -55%;
+        width: 120vw;
+      }
+
+      .hero-orbit-b {
+        display: none;
+      }
+
+      .chapter {
+        padding-block: 4.5rem;
+      }
+
+      .chapter-head {
+        margin-bottom: 3.5rem;
+        padding-top: 2rem;
+      }
+
+      .card,
+      .compare-card,
+      .chart-card {
+        padding: 1.2rem;
+      }
+
+      .image-placeholder {
+        margin: -1.2rem -1.2rem 1.3rem;
+      }
+
+      .article-demo {
+        padding: 1.2rem;
+      }
+
+      .article-aside ul {
+        grid-template-columns: 1fr;
+      }
+
+      .button-row .button {
+        width: 100%;
+      }
+
+      .balance-segment {
+        padding: 0.25rem;
+        writing-mode: vertical-rl;
+      }
+
+      .swatch-color {
+        min-height: 120px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .wrap,
+      .wrap-wide {
+        width: min(calc(100% - 1.5rem), var(--content-max));
+      }
+
+      .brand-logo-nav {
+        max-width: 170px;
+      }
+
+      .hero > .wrap {
+        padding-block: 3.75rem;
+      }
+
+      .hero-panel {
+        padding: 1.2rem;
+      }
+
+      .chapter {
+        padding-block: 3.75rem;
+      }
+
+      .card,
+      .compare-card,
+      .chart-card,
+      .article-demo {
+        padding: 1rem;
+      }
+
+      .image-placeholder {
+        margin: -1rem -1rem 1.2rem;
+      }
+    }
+
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .hero-orbit,
+      .hero-signal,
+      .hero-node,
+      .brand-rail::after,
+      .signal-line::after,
+      .hero-panel::after {
+        animation: none !important;
+      }
+
+      .motion-item,
+      .motion-enabled .motion-item:not(.is-visible) {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .bar-fill {
+        transform: scaleX(1) !important;
+      }
+    }
+
+    /* =========================================================
+       FORCED COLORS
+    ========================================================= */
+
+    @media (forced-colors: active) {
+      .hero-atmosphere,
+      .brand-rail::after,
+      .signal-line::after,
+      .card::after,
+      .button-primary::before,
+      .story-visual::before,
+      .site-footer::before {
+        display: none;
+      }
+
+      .card,
+      .button,
+      .tag,
+      .status,
+      .compare-card,
+      .chart-card,
+      .hero-panel {
+        border: 1px solid CanvasText;
+        box-shadow: none;
+      }
+
+      .gradient-text {
+        color: CanvasText;
+        background: none;
+        -webkit-text-fill-color: currentColor;
+      }
+
+      .bar-fill {
+        background: Highlight;
+      }
+    }
+
+    /* =========================================================
+       PRINT
+    ========================================================= */
+
+    @media print {
+      :root {
+        --text-primary: #000;
+        --text-secondary: #222;
+        --text-muted: #444;
+      }
+
+      @page {
+        margin: 18mm;
+      }
+
+      html,
+      body {
+        color: #000;
+        background: #fff;
+        font-size: 10pt;
+      }
+
+      .brand-rail,
+      .site-nav,
+      .hero-atmosphere,
+      .signal-line::after,
+      .card::after,
+      .button-row,
+      .skip-link {
+        display: none !important;
+      }
+
+      .hero {
+        min-height: 0;
+        background: #fff;
+        border-bottom: 2px solid #000;
+      }
+
+      .hero > .wrap {
+        padding-block: 1cm;
+      }
+
+      .hero-grid,
+      .chapter-head,
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .bento,
+      .logo-specimens,
+      .compare-grid,
+      .image-grid,
+      .article-demo,
+      .footer-grid {
+        display: block;
+      }
+
+      .hero-panel,
+      .card-dark,
+      .site-footer {
+        color: #000;
+        background: #fff;
+        border: 1px solid #000;
+        box-shadow: none;
+      }
+
+      .hero-panel h2,
+      .card-dark h3,
+      .card-dark h4,
+      .site-footer strong,
+      .site-footer a {
+        color: #000;
+      }
+
+      .chapter {
+        padding-block: 1.2cm;
+        background: #fff !important;
+        break-before: page;
+      }
+
+      .chapter-head {
+        padding-top: 0;
+      }
+
+      .chapter-head::before,
+      .chapter::before {
+        display: none;
+      }
+
+      .card,
+      .compare-card,
+      .chart-card,
+      .article-demo,
+      .logo-stage {
+        margin-bottom: 0.5cm;
+        break-inside: avoid;
+        box-shadow: none;
+        transform: none !important;
+      }
+
+      a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        color: #333;
+        font-size: 8pt;
+        overflow-wrap: anywhere;
+      }
+
+      .brand-logo-footer:not(.footer-logo-print) {
+        display: none;
+      }
+
+      .footer-logo-print {
+        display: block;
+        height: 36px;
+      }
+
+      .site-footer {
+        padding-block: 1cm;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <a class="skip-link" href="#main-content">
+    Direkt zum Inhalt
+  </a>
+
+  <div class="brand-rail" aria-hidden="true"></div>
+
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <div class="wrap-wide nav-inner">
+      <a
+        class="logo-link"
+        href="#top"
+        aria-label="VersicherungsTech Magazin – zum Anfang"
+      >
+        <img
+          class="brand-logo brand-logo-nav"
+          src="https://storage.ghost.io/c/16/79/16794837-6459-4f6f-b4c4-2787d5771849/content/images/size/w1000/2026/04/Logo--2-.png"
+          alt="VersicherungsTech Magazin"
+          decoding="async"
+          fetchpriority="high"
+          referrerpolicy="no-referrer"
+        >
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#strategie">Strategie</a></li>
+        <li><a href="#logo">Logo</a></li>
+        <li><a href="#signatur">Signatur</a></li>
+        <li><a href="#farbe">Farbe</a></li>
+        <li><a href="#typografie">Typografie</a></li>
+        <li><a href="#editorial">Editorial</a></li>
+        <li><a href="#bildsprache">Bild</a></li>
+        <li><a href="#sprache">Sprache</a></li>
+        <li><a href="#interaktion">Interaktion</a></li>
+        <li><a href="#technik">Technik</a></li>
+        <li><a href="#governance">Governance</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" aria-labelledby="hero-title">
+    <div class="hero-atmosphere" aria-hidden="true">
+      <span class="hero-orbit hero-orbit-a"></span>
+      <span class="hero-orbit hero-orbit-b"></span>
+      <span class="hero-signal"></span>
+      <span class="hero-node hero-node-a"></span>
+      <span class="hero-node hero-node-b"></span>
+    </div>
+
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            Brand &amp; Design System · Version 4.2
+          </p>
+
+          <h1 id="hero-title">
+            Technologie
+            <span class="gradient-text">verstehen.</span>
+          </h1>
+
+          <p class="lead">
+            Die verbindliche Marken-, Editorial- und Produktsprache des
+            VersicherungsTech Magazins – präzise, evidenzbasiert und mit
+            einem eigenständigen digitalen Signalcode.
+          </p>
+
+          <div
+            class="signal-line"
+            aria-hidden="true"
+          ></div>
+
+          <p class="hero-claim">
+            Versicherung verändern.
+          </p>
+
+          <div class="button-row">
+            <a class="button button-primary" href="#strategie">
+              System entdecken
+            </a>
+            <a class="button button-secondary" href="#governance">
+              Freigabekriterien
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-labelledby="principles-title">
+          <p class="meta">VTM BRAND PRINCIPLES</p>
+          <h2 id="principles-title">Vier verbindliche Leitlinien</h2>
+
+          <ol class="hero-principles">
+            <li>Inhalt vor Dekoration</li>
+            <li>Evidenz vor Behauptung</li>
+            <li>Präzision vor Effekt</li>
+            <li>Zugang vor Exklusivität</li>
+          </ol>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- =====================================================
+         01 · STRATEGIE
+    ====================================================== -->
+    <section
+      class="chapter"
+      id="strategie"
+      aria-labelledby="strategie-title"
+    >
+      <div class="wrap">
+        <header class="chapter-head" data-index="01">
+          <div>
+            <p class="kicker">01 · Markenstrategie</p>
+            <h2 id="strategie-title">
+              Orientierung in einer Branche im Wandel
+            </h2>
+          </div>
+
+          <p class="lead">
+            VTM übersetzt technologische, regulatorische und organisatorische
+            Veränderungen in belastbare Einordnung für Entscheiderinnen und
+            Entscheider der Versicherungswirtschaft.
+          </p>
+        </header>
+
+        <div class="section-stack">
+          <div class="bento">
+            <article class="card card-dark bento-wide">
+              <p class="meta">Purpose</p>
+              <h3>Komplexität in Handlungsfähigkeit übersetzen</h3>
+              <p>
+                VTM macht technologische Entwicklungen verständlich, bewertet
+                ihre Relevanz für Versicherungsunternehmen und schafft eine
+                fundierte Grundlage für strategische Entscheidungen.
+              </p>
+            </article>
+
+            <article class="card card-research bento-narrow">
+              <p class="meta">Brand Promise</p>
+              <h3>Relevanz ohne Rauschen</h3>
+              <p>
+                Jeder Beitrag soll entweder erklären, einordnen, belegen oder
+                eine Entscheidung besser machen.
+              </p>
+            </article>
+
+            <article class="card">
+              <p class="meta">Mission</p>
+              <h3>Technologie verständlich machen</h3>
+              <p>
+                VTM verbindet journalistische Sorgfalt mit technischer Tiefe
+                und der praktischen Realität von Versicherungsunternehmen.
+              </p>
+            </article>
+
+            <article class="card">
+              <p class="meta">Vision</p>
+              <h3>Die Referenz für Versicherungstechnologie</h3>
+              <p>
+                VTM wird zur verlässlichsten deutschsprachigen
+                Informationsplattform für die technologische Transformation
+                der Versicherungswirtschaft.
+              </p>
+            </article>
+
+            <article class="card bento-full">
+              <p class="meta">Positionierung</p>
+              <h3>
+                Das digitale B2B-Fachmagazin an der Schnittstelle von
+                Versicherung, Technologie und Transformation
+              </h3>
+              <p class="lead">
+                VTM richtet sich an Menschen, die Systeme verantworten,
+                Transformation gestalten, Risiken bewerten und
+                Investitionsentscheidungen vorbereiten.
+              </p>
+            </article>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-head">
+              <p class="kicker">Zielgruppen</p>
+              <h3>Drei Perspektiven, ein gemeinsamer Informationsraum</h3>
+            </div>
+
+            <div class="grid-3">
+              <article class="card">
+                <p class="meta">01 · Leadership</p>
+                <h3>Vorstand &amp; C-Level</h3>
+                <p>
+                  CIO, CTO, CDO, COO und strategische Entscheider benötigen
+                  belastbare Einordnung, wirtschaftliche Konsequenzen und
+                  klare Handlungsoptionen.
+                </p>
+                <ul class="rule-list">
+                  <li>Strategische Relevanz</li>
+                  <li>Investitionslogik</li>
+                  <li>Risiken und Abhängigkeiten</li>
+                  <li>Markt- und Wettbewerbsvergleich</li>
+                </ul>
+              </article>
+
+              <article class="card">
+                <p class="meta">02 · Technology</p>
+                <h3>Architektur &amp; IT</h3>
+                <p>
+                  Enterprise Architects, Plattformverantwortliche und
+                  Engineering-Leads erwarten technische Substanz,
+                  nachvollziehbare Modelle und praktische Erfahrungen.
+                </p>
+                <ul class="rule-list">
+                  <li>Zielarchitekturen</li>
+                  <li>Integration und Daten</li>
+                  <li>Cloud und Plattformen</li>
+                  <li>Modernisierungspfade</li>
+                </ul>
+              </article>
+
+              <article class="card">
+                <p class="meta">03 · Business</p>
+                <h3>Fachbereich &amp; Transformation</h3>
+                <p>
+                  Produkt-, Operations-, Schaden- und Transformationsbereiche
+                  benötigen verständliche Auswirkungen auf Prozesse,
+                  Kundenerlebnis und Organisation.
+                </p>
+                <ul class="rule-list">
+                  <li>Prozesswirkung</li>
+                  <li>Umsetzbarkeit</li>
+                  <li>Regulatorischer Kontext</li>
+                  <li>Veränderung der Rollen</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <article class="card">
+              <p class="meta">Persönlichkeit</p>
+              <h3>So tritt VTM auf</h3>
+              <ul class="rule-list">
+                <li><strong>Präzise:</strong> konkrete Aussagen statt Allgemeinplätze.</li>
+                <li><strong>Souverän:</strong> ruhig, klar und ohne Übertreibung.</li>
+                <li><strong>Technisch fundiert:</strong> Substanz vor Buzzwords.</li>
+                <li><strong>Kritisch:</strong> Behauptungen werden geprüft und eingeordnet.</li>
+                <li><strong>Zugänglich:</strong> Komplexität wird erklärt, nicht verborgen.</li>
+                <li><strong>Meinungsstark:</strong> Haltung basiert auf Argumenten und Evidenz.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <p class="meta">Brand Boundaries</p>
+              <h3>Was VTM nicht ist</h3>
+              <ul class="rule-list">
+                <li>Keine unkritische Bühne für Produktversprechen.</li>
+                <li>Kein austauschbares Technologie-Newsportal.</li>
+                <li>Keine futuristische Cyber- oder Hologramm-Marke.</li>
+                <li>Keine visuelle Inszenierung ohne inhaltliche Funktion.</li>
+                <li>Keine künstliche Exklusivität durch unnötige Fachsprache.</li>
+                <li>Keine Vermischung von Redaktion und Werbung.</li>
+              </ul>
+            </article>
+          </div>
+
+          <aside class="note">
+            <strong>Redaktioneller Grundsatz:</strong>
+            VTM bewertet Technologie nicht danach, wie neu sie erscheint,
+            sondern danach, welches Problem sie löst, welche Abhängigkeiten
+            sie erzeugt und welchen nachweisbaren Beitrag sie leisten kann.
+          </aside>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         02 · LOGO
+    ====================================================== -->
+    <section
+      class="chapter"
+      id="logo"
+      aria-labelledby="logo-title"
+    >
+      <div class="wrap">
+        <header class="chapter-head" data-index="02">
+          <div>
+            <p class="kicker">02 · Logo</p>
+            <h2 id="logo-title">
+              Klar erkennbar in jedem Kontext
+            </h2>
+          </div>
+
+          <p class="lead">
+            Die Wortmarke ist der konstante Absender des Systems. Effekte
+            finden in ihrem Umfeld statt – das Logo selbst wird nicht
+            animiert, verzerrt oder dekorativ verändert.
+          </p>
+        </header>
+
+        <div class="logo-specimens">
+          <article>
+            <div class="logo-stage logo-stage-light">
+              <img
+                class="brand-logo brand-logo-specimen"
+                src="https://storage.ghost.io/c/16/79/16794837-6459-4f6f-b4c4-2787d5771849/content/images/size/w1000/2026/04/Logo--2-.png"
+                alt="VersicherungsTech Magazin – farbige Logovariante"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+              >
+            </div>
+
+            <p class="meta">Primärlogo · Farbe</p>
+            <h3>Für helle Flächen</h3>
+            <p>
+              Standardvariante auf Weiß, Off-White und sehr hellen neutralen
+              Hintergründen.
+            </p>
+          </article>
+
+          <article>
+            <div class="logo-stage logo-stage-dark">
+              <img
+                class="brand-logo brand-logo-specimen"
+                src="https://storage.ghost.io/c/16/79/16794837-6459-4f6f-b4c4-2787d5771849/content/images/size/w1000/2026/07/versicherungstech_logo_white.png"
+                alt="VersicherungsTech Magazin – weiße Logovariante"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+              >
+            </div>
+
+            <p class="meta">Inverslogo · Weiß</p>
+            <h3>Für dunkle Flächen</h3>
+            <p>
+              Ausschließlich auf Cobalt, dunklen Bildern oder ausreichend
+              kontrastreichen Brand-Verläufen verwenden.
+            </p>
+          </article>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <p class="meta">Schutzraum</p>
+            <h3>Die Marke braucht Abstand</h3>
+
+            <div class="clearspace-demo">
+              <div class="clearspace-box">
+                <img
+                  class="brand-logo brand-logo-specimen"
+                  src="https://storage.ghost.io/c/16/79/16794837-6459-4f6f-b4c4-2787d5771849/content/images/size/w1000/2026/04/Logo--2-.png"
+                  alt="Logo mit exemplarisch dargestelltem Schutzraum"
+                  loading="lazy"
+                  decoding="async"
+                  referrerpolicy="no-referrer"
+                >
+              </div>
+            </div>
+
+            <p>
+              Der minimale Schutzraum entspricht der optischen Höhe des
+              Buchstabens „V“ der Wortmarke. Innerhalb dieses Bereichs stehen
+              keine Texte, Linien, Bilder oder Bedienelemente.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="meta">Verbindliche Regeln</p>
+            <h3>Anwendung</h3>
+            <ul class="number-list">
+              <li>
+                <span>
+                  Mindestbreite im digitalen Einsatz:
+                  <strong>140 CSS-Pixel</strong>.
+                </span>
+              </li>
+              <li>
+                <span>
+                  Seitenverhältnis immer beibehalten; niemals stauchen,
+                  strecken oder drehen.
+                </span>
+              </li>
+              <li>
+                <span>
+                  Keine Schatten, Konturen, Glows oder Animationen direkt
+                  auf das Logo anwenden.
+                </span>
+              </li>
+              <li>
+                <span>
+                  Nur die freigegebenen Farb- und Weißvarianten verwenden.
+                </span>
+              </li>
+              <li>
+                <span>
+                  Auf Bildern muss der Hintergrund ruhig und ausreichend
+                  kontrastreich sein.
+                </span>
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="compare-grid">
+          <article class="compare-card good">
+            <p class="meta">Zulässig</p>
+            <h3>Ruhig und unverändert</h3>
+            <ul class="rule-list">
+              <li>Farbvariante auf hellen Flächen</li>
+              <li>Weißvariante auf Cobalt</li>
+              <li>Ausreichender Schutzraum</li>
+              <li>Originales Seitenverhältnis</li>
+              <li>Freigegebene Originaldatei</li>
+            </ul>
+          </article>
+
+          <article class="compare-card bad">
+            <p class="meta">Nicht zulässig</p>
+            <h3>Verfremdet oder kontrastarm</h3>
+            <ul class="rule-list">
+              <li>Eigene Umfärbungen oder Verläufe</li>
+              <li>Animation einzelner Logobestandteile</li>
+              <li>Schlagschatten, Glow oder 3D-Effekt</li>
+              <li>Platzierung auf unruhigen Motiven</li>
+              <li>Veränderung der Proportionen</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="note">
+          <strong>Produktionshinweis:</strong>
+          Für archivierte, offline verfügbare und produktive Fassungen werden
+          die Logos lokal unter <code>./assets/logos/</code> gespeichert.
+          Die externen URLs in diesem Guide dienen der portablen Vorschau.
+        </aside>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         03 · SIGNATURE SYSTEM
+    ====================================================== -->
+    <section
+      class="chapter"
+      id="signatur"
+      aria-labelledby="signatur-title"
+    >
+      <div class="wrap">
+        <header class="chapter-head" data-index="03">
+          <div>
+            <p class="kicker">03 · Signature System</p>
+            <h2 id="signatur-title">
+              Editorial Signal Intelligence
+            </h2>
+          </div>
+
+          <p class="lead">
+            Der VTM-Signature-Code verbindet redaktionelle Autorität mit
+            digitaler Bewegung: Electric aktiviert, Cobalt strukturiert und
+            Brass kennzeichnet Evidenz.
+          </p>
+        </header>
+
+        <div class="bento">
+          <article class="card card-dark bento-wide">
+            <p class="meta">Signature 01 · Signal Line</p>
+            <h3>Eine Linie mit Bedeutung</h3>
+            <p>
+              Die Signal Line verbindet Themen, Kapitel und Datenpunkte. Der
+              Lichtimpuls bewegt sich langsam und selten – nicht als
+              Dekoration, sondern als Zeichen für Weiterleitung und Erkenntnis.
+            </p>
+
+            <div
+              class="signal-line"
+              aria-hidden="true"
+              style="margin-top: 2.5rem;"
+            ></div>
+          </article>
+
+          <article class="card bento-narrow">
+            <p class="meta">Signature 02 · Index</p>
+            <h3>Redaktionelle Ordnung</h3>
+            <p>
+              Kapitelnummern, Datencodes und Metainformationen erzeugen eine
+              wiedererkennbare publizistische Systematik.
+            </p>
+
+            <div class="tag-row">
+              <span class="tag tag-electric">03 · Signatur</span>
+              <span class="tag">VTM / 4.2</span>
+              <span class="tag tag-brass">Research</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <p class="meta">Electric Signal</p>
+            <h3>Bewegung &amp; Interaktion</h3>
+            <p>
+              Electric Blue markiert Links, Fokus, aktive Navigation,
+              Primäraktionen und technologische Datenverbindungen.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="meta">Cobalt Anchor</p>
+            <h3>Autorität &amp; Struktur</h3>
+            <p>
+              Deep Cobalt verankert Navigation, Typografie, Footer und
+              redaktionelle Hierarchie.
+            </p>
+          </article>
+
+          <article class="card card-research">
+            <p class="meta">Research Glint</p>
+            <h3>Evidenz &amp; Original Research</h3>
+            <p>
+              Brass erscheint nur für VTM-eigene Studien, exklusive Daten,
+              Methodikhinweise und Research-Markierungen.
+            </p>
+          </article>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head">
+            <p class="kicker">Verlaufslogik</p>
+            <h3>Drei Verläufe, drei Aufgaben</h3>
+          </div>
+
+          <div class="grid-3">
+            <article class="card card-dark">
+              <p class="meta">Brand Gradient</p>
+              <h3>Cobalt → Electric</h3>
+              <p>
+                Für Hero-Flächen, Report-Cover, Footer, Keyvisuals und
+                ausgewählte Kapitelaufmacher.
+              </p>
+            </article>
+
+            <article class="card">
+              <p class="meta">Atmospheric Gradient</p>
+              <h3>Licht statt Fläche</h3>
+              <p>
+                Sehr leichte radiale Lichtfelder schaffen Tiefe auf Weiß,
+                ohne die Flächenbalance zu dominieren.
+              </p>
+            </article>
+
+            <article class="card card-research">
+              <p class="meta">Signature Gradient</p>
+              <h3>Brass als Herkunftszeichen</h3>
+              <p>
+                Ausschließlich für Research, eigene Daten und hochwertige
+                redaktionelle Markierungen.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div class="compare-grid">
+          <article class="compare-card good">
+            <p class="meta">VTM</p>
+            <h3>Kontrollierte Leuchtkraft</h3>
+            <ul class="rule-list">
+              <li>Ein dominanter Lichtmoment pro Viewport</li>
+              <li>Langsame atmosphärische Bewegung</li>
+              <li>Kurzer Glint bei relevanter Interaktion</li>
+              <li>Effekte unterstützen Hierarchie und Bedeutung</li>
+              <li>Reduzierte Bewegung wird respektiert</li>
+            </ul>
+          </article>
+
+          <article class="compare-card bad">
+            <p class="meta">Nicht VTM</p>
+            <h3>Effekte ohne Funktion</h3>
+            <ul class="rule-list">
+              <li>Leuchtende Ränder an jeder Komponente</li>
+              <li>Dauerhaft wandernde Verläufe im Fließtext</li>
+              <li>Glassmorphism als universeller Card-Stil</li>
+              <li>Partikel, Mouse-Follower oder 3D-Tilt</li>
+              <li>Animation des Logos</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="note note-research">
+          <strong>Signature-Frequenz:</strong>
+          Signal Line und Research Glint sollen pro Ansicht bewusst begrenzt
+          bleiben. Wiedererkennbarkeit entsteht durch Konsequenz, nicht durch
+          die Menge der Effekte.
+        </aside>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         04 · FARBE
+    ====================================================== -->
+    <section
+      class="chapter"
+      id="farbe"
+      aria-labelledby="farbe-title"
+    >
+      <div class="wrap">
+        <header class="chapter-head" data-index="04">
+          <div>
+            <p class="kicker">04 · Farbe</p>
+            <h2 id="farbe-title">
+              Helle Redaktion, elektrische Akzente
+            </h2>
+          </div>
+
+          <p class="lead">
+            Weißraum bleibt die Grundlage. Cobalt schafft Autorität,
+            Electric signalisiert Interaktion und Brass kennzeichnet
+            redaktionelle Evidenz.
+          </p>
+        </header>
+
+        <div class="subsection">
+          <div class="subsection-head">
+            <p class="kicker">Kernpalette</p>
+            <h3>Verbindliche Markenfarben</h3>
+          </div>
+
+          <div class="swatch-grid">
+            <article class="swatch">
+              <div
+                class="swatch-color"
+                style="--swatch-color: #121e39;"
+                aria-label="Deep Cobalt"
+              ></div>
+              <div class="swatch-info">
+                <strong>Deep Cobalt</strong>
+                <span>#121E39</span>
+                <span>oklch(22% 0.05 260)</span>
+                <span>Text · Navigation · Anker</span>
+              </div>
+            </article>
+
+            <article class="swatch">
+              <div
+                class="swatch-color"
+                style="--swatch-color: #ffffff;"
+                aria-label="Editorial White"
+              ></div>
+              <div class="swatch-info">
+                <strong>Editorial White</strong>
+                <span>#FFFFFF</span>
+                <span>oklch(100% 0 0)</span>
+                <span>Primäre redaktionelle Fläche</span>
+              </div>
+            </article>
+
+            <article class="swatch">
+              <div
+                class="swatch-color"
+                style="--swatch-color: #123fa6;"
+                aria-label="Signal Electric"
+              ></div>
+              <div class="swatch-info">
+                <strong>Signal Electric</strong>
+                <span>#123FA6</span>
+                <span>Produktionswert für Text &amp; UI</span>
+                <span>Links · Buttons · Fokus</span>
+              </div>
+            </article>
+
+            <article class="swatch">
+              <div
+                class="swatch-color"
+                style="--swatch-color: #c99b32;"
+                aria-label="Research Brass"
+              ></div>
+              <div class="swatch-info">
+                <strong>Research Brass</strong>
+                <span>#C99B32</span>
+                <span>Akzentwert</span>
+                <span>Research · Signatur · Daten</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-head">
+            <p class="kicker">Flächenbalance</p>
+            <h3>Die Helligkeit bleibt Teil der Marke</h3>
+          </div>
+
+          <div
+            class="balance-bar"
+            role="img"
+            aria-label="Empfohlene Flächenbalance: 88 Prozent neutrale Flächen, 8 Prozent Cobalt, 3 Prozent Electric Blue und 1 Prozent Brass"
+          >
+            <div class="balance-segment balance-neutral">
+              85–92&nbsp;% Neutral
+            </div>
+            <div class="balance-segment balance-cobalt">
+              5–10&nbsp;%
+            </div>
+            <div class="balance-segment balance-electric">
+              2–5&nbsp;%
+            </div>
+            <div class="balance-segment balance-brass">
+              &lt;1&nbsp;%
+            </div>
+          </div>
+
+          <div class="grid-4" style="margin-top: 1.5rem;">
+            <article class="card">
+              <p class="meta">85–92 %</p>
+              <h3>Neutral</h3>
+              <p>Weiß, Paper und sehr helle blaue Flächen.</p>
+            </article>
+
+            <article class="card card-dark">
+              <p class="meta">5–10 %</p>
+              <h3>Cobalt</h3>
+              <p>Navigation, Footer und strategische Ankerflächen.</p>
+            </article>
+
+            <article class="card">
+              <p class="meta">2–5 %</p>
+              <h3>Electric</h3>
+              <p>Interaktion, Signale und primäre Datenreihen.</p>
+            </article>
+
+            <article class="card card-research">
+              <p class="meta">&lt;1 %</p>
+              <h3>Brass</h3>
+              <p>Original Research und redaktionelle Herkunft.</p>
+            </article>
+          </div>
+        </div>
+
+        <article class="card">
+          <p class="meta">Kontrastrollen</p>
+          <h3>Freigabe nach Anwendungsfall</h3>
+
+          <div class="table-wrap">
+            <table>
+              <caption>
+                Verbindliche Farbkombinationen für digitale Anwendungen
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Vordergrund</th>
+                  <th scope="col">Hintergrund</th>
+                  <th scope="col">Einsatz</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Deep Cobalt</th>
+                  <td>Editorial White</td>
+                  <td>Fließtext, Überschriften, Meta</td>
+                  <td>
+                    <span class="status status-good">Freigegeben</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Signal Electric #123FA6</th>
+                  <td>Editorial White</td>
+                  <td>Links, Buttons, UI-Text</td>
+                  <td>
+                    <span class="status status-good">Freigegeben</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Weiß</th>
+                  <td>Deep Cobalt</td>
+                  <td>Navigation, Footer, dunkle Cards</td>
+                  <td>
+                    <span class="status status-good">Freigegeben</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Research Brass #C99B32</th>
+                  <td>Editorial White</td>
+                  <td>Große Akzente, Linien, Icons</td>
+                  <td>
+                    <span class="status status-warning">Kein Kleinsttext</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Dunkles Brass #9B7017</th>
+                  <td>Editorial White</td>
+                  <td>Research-Text nach finaler Prüfung</td>
+                  <td>
+                    <span class="status status-warning">Einzeln prüfen</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Weiß</th>
+                  <td>Signal Electric #123FA6</td>
+                  <td>Primärbutton</td>
+                  <td>
+                    <span class="status status-good">Freigegeben</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <aside class="note">
+          <strong>Accessibility-Regel:</strong>
+          Produktionsfarben werden vor jeder Freigabe in ihrer konkreten
+          Kombination geprüft. Text benötigt grundsätzlich mindestens 4,5:1,
+          großer Text und wesentliche grafische Bedienelemente mindestens 3:1.
+          Verläufe müssen über die gesamte Textfläche ausreichenden Kontrast
+          gewährleisten.
+        </aside>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         05 · TYPOGRAFIE
+    ====================================================== -->
+    <section
+      class="chapter"
+      id="typografie"
+      aria-labelledby="typografie-title"
+    >
+      <div class="wrap">
+        <header class="chapter-head" data-index="05">
+          <div>
+            <p class="kicker">05 · Typografie</p>
+            <h2 id="typografie-title">
+              Vier Rollen, eine Stimme
+            </h2>
+          </div>
+
+          <p class="lead">
+            Plus Jakarta Sans führt, Inter erklärt, Source Serif 4 gibt der
+            redaktionellen Stimme Tiefe und IBM Plex Mono strukturiert Daten
+            und Metainformationen.
+          </p>
+        </header>
+
+        <div class="section-stack">
+          <article class="type-specimen">
+            <p class="meta">
+              Display · Plus Jakarta Sans · 600–800
+            </p>
+            <p class="type-specimen-display">
+              Technologie verändert Versicherung.
+            </p>
+            <p>
+              Einsatz: H1–H3, Masthead, Claim, Report-Titel, Kampagnenmotive
+              und prägnante Zahlen.
+            </p>
+          </article>
+
+          <article class="type-specimen">
+            <p class="meta">
+              Body &amp; UI · Inter · 400–700
+            </p>
+            <p class="type-specimen-body">
+              Kernsystemmodernisierung ist kein isoliertes IT-Projekt. Sie
+              verändert Datenflüsse, Produktlogik, Verantwortlichkeiten und
+              die Fähigkeit eines Versicherers, auf neue Marktanforderungen
+              zu reagieren. Gute redaktionelle Typografie macht diese
+              Zusammenhänge auch in längeren Beiträgen zugänglich.
+            </p>
+            <p>
+              Standard für Fließtext: 16–18 Pixel, Zeilenhöhe 1,65–1,75 und
+              eine Lesebreite von ungefähr 60–68 Zeichen.
+            </p>
+          </article>
+
+          <article class="type-specimen">
+            <p class="meta">
+              Editorial · Source Serif 4 · 400/600/Italic
+            </p>
+            <p class="type-specimen-editorial">
+              „Technologische Erneuerung beginnt nicht mit einer Plattform,
+              sondern mit einer klaren Entscheidung über Verantwortung.“
+            </p>
+            <p>
+              Einsatz: Pull-Quotes, Essays, Interviews und ausgewählte
+              Meinungsformate – nicht für Navigation oder Formulare.
+            </p>
+          </article>
+
+          <article class="type-specimen">
+            <p class="meta">
+              Meta &amp; Data · IBM Plex Mono · 500–600
+            </p>
+            <p class="type-specimen-mono">
+              VTM Research / Modernisierungsindex 2026 / n=84 /
+              Datenstand 30.06.2026 / Version 4.2
+            </p>
+            <p>
+              Einsatz: Rubriken, Datum, Datenlabels, Quellen, Code und
+              technische Statusinformationen.
+            </p>
+          </article>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <p class="meta">Typografische Hierarchie</p>
+            <h3>Inhalt zuerst scannbar machen</h3>
+            <ul class="rule-list">
+              <li>H1 nur einmal pro Dokument oder Seite.</li>
+              <li>H2 eröffnet Hauptabschnitte, H3 strukturiert Teilthemen.</li>
+              <li>Lead erklärt Relevanz und Perspektive.</li>
+              <li>Fließtext bleibt linksbündig; kein Blocksatz im Web.</li>
+              <li>Meta-Typografie wird sparsam und nicht als Fließtext verwendet.</li>
+              <li>Versalien nur für kurze Labels und Statusangaben.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <p class="meta">Font Loading</p>
+            <h3>Markenkonsistenz ohne Datenschutzrisiko</h3>
+            <ul class="rule-list">
+              <li>Produktivschriften lokal als WOFF2 hosten.</li>
+              <li><code>font-display: swap</code> einsetzen.</li>
+              <li>Nur tatsächlich benötigte Schnitte ausliefern.</li>
+              <li>Variable Fonts für Display, Body und Serif bevorzugen.</li>
+              <li>Fallback-Metriken auf Layoutstabilität prüfen.</li>
+              <li>Lizenzdateien gemeinsam mit dem Font-Paket archivieren.</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="card">
+          <p class="meta">Typografische Skala</p>
+          <h3>Empfohlene Rollen</h3>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Rolle</th>
+                  <th scope="col">Familie</th>
+                  <th scope="col">Gewicht</th>
+                  <th scope="col">Zeilenhöhe</th>
+                  <th scope="col">Einsatz</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Hero / H1</th>
+                  <td>Plus Jakarta Sans</td>
+                  <td>800</td>
+                  <td>0,94–1,02</td>
+                  <td>Seiten- und Report-Aufmacher</td>
+                </tr>
+                <tr>
+                  <th scope="row">H2</th>
+                  <td>Plus Jakarta Sans</td>
+                  <td>700</td>
+                  <td>1,05–1,12</td>
+                  <td>Kapitelüberschrift</td>
+                </tr>
+                <tr>
+                  <th scope="row">H3</th>
+                  <td>Plus Jakarta Sans</td>
+                  <td>700</td>
+                  <td>1,12–1,22</td>
+                  <td>Komponenten und Teilthemen</td>
+                </tr>
+                <tr>
+                  <th scope="row">Lead</th>
+                  <td>Inter</td>
+                  <td>400–500</td>
+                  <td>1,55–1,68</td>
+                  <td>Einleitung und Zusammenfassung</td>
+                </tr>
+                <tr>
+                  <th scope="row">Body</th>
+                  <td>Inter</td>
+                  <td>400</td>
+                  <td>1,65–1,75</td>
+                  <td>Fließtext und UI</td>
+                </tr>
+                <tr>
+                  <th scope="row">Quote</th>
+                  <td>Source Serif 4</td>
+                  <td>400 Italic</td>
+                  <td>1,30–1,45</td>
+                  <td>Pull-Quote und Essay</td>
+                </tr>
+                <tr>
+                  <th scope="row">Meta</th>
+                  <td>IBM Plex Mono</td>
+                  <td>500–600</td>
+                  <td>1,40–1,60</td>
+                  <td>Datum, Quelle und Status</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         06 · EDITORIAL EXPERIENCE & DATA
+    ====================================================== -->
+    <section
+      class="chapter"
+      id="editorial"
+      aria-labelledby="editorial-title"
+    >
+      <div class="wrap">
+        <header class="chapter-head" data-index="06">
+          <div>
+            <p class="kicker">06 · Editorial Experience</p>
+            <h2 id="editorial-title">
+              Inhalt ist das zentrale Produkt
+            </h2>
+          </div>
+
+          <p class="lead">
+            VTM verbindet Nachricht, Analyse, Praxiswissen und Original
+            Research in einer nachvollziehbaren redaktionellen Hierarchie.
+          </p>
+        </header>
+
+        <div class="subsection">
+          <div class="subsection-head">
+            <p class="kicker">Story-System</p>
+            <h3>Formate bleiben vor dem Öffnen erkennbar</h3>
+          </div>
+
+          <div class="grid-3">
+            <article class="story-card">
+              <div class="story-visual" aria-hidden="true">
+                <span class="story-index">01 / ANALYSE</span>
+              </div>
+
+              <div class="story-content">
+                <div class="tag-row">
+                  <span class="tag tag-electric">Analyse</span>
+                  <span class="tag">8 Min.</span>
+                </div>
+
+                <h3>
+                  <a href="#article-demo">
+                    Warum Datenentkopplung vor dem Core-Replacement kommt
+                  </a>
+                </h3>
+
+                <p>
+                  Eine Einordnung technologischer Abhängigkeiten und
+                  realistischer Modernisierungspfade.
+                </p>
+              </div>
+            </article>
+
+            <article class="story-card">
+              <div class="story-visual" aria-hidden="true">
+                <span class="story-index">02 / IT-PRAXIS</span>
+              </div>
+
+              <div class="story-content">
+                <div class="tag-row">
+                  <span class="tag tag-electric">IT-Praxis</span>
+                  <span class="tag">Architektur</span>
+                </div>
+
+                <h3>
+                  <a href="#article-demo">
+                    API-Schichten zwischen Übergangslösung und Zielarchitektur
+                  </a>
+                </h3>
+
+                <p>
+                  Welche Integrationsmuster kurzfristig helfen und langfristig
+                  neue Abhängigkeiten erzeugen können.
+                </p>
+              </div>
+            </article>
+
+            <article class="story-card">
+              <div class="story-visual" aria-hidden="true">
+                <span class="story-index">03 / RESEARCH</span>
+              </div>
+
+              <div class="story-content">
+                <div class="tag-row">
+                  <span class="tag tag-brass">VTM Research</span>
+                  <span class="tag">Index 2026</span>
+                </div>
+
+                <h3>
+                  <a href="#data-chart">
+                    Modernisierungsindex: Prioritäten verschieben sich
+                  </a>
+                </h3>
+
+                <p>
+                  Exklusive Daten zu Architektur, Cloud-Betrieb und
+                  Erneuerungsstrategien in der Versicherungswirtschaft.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="subsection" id="article-demo">
+          <div class="subsection-head">
+            <p class="kicker">Artikeltemplate</p>
+            <h3>Vollständiger redaktioneller Aufbau</h3>
+          </div>
+
+          <article class="article-demo">
+            <aside class="article-aside">
+              <nav aria-label="Inhaltsübersicht des Beispielartikels">
+                <p class="meta">Inhalt</p>
+                <ul>
+                  <li><a href="#article-context">01 · Kontext</a></li>
+                  <li><a href="#article-dependencies">02 · Abhängigkeiten</a></li>
+                  <li><a href="#article-conclusion">03 · Konsequenz</a></li>
+                </ul>
+              </nav>
+            </aside>
+
+            <div class="article-body">
+              <div class="tag-row">
+                <span class="tag tag-electric">Analyse</span>
+                <span class="tag">Kernsysteme</span>
+              </div>
+
+              <p class="meta">
+                Architektur / Transformation / VTM Analyse
+              </p>
+
+              <h3>
+                Kernsystemmodernisierung beginnt außerhalb des Kernsystems
+              </h3>
+
+              <p class="lead">
+                Wer technologische Erneuerung ausschließlich als Austausch
+                einer zentralen Plattform versteht, unterschätzt Daten,
+                Prozesse und organisatorische Abhängigkeiten.
+              </p>
+
+              <div class="article-byline">
+                <span>Von VTM Redaktion</span>
+                <time datetime="2026-07-10">
+                  10. Juli 2026
+                </time>
+                <span>8 Minuten Lesezeit</span>
+                <span>Aktualisiert: 10. Juli 2026</span>
+              </div>
+
+              <h4 id="article-context">Kontext</h4>
+              <p>
+                Versicherer modernisieren ihre Systemlandschaften nicht auf
+                einer leeren Fläche. Produktlogik, Vertragsdaten,
+                Bestandsprozesse und regulatorische Anforderungen sind über
+                Jahre miteinander verwachsen. Eine tragfähige Strategie muss
+                diese Beziehungen sichtbar machen.
+              </p>
+
+              <div class="pull-quote">
+                <blockquote>
+                  „Nicht der Austausch eines Systems ist das Ziel, sondern
+                  die kontrollierte Reduktion kritischer Abhängigkeiten.“
+                  <footer>
+                    VTM Analyse · Kernsystemmodernisierung
+                  </footer>
+                </blockquote>
+              </div>
+
+              <h4 id="article-dependencies">Abhängigkeiten</h4>
+              <p>
+                Datenentkopplung, API-Governance und klare fachliche
+                Verantwortlichkeiten können die Veränderungsfähigkeit bereits
+                verbessern, bevor eine vollständige Plattformmigration
+                beschlossen wird.
+              </p>
+
+              <h4 id="article-conclusion">Konsequenz</h4>
+              <p>
+                Die entscheidende Frage lautet daher nicht nur, welches
+                Kernsystem künftig eingesetzt wird. Entscheidend ist, welche
+                Fähigkeiten unabhängig vom Kernsystem verfügbar sein müssen.
+              </p>
+
+              <aside class="note">
+                <strong>Quellen &amp; Methodik:</strong>
+                Grundlage dieser Beispieldarstellung sind redaktionelle
+                Gespräche, öffentlich dokumentierte Architekturansätze und
+                die Methodik des VTM Modernisierungsindex 2026. In einem
+                Produktionsbeitrag werden die Primärquellen direkt verlinkt.
+              </aside>
+
+              <div class="button-row">
+                <a class="button button-primary" href="#data-chart">
+                  Research-Daten ansehen
+                </a>
+                <a class="button button-secondary" href="#sprache">
+                  Transparenzstandard
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="subsection" id="data-chart">
+          <div class="subsection-head">
+            <p class="kicker">Data Intelligence</p>
+            <h3>Daten werden erklärt, nicht nur dargestellt</h3>
+          </div>
+
+          <figure
+            class="chart-card"
+            aria-labelledby="chart-title"
+            aria-describedby="chart-description chart-source"
+          >
+            <figcaption>
+              <p class="meta">VTM Modernisierungsindex 2026</p>
+              <h3 id="chart-title">
+                Prioritäten bei der Kernsystemmodernisierung
+              </h3>
+              <p id="chart-description" class="lead">
+                Anteil der befragten Unternehmen, die das jeweilige
+                Handlungsfeld als hohe oder sehr hohe Priorität einstufen.
+              </p>
+            </figcaption>
+
+            <div
+              class="chart"
+              role="img"
+              aria-label="Datenentkopplung 82 Prozent, API-Schicht 74 Prozent, Cloud-Betrieb 58 Prozent und Komplettaustausch 31 Prozent"
+            >
+              <div class="chart-row">
+                <div class="chart-label">Datenentkopplung</div>
+                <div class="bar-track">
+                  <div
+                    class="bar-fill"
+                    style="--value: 82%;"
+                    aria-hidden="true"
+                  ></div>
+                </div>
+                <div class="chart-value">82&nbsp;%</div>
+              </div>
+
+              <div class="chart-row">
+                <div class="chart-label">API-Schicht</div>
+                <div class="bar-track">
+                  <div
+                    class="bar-fill"
+                    style="--value: 74%;"
+                    aria-hidden="true"
+                  ></div>
+                </div>
+                <div class="chart-value">74&nbsp;%</div>
+              </div>
+
+              <div class="chart-row">
+                <div class="chart-label">Cloud-Betrieb</div>
+                <div class="bar-track">
+                  <div
+                    class="bar-fill"
+                    style="--value: 58%;"
+                    aria-hidden="true"
+                  ></div>
+                </div>
+                <div class="chart-value">58&nbsp;%</div>
+              </div>
+
+              <div class="chart-row chart-row-research">
+                <div class="chart-label">Komplettaustausch</div>
+                <div class="bar-track">
+                  <div
+                    class="bar-fill"
+                    style="--value: 31%;"
+                    aria-hidden="true"
+                  ></div>
+                </div>
+                <div class="chart-value">31&nbsp;%</div>
+              </div>
+            </div>
+
+            <div class="sr-only">
+              <table>
+                <caption>
+                  Prioritäten bei der Kernsystemmodernisierung
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Handlungsfeld</th>
+                    <th scope="col">Anteil</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Datenentkopplung</th>
+                    <td>82 Prozent</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">API-Schicht</th>
+                    <td>74 Prozent</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Cloud-Betrieb</th>
+                    <td>58 Prozent</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Komplettaustausch</th>
+                    <td>31 Prozent</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="chart-source" id="chart-source">
+              Quelle: VTM Modernisierungsindex 2026 · n = 84 ·
+              Mehrfachnennungen möglich · Beispieldaten zur Darstellung des
+              Designsystems.
+            </p>
+          </figure>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <p class="meta">Chart-Regeln</p>
+            <h3>Jede Grafik bleibt nachvollziehbar</h3>
+            <ul class="rule-list">
+              <li>Titel beschreibt die Aussage, nicht nur das Thema.</li>
+              <li>Einheit, Zeitraum und Grundgesamtheit werden genannt.</li>
+              <li>Achsen beginnen bei Balkendiagrammen grundsätzlich bei null.</li>
+              <li>Werte werden direkt beschriftet, wenn dies die Lesbarkeit erhöht.</li>
+              <li>Farbe wird durch Text, Marker oder Muster ergänzt.</li>
+              <li>Eine zugängliche Datentabelle steht zusätzlich bereit.</li>
+            </ul>
+          </article>
+
+          <article class="card card-research">
+            <p class="meta">Original Research</p>
+            <h3>Brass dokumentiert Herkunft</h3>
+            <ul class="rule-list">
+              <li>Brass nur für VTM-eigene Erhebung oder Analyse.</li>
+              <li>Methodik und Einschränkungen offenlegen.</li>
+              <li>Stichprobengröße und Erhebungszeitraum nennen.</li>
+              <li>Keine Scheingenauigkeit durch ungeeignete Dezimalstellen.</li>
+              <li>Korrelation und Kausalität sprachlich unterscheiden.</li>
+              <li>Downloadbare Daten nur nach rechtlicher Freigabe anbieten.</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="note note-research">
+          <strong>Sponsored Content:</strong>
+          Bezahlte Inhalte verwenden dieselben Qualitätsstandards, werden
+          jedoch vor Titel und Teaser eindeutig als „Sponsored Content“ oder
+          „Anzeige“ gekennzeichnet. Brass darf nicht dazu verwendet werden,
+          Werbung wie VTM-eigenes Research erscheinen zu lassen.
+        </aside>
+      </div>
+    </section>
+    <!-- =====================================================
+         07 · BILDSPRACHE
+    ====================================================== -->
+    <section
+      class="chapter"
+      id="bildsprache"
+      aria-labelledby="bildsprache-title"
+    >
+      <div class="wrap">
+        <header class="chapter-head" data-index="07">
+          <div>
+            <p class="kicker">07 · Bildsprache</p>
+            <h2 id="bildsprache-title">
+              Dokumentarisch statt dekorativ
+            </h2>
+          </div>
+
+          <p class="lead">
+            VTM zeigt reale Menschen, technologische Zusammenhänge und die
+            Arbeitswirklichkeit der Versicherungsbranche. Bilder schaffen
+            Glaubwürdigkeit und Kontext – nicht bloß Atmosphäre.
+          </p>
+        </header>
+
+        <div class="image-grid">
+          <article class="card">
+            <div
+              class="image-placeholder"
+              role="img"
+              aria-label="Stilbeispiel für ein authentisches redaktionelles Porträt"
+            >
+              <span class="meta">Porträt · 4:5</span>
+              <strong>Menschen mit Kontext</strong>
+            </div>
+
+            <h3>Redaktionelle Porträts</h3>
+            <p>
+              Natürliche Haltung, glaubwürdige Arbeitsumgebung und
+              kontrolliertes Licht. Die Person wird nicht als
+              austauschbares Symbolmotiv inszeniert.
+            </p>
+
+            <ul class="rule-list">
+              <li>Echte Gesprächspartner und Verantwortliche zeigen.</li>
+              <li>Negativraum für redaktionelle Crops einplanen.</li>
+              <li>Hauttöne und Materialfarben natürlich wiedergeben.</li>
+              <li>Name, Funktion, Unternehmen und Bildnachweis erfassen.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div
+              class="image-placeholder image-placeholder-dark"
+              role="img"
+              aria-label="Stilbeispiel für eine technologische Detailaufnahme"
+            >
+              <span class="meta">Technologie · 16:9</span>
+              <strong>Systeme sichtbar machen</strong>
+            </div>
+
+            <h3>Technologie &amp; Infrastruktur</h3>
+            <p>
+              Architektur, Geräte, Schnittstellen und Arbeitsprozesse werden
+              konkret gezeigt. Generische Serverräume und
+              Science-Fiction-Klischees sind zu vermeiden.
+            </p>
+
+            <ul class="rule-list">
+              <li>Reale Nutzung vor symbolischen Stockmotiven.</li>
+              <li>Details nur einsetzen, wenn sie zum Inhalt beitragen.</li>
+              <li>Sensible Daten und Zugangsinformationen entfernen.</li>
+              <li>Keine künstliche Blauüberlagerung als Standardfilter.</li>
+            </ul>
+          </article>
+
+          <article class="card card-research">
+            <div
+              class="image-placeholder image-placeholder-brass"
+              role="img"
+              aria-label="Stilbeispiel für eine Research- oder Datenillustration"
+            >
+              <span class="meta">Research · 3:2</span>
+              <strong>Evidenz visualisieren</strong>
+            </div>
+
+            <h3>Research &amp; Illustration</h3>
+            <p>
+              Illustrationen erklären Daten, Systeme oder Beziehungen. Brass
+              kennzeichnet ausschließlich VTM-eigene Analysen, Studien und
+              redaktionell verantwortete Research-Inhalte.
+            </p>
+
+            <ul class="rule-list">
+              <li>Informationsgehalt vor dekorativer Wirkung.</li>
+              <li>Diagramme benötigen Titel, Einheit und Quelle.</li>
+              <li>Farbunterschiede durch Form oder Text ergänzen.</li>
+              <li>Generative Inhalte transparent kennzeichnen.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="compare-grid">
+          <article class="compare-card good">
+            <p class="meta">VTM · Empfohlen</p>
+            <h3>Authentisch und fachlich</h3>
+
+            <ul class="rule-list">
+              <li>Reale Personen und überprüfbare Situationen</li>
+              <li>Ruhige Bildkomposition mit klarer Hierarchie</li>
+              <li>Natürliche Farben und glaubwürdige Materialien</li>
+              <li>Konsistente Angaben zu Urheber und Nutzungsrechten</li>
+              <li>Varianten für 16:9, 4:5, 1:1 und 9:16</li>
+            </ul>
+          </article>
+
+          <article class="compare-card bad">
+            <p class="meta">Nicht VTM</p>
+            <h3>Austauschbar oder künstlich</h3>
+
+            <ul class="rule-list">
+              <li>Handschlag-, Puzzle- oder Roboter-Klischees</li>
+              <li>Unbegründete Neon-, Cyber- oder Hologramm-Ästhetik</li>
+              <li>Übermäßige Retusche und unrealistische Hauttöne</li>
+              <li>KI-Bilder ohne Kennzeichnung oder Zweck</li>
+              <li>Text im Bild ohne barrierefreie Alternative</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <p class="meta">Bildhierarchie</p>
+            <h3>Formate nach Funktion</h3>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Format</th>
+                    <th scope="col">Verhältnis</th>
+                    <th scope="col">Einsatz</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Hero</th>
+                    <td>16:9 oder 3:2</td>
+                    <td>Artikel- und Themeneinstieg</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Porträt</th>
+                    <td>4:5</td>
+                    <td>Interview, Profil, Autorenschaft</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Social</th>
+                    <td>1:1 und 4:5</td>
+                    <td>LinkedIn und Kampagnen</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Story</th>
+                    <td>9:16</td>
+                    <td>Mobile Kurzformate</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Research</th>
+                    <td>3:2</td>
+                    <td>Studien, Reports und Datenteaser</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="card">
+            <p class="meta">Accessibility</p>
+            <h3>Alternativtexte</h3>
+
+            <ul class="rule-list">
+              <li>
+                Informative Bilder erhalten einen knappen, kontextbezogenen
+                Alternativtext.
+              </li>
+              <li>
+                Rein dekorative Bilder verwenden ein leeres
+                <code>alt=""</code>.
+              </li>
+              <li>
+                Text im Bild wird zusätzlich als echter HTML-Text angeboten.
+              </li>
+              <li>
+                Diagramme erhalten Beschreibung und zugängliche Datentabelle.
+              </li>
+              <li>
+                Der Alternativtext wiederholt keine unmittelbar benachbarte
+                Bildunterschrift.
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="note">
+          <strong>Verbindlicher Bildnachweis:</strong>
+          Jede veröffentlichte Abbildung erhält eine dokumentierte Quelle,
+          Nutzungsart, Laufzeit und – sofern erforderlich – eine sichtbare
+          Urheberangabe.
+        </aside>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         08 · SPRACHE UND TRANSPARENZ
+    ====================================================== -->
+    <section
+      class="chapter"
+      id="sprache"
+      aria-labelledby="sprache-title"
+    >
+      <div class="wrap">
+        <header class="chapter-head" data-index="08">
+          <div>
+            <p class="kicker">08 · Voice &amp; Tone</p>
+            <h2 id="sprache-title">
+              Präzise. Souverän. Verständlich.
+            </h2>
+          </div>
+
+          <p class="lead">
+            VTM spricht fachlich fundiert und direkt. Die Sprache ordnet
+            Komplexität ein und unterscheidet konsequent zwischen Fakten,
+            Prognosen, Positionen und Meinungen.
+          </p>
+        </header>
+
+        <div class="bento">
+          <article class="card">
+            <p class="meta">01 · Präzise</p>
+            <h3>Konkrete Aussagen</h3>
+            <p>
+              Zahlen, Zeiträume, Verantwortlichkeiten und Quellen werden
+              genannt. Unbestimmte Superlative werden vermieden.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="meta">02 · Souverän</p>
+            <h3>Ruhige Autorität</h3>
+            <p>
+              VTM argumentiert nachvollziehbar und ohne werbliche
+              Übertreibung. Unsicherheiten werden sichtbar gemacht.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="meta">03 · Zugänglich</p>
+            <h3>Fachsprache mit Maß</h3>
+            <p>
+              Branchenbegriffe sind erlaubt, werden aber bei Bedarf erklärt.
+              Abkürzungen werden beim ersten Auftreten ausgeschrieben.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="meta">04 · Kritisch</p>
+            <h3>Unabhängige Einordnung</h3>
+            <p>
+              Aussagen von Unternehmen und Verbänden werden geprüft,
+              kontextualisiert und als solche kenntlich gemacht.
+            </p>
+          </article>
+        </div>
+
+        <div class="compare-grid">
+          <article class="compare-card good">
+            <p class="meta">VTM</p>
+            <h3>Belegt und differenziert</h3>
+
+            <blockquote>
+              „Laut der veröffentlichten Studie verkürzt sich die
+              durchschnittliche Bearbeitungszeit im untersuchten Prozess um
+              18 Prozent. Ob sich der Wert auf andere Bestände übertragen
+              lässt, bleibt offen.“
+            </blockquote>
+          </article>
+
+          <article class="compare-card bad">
+            <p class="meta">Nicht VTM</p>
+            <h3>Werblich und absolut</h3>
+
+            <blockquote>
+              „Die revolutionäre Lösung transformiert die gesamte
+              Versicherungsbranche und garantiert maximale Effizienz.“
+            </blockquote>
+          </article>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <p class="meta">Schreibregeln</p>
+            <h3>Redaktioneller Standard</h3>
+
+            <ul class="rule-list">
+              <li>Aktive, möglichst kurze Sätze bevorzugen.</li>
+              <li>Zahlen in Datenreihen als Ziffern darstellen.</li>
+              <li>Deutsche Datumsform: <strong>10. Juli 2026</strong>.</li>
+              <li>Prozentwerte im Fließtext: <strong>18&nbsp;%</strong>.</li>
+              <li>Abkürzungen bei der ersten Nennung erklären.</li>
+              <li>Personen mit Name, Funktion und Organisation nennen.</li>
+              <li>Nachricht, Analyse, Meinung und Werbung unterscheiden.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <p class="meta">Ansprache</p>
+            <h3>Respektvoll und inklusiv</h3>
+
+            <ul class="rule-list">
+              <li>
+                Nach Möglichkeit neutrale Begriffe wie „Beschäftigte“,
+                „Fachkräfte“ oder „Team“ verwenden.
+              </li>
+              <li>Personenbezeichnungen konsistent formulieren.</li>
+              <li>Direkte Ansprache sparsam und situationsgerecht einsetzen.</li>
+              <li>Keine abwertenden Zuschreibungen oder Stereotype.</li>
+              <li>Zitate nicht sprachlich verfälschen.</li>
+              <li>Kürzungen und redaktionelle Ergänzungen kennzeichnen.</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="card">
+          <p class="meta">Transparenzstandard</p>
+          <h3>Jeder Beitrag macht seine Herkunft nachvollziehbar</h3>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Angabe</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Umsetzung</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Autorenschaft</th>
+                  <td>
+                    <span class="status status-good">Pflicht</span>
+                  </td>
+                  <td>Name, Funktion und verlinktes Profil</td>
+                </tr>
+                <tr>
+                  <th scope="row">Veröffentlichung</th>
+                  <td>
+                    <span class="status status-good">Pflicht</span>
+                  </td>
+                  <td>Datum und gegebenenfalls Uhrzeit</td>
+                </tr>
+                <tr>
+                  <th scope="row">Aktualisierung</th>
+                  <td>
+                    <span class="status status-good">Bei Änderung</span>
+                  </td>
+                  <td>Datum und wesentliche Änderung dokumentieren</td>
+                </tr>
+                <tr>
+                  <th scope="row">Quellen</th>
+                  <td>
+                    <span class="status status-good">Pflicht</span>
+                  </td>
+                  <td>Primärquellen bevorzugen und direkt verlinken</td>
+                </tr>
+                <tr>
+                  <th scope="row">Methodik</th>
+                  <td>
+                    <span class="status status-good">Bei Daten</span>
+                  </td>
+                  <td>Stichprobe, Zeitraum, Methode und Einschränkungen</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sponsored Content</th>
+                  <td>
+                    <span class="status status-good">Pflicht</span>
+                  </td>
+                  <td>Vor Titel und Teaser eindeutig kennzeichnen</td>
+                </tr>
+                <tr>
+                  <th scope="row">KI-Unterstützung</th>
+                  <td>
+                    <span class="status status-warning">Bei Relevanz</span>
+                  </td>
+                  <td>Art und Umfang der Unterstützung offenlegen</td>
+                </tr>
+                <tr>
+                  <th scope="row">Korrekturen</th>
+                  <td>
+                    <span class="status status-good">Pflicht</span>
+                  </td>
+                  <td>Inhaltliche Korrekturen transparent protokollieren</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <aside class="note">
+          <strong>KI-Richtlinie:</strong>
+          Generative Systeme dürfen Recherche, Strukturierung und sprachliche
+          Bearbeitung unterstützen. Verantwortung, Faktenprüfung, Auswahl und
+          Freigabe verbleiben immer bei einem benannten Menschen. Nicht
+          verifizierte KI-Ausgaben sind keine Quelle.
+        </aside>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         09 · INTERAKTION
+    ====================================================== -->
+    <section
+      class="chapter"
+      id="interaktion"
+      aria-labelledby="interaktion-title"
+    >
+      <div class="wrap">
+        <header class="chapter-head" data-index="09">
+          <div>
+            <p class="kicker">09 · Interaktion</p>
+            <h2 id="interaktion-title">
+              Klar vor spektakulär
+            </h2>
+          </div>
+
+          <p class="lead">
+            Interaktionen bestätigen eine Handlung, erklären den nächsten
+            Schritt und bleiben in allen Zuständen verständlich. Bewegung
+            dient der Orientierung, nicht der Inszenierung.
+          </p>
+        </header>
+
+        <div class="grid-2">
+          <article class="card">
+            <p class="meta">Button-System</p>
+            <h3>Eine dominante Aktion</h3>
+            <p>
+              Pro Inhaltsbereich soll es höchstens eine visuell dominante
+              Primäraktion geben.
+            </p>
+
+            <div
+              class="button-row"
+              aria-label="Beispiele für Button-Stile"
+            >
+              <button class="button button-primary" type="button">
+                Primäraktion
+              </button>
+
+              <button class="button button-secondary" type="button">
+                Sekundäraktion
+              </button>
+
+              <button class="button button-quiet" type="button">
+                Textaktion
+              </button>
+
+              <button class="button button-primary" type="button" disabled>
+                Deaktiviert
+              </button>
+            </div>
+
+            <ul class="rule-list">
+              <li>Buttons lösen Aktionen aus; Links öffnen Ziele.</li>
+              <li>Beschriftungen beschreiben das konkrete Ergebnis.</li>
+              <li>Touch-Ziele grundsätzlich mindestens 44 × 44 Pixel.</li>
+              <li>Fokus, Hover, Active und Disabled unterscheiden.</li>
+              <li>Icons ergänzen Text, ersetzen ihn aber nicht automatisch.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <p class="meta">Statussystem</p>
+            <h3>Zustände bleiben eindeutig</h3>
+
+            <div
+              class="tag-row"
+              aria-label="Beispiele für Statuskennzeichnungen"
+            >
+              <span class="tag">Standard</span>
+              <span class="tag tag-electric">Aktiv</span>
+              <span class="tag tag-brass">Research</span>
+              <span class="status status-good">Erfolgreich</span>
+              <span class="status status-warning">Prüfen</span>
+              <span class="status status-error">Fehler</span>
+            </div>
+
+            <ul class="rule-list">
+              <li>Status nie ausschließlich durch Farbe vermitteln.</li>
+              <li>Fehlermeldungen direkt dem Feld zuordnen.</li>
+              <li>Ladezustände ankündigen und Mehrfachauslösung verhindern.</li>
+              <li>Erfolgsmeldungen konkret formulieren.</li>
+              <li>Wichtige Meldungen nicht automatisch zu schnell ausblenden.</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="card">
+          <p class="meta">Formularmuster</p>
+          <h3>Newsletter-Anmeldung</h3>
+
+          <form
+            class="form-specimen"
+            aria-labelledby="newsletter-example-title"
+          >
+            <div>
+              <h4 id="newsletter-example-title">
+                VTM Briefing abonnieren
+              </h4>
+              <p>
+                Einordnung zu Versicherungstechnologie, Regulierung und
+                digitaler Transformation.
+              </p>
+            </div>
+
+            <div class="form-field">
+              <label for="example-email">
+                Geschäftliche E-Mail-Adresse
+              </label>
+
+              <input
+                id="example-email"
+                name="example-email"
+                type="email"
+                autocomplete="email"
+                inputmode="email"
+                placeholder="name@unternehmen.de"
+                aria-describedby="example-email-help"
+              >
+
+              <small id="example-email-help">
+                Designmuster ohne Datenübertragung. Im Produktivsystem sind
+                Datenschutzhinweis und Double-Opt-in erforderlich.
+              </small>
+            </div>
+
+            <div class="form-field form-check">
+              <input
+                id="example-consent"
+                type="checkbox"
+                name="example-consent"
+              >
+
+              <label for="example-consent">
+                Ich habe die Datenschutzhinweise zur Kenntnis genommen.
+              </label>
+            </div>
+
+            <button class="button button-primary" type="button">
+              Anmeldung prüfen
+            </button>
+          </form>
+        </article>
+
+        <div class="grid-2">
+          <article class="card">
+            <p class="meta">Motion Language</p>
+            <h3>Bewegung mit Bedeutung</h3>
+
+            <ul class="rule-list">
+              <li>Standarddauer: 160–320 Millisekunden.</li>
+              <li>Atmosphärische Bewegung darf deutlich langsamer sein.</li>
+              <li>Primär <code>transform</code> und <code>opacity</code> animieren.</li>
+              <li>Keine automatisch laufenden, hektischen Animationen.</li>
+              <li><code>prefers-reduced-motion</code> respektieren.</li>
+              <li>Inhalte nie dauerhaft durch Reveal-Skripte verbergen.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <p class="meta">Motion Semantics</p>
+            <h3>Drei Bewegungsrollen</h3>
+
+            <ul class="rule-list">
+              <li>
+                <strong>Signal:</strong>
+                horizontaler Lichtimpuls für Verbindung und Navigation.
+              </li>
+              <li>
+                <strong>Reveal:</strong>
+                kurze, ruhige Bewegung beim Eintritt in den Viewport.
+              </li>
+              <li>
+                <strong>Research Glint:</strong>
+                einmaliger Brass-Schimmer bei eigener Evidenz.
+              </li>
+              <li>
+                <strong>Atmosphere:</strong>
+                langsame, nicht interaktionskritische Hintergrundbewegung.
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="card card-dark">
+          <p class="meta">Motion-Prinzip</p>
+          <h3>Die Oberfläche reagiert – sie führt keine Show auf</h3>
+          <p>
+            Animationen sollen Orientierung geben, Hierarchie verdeutlichen
+            oder eine Zustandsänderung bestätigen. Wenn eine Bewegung keine
+            dieser Aufgaben erfüllt, wird sie entfernt.
+          </p>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         10 · TECHNOLOGIE
+    ====================================================== -->
+    <section
+      class="chapter"
+      id="technik"
+      aria-labelledby="technik-title"
+    >
+      <div class="wrap">
+        <header class="chapter-head" data-index="10">
+          <div>
+            <p class="kicker">10 · Technologie</p>
+            <h2 id="technik-title">
+              Robust by default
+            </h2>
+          </div>
+
+          <p class="lead">
+            Das visuelle System wird als wartbares Produkt umgesetzt:
+            semantisch, performant, datenschutzfreundlich und unabhängig von
+            einzelnen Plattformen.
+          </p>
+        </header>
+
+        <div class="grid-2">
+          <article class="card">
+            <p class="meta">Font-Paket</p>
+            <h3>Lokale Produktionsschriften</h3>
+            <p>
+              Die vier verbindlichen Schriftfamilien werden für öffentliche
+              Produktionssysteme lokal als WOFF2 ausgeliefert.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Rolle</th>
+                    <th scope="col">Schrift</th>
+                    <th scope="col">Gewichte</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Display</th>
+                    <td>Plus Jakarta Sans</td>
+                    <td>600–800</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Body &amp; UI</th>
+                    <td>Inter</td>
+                    <td>400–700</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Editorial</th>
+                    <td>Source Serif 4</td>
+                    <td>400, 600, Italic</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Meta &amp; Code</th>
+                    <td>IBM Plex Mono</td>
+                    <td>500–600</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <aside class="note">
+              Die externe Google-Fonts-Einbindung dieser Dokumentationsdatei
+              dient nur der portablen Vorschau. Für öffentlich erreichbare
+              Produkte ist lokales Hosting die verbindliche Lösung.
+            </aside>
+          </article>
+
+          <article class="card">
+            <p class="meta">Paketstruktur</p>
+            <h3>Empfohlene Ablage</h3>
+
+            <pre><code>VTM-Brand-System-4.2/
+├── VTM-Brand-Design-System-4.2-Final.html
+├── README.txt
+└── assets/
+    ├── fonts/
+    │   ├── plus-jakarta-sans-variable.woff2
+    │   ├── inter-variable.woff2
+    │   ├── source-serif-4-variable.woff2
+    │   ├── source-serif-4-italic-variable.woff2
+    │   ├── ibm-plex-mono-500.woff2
+    │   ├── ibm-plex-mono-600.woff2
+    │   └── OFL-LICENSES.txt
+    └── logos/
+        ├── vtm-logo-color.png
+        └── vtm-logo-white.png</code></pre>
+          </article>
+        </div>
+
+        <article class="card">
+          <p class="meta">Token-Architektur</p>
+          <h3>Primitive → semantisch → Komponente</h3>
+          <p>
+            Komponenten verwenden keine unkommentierten Rohfarben.
+            Semantische Tokens bilden Bedeutung ab und ermöglichen
+            kontrollierte Änderungen über Kanäle und Themes hinweg.
+          </p>
+
+          <pre><code>{
+  "color": {
+    "primitive": {
+      "cobalt-950": {
+        "value": "#121e39",
+        "type": "color"
+      },
+      "electric-700": {
+        "value": "#123fa6",
+        "type": "color"
+      },
+      "brass-700": {
+        "value": "#9b7017",
+        "type": "color"
+      }
+    },
+    "semantic": {
+      "text-primary": {
+        "value": "{color.primitive.cobalt-950}",
+        "type": "color"
+      },
+      "action-primary": {
+        "value": "{color.primitive.electric-700}",
+        "type": "color"
+      },
+      "editorial-research": {
+        "value": "{color.primitive.brass-700}",
+        "type": "color"
+      }
+    }
+  }
+}</code></pre>
+        </article>
+
+        <div class="grid-2">
+          <article class="card">
+            <p class="meta">Semantik</p>
+            <h3>Native Elemente zuerst</h3>
+
+            <ul class="rule-list">
+              <li>
+                Landmarks wie <code>header</code>, <code>nav</code>,
+                <code>main</code> und <code>footer</code> verwenden.
+              </li>
+              <li>Überschriftenhierarchie logisch aufbauen.</li>
+              <li>Native Elemente vor ARIA-Ersatzlösungen bevorzugen.</li>
+              <li>Tabellen nur für tabellarische Daten verwenden.</li>
+              <li>Datum, Zitat und Sprachwechsel semantisch auszeichnen.</li>
+              <li>Buttons und Links nach ihrer tatsächlichen Funktion wählen.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <p class="meta">Progressive Enhancement</p>
+            <h3>Kerninhalte bleiben verfügbar</h3>
+
+            <ul class="rule-list">
+              <li>Kerninhalte funktionieren ohne JavaScript.</li>
+              <li>Links besitzen echte Zieladressen.</li>
+              <li>Formulare werden auch serverseitig validiert.</li>
+              <li>OKLCH-Farben erhalten sRGB-Fallbacks.</li>
+              <li>Gradient-Text besitzt eine einfarbige Ausgangsfarbe.</li>
+              <li>Animationen werden nur bei technischer Unterstützung ergänzt.</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="card">
+          <p class="meta">Qualitätsbudget</p>
+          <h3>Verbindliche Produktziele</h3>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Bereich</th>
+                  <th scope="col">Ziel</th>
+                  <th scope="col">Prüfung</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Accessibility</th>
+                  <td>WCAG 2.2, Konformitätsstufe AA</td>
+                  <td>Automatisiert und manuell</td>
+                </tr>
+                <tr>
+                  <th scope="row">LCP</th>
+                  <td>≤ 2,5 Sekunden am 75. Perzentil</td>
+                  <td>Felddaten und Labortest</td>
+                </tr>
+                <tr>
+                  <th scope="row">INP</th>
+                  <td>≤ 200 Millisekunden am 75. Perzentil</td>
+                  <td>Felddaten</td>
+                </tr>
+                <tr>
+                  <th scope="row">CLS</th>
+                  <td>≤ 0,1 am 75. Perzentil</td>
+                  <td>Felddaten und visuelle Prüfung</td>
+                </tr>
+                <tr>
+                  <th scope="row">Reflow</th>
+                  <td>Ohne Inhaltsverlust bei 320 CSS-Pixel Breite</td>
+                  <td>Manueller Responsive-Test</td>
+                </tr>
+                <tr>
+                  <th scope="row">Privatsphäre</th>
+                  <td>Keine unnötigen Drittanbieter-Requests</td>
+                  <td>Netzwerk- und Consent-Audit</td>
+                </tr>
+                <tr>
+                  <th scope="row">Resilienz</th>
+                  <td>Kerninhalte ohne JavaScript erreichbar</td>
+                  <td>Test mit deaktiviertem JavaScript</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <aside class="note">
+          <strong>SharePoint-Hinweis:</strong>
+          SharePoint kann aktive HTML-Dateien je nach Tenant-Konfiguration nur
+          als Download oder in einer eingeschränkten Vorschau anbieten. Die
+          HTML-Datei sollte deshalb zusätzlich in einem normalen Browser
+          getestet werden.
+        </aside>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         11 · GOVERNANCE
+    ====================================================== -->
+    <section
+      class="chapter"
+      id="governance"
+      aria-labelledby="governance-title"
+    >
+      <div class="wrap">
+        <header class="chapter-head" data-index="11">
+          <div>
+            <p class="kicker">11 · Governance</p>
+            <h2 id="governance-title">
+              Ein System mit Verantwortung
+            </h2>
+          </div>
+
+          <p class="lead">
+            Markenqualität entsteht durch klare Zuständigkeiten,
+            dokumentierte Entscheidungen und wiederholbare
+            Qualitätsprüfungen.
+          </p>
+        </header>
+
+        <div class="bento">
+          <article class="card">
+            <p class="meta">Brand Owner</p>
+            <h3>Marketing &amp; Marke</h3>
+            <p>
+              Verantwortet Positionierung, visuelle Identität,
+              Kampagnenfähigkeit und kanalübergreifende Konsistenz.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="meta">Editorial Owner</p>
+            <h3>Chefredaktion</h3>
+            <p>
+              Verantwortet Tonalität, journalistische Standards, Quellen,
+              Kennzeichnungen und redaktionelle Transparenz.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="meta">System Owner</p>
+            <h3>Design &amp; Product</h3>
+            <p>
+              Verantwortet Komponenten, Tokens, Figma-Bibliothek,
+              Dokumentation und visuelle Qualitätssicherung.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="meta">Technical Owner</p>
+            <h3>Engineering</h3>
+            <p>
+              Verantwortet Implementierung, Accessibility, Performance,
+              Browser-Kompatibilität und Release-Automatisierung.
+            </p>
+          </article>
+        </div>
+
+        <article class="card">
+          <p class="meta">Definition of Done</p>
+          <h3>Verbindliche Freigabekriterien</h3>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Prüfbereich</th>
+                  <th scope="col">Kriterium</th>
+                  <th scope="col">Nachweis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Marke</th>
+                  <td>
+                    Logo, Farben, Typografie und Signature Code regelkonform
+                  </td>
+                  <td>Brand Review</td>
+                </tr>
+                <tr>
+                  <th scope="row">Redaktion</th>
+                  <td>
+                    Autor, Datum, Quellen, Kennzeichnung und Korrekturweg
+                    vorhanden
+                  </td>
+                  <td>Editorial QA</td>
+                </tr>
+                <tr>
+                  <th scope="row">Accessibility</th>
+                  <td>
+                    WCAG 2.2 AA; Tastatur, Fokus, Zoom und Screenreader geprüft
+                  </td>
+                  <td>Automatisierter und manueller Test</td>
+                </tr>
+                <tr>
+                  <th scope="row">Performance</th>
+                  <td>LCP ≤ 2,5 s, INP ≤ 200 ms, CLS ≤ 0,1</td>
+                  <td>Monitoring und Labortest</td>
+                </tr>
+                <tr>
+                  <th scope="row">Responsive</th>
+                  <td>
+                    320 Pixel bis große Desktop-Breite ohne Inhaltsverlust
+                  </td>
+                  <td>Geräte- und Browser-Test</td>
+                </tr>
+                <tr>
+                  <th scope="row">Datenschutz</th>
+                  <td>Fonts, Medien, Tracking und Formulare geprüft</td>
+                  <td>Privacy Review</td>
+                </tr>
+                <tr>
+                  <th scope="row">Visual Regression</th>
+                  <td>
+                    Keine unbeabsichtigte Änderung kritischer Komponenten
+                  </td>
+                  <td>Screenshot-Vergleich</td>
+                </tr>
+                <tr>
+                  <th scope="row">Dokumentation</th>
+                  <td>
+                    Änderung, Verantwortliche und Migration dokumentiert
+                  </td>
+                  <td>Changelog</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <div class="grid-2">
+          <article class="card">
+            <p class="meta">Release-Modell</p>
+            <h3>Vier kontrollierte Statusstufen</h3>
+
+            <ol class="number-list">
+              <li>
+                <span>
+                  <strong>Draft:</strong>
+                  Konzept in Bearbeitung; nicht für Produktion freigegeben.
+                </span>
+              </li>
+              <li>
+                <span>
+                  <strong>Beta:</strong>
+                  Inhaltlich vollständig; nur in kontrollierten Pilotprojekten.
+                </span>
+              </li>
+              <li>
+                <span>
+                  <strong>Stable:</strong>
+                  Dokumentiert, getestet und produktiv freigegeben.
+                </span>
+              </li>
+              <li>
+                <span>
+                  <strong>Deprecated:</strong>
+                  Mit Frist und dokumentiertem Ersatz versehen.
+                </span>
+              </li>
+            </ol>
+          </article>
+
+          <article class="card">
+            <p class="meta">Änderungsprozess</p>
+            <h3>Von der Anforderung zur Freigabe</h3>
+
+            <ol class="number-list">
+              <li>
+                <span>Anforderung und Problem nachvollziehbar dokumentieren.</span>
+              </li>
+              <li>
+                <span>
+                  Wirkung auf Marke, Redaktion, Accessibility und Technik
+                  prüfen.
+                </span>
+              </li>
+              <li>
+                <span>Änderung in Design und Code prototypisch umsetzen.</span>
+              </li>
+              <li>
+                <span>Tests und Reviews durch die zuständigen Owner.</span>
+              </li>
+              <li>
+                <span>Version, Changelog und Migration veröffentlichen.</span>
+              </li>
+            </ol>
+          </article>
+        </div>
+
+        <article class="card card-research">
+          <p class="meta">Freigabestatus</p>
+          <h3>Version 4.2 · Luminous Editorial Edition</h3>
+          <p>
+            Diese Fassung definiert die verbindliche gestalterische,
+            redaktionelle und technische Grundlage für VTM-Markenauftritte.
+            Projektspezifische Abweichungen benötigen eine dokumentierte
+            Freigabe durch den Brand Owner und den betroffenen fachlichen
+            Owner.
+          </p>
+
+          <div class="tag-row">
+            <span class="status status-good">Stable</span>
+            <span class="tag">Version 4.2</span>
+            <span class="tag">Juli 2026</span>
+            <span class="tag tag-electric">WCAG 2.2 AA als Ziel</span>
+            <span class="tag tag-brass">Luminous Editorial</span>
+          </div>
+        </article>
+
+        <aside class="note note-research">
+          <strong>Freigabehinweis:</strong>
+          „Stable“ bezeichnet die Freigabe des Designsystems. Jede konkrete
+          Website, Kampagne, Publikation oder Produktimplementierung benötigt
+          weiterhin eine eigene technische, redaktionelle und rechtliche
+          Qualitätsprüfung.
+        </aside>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <img
+            class="brand-logo brand-logo-footer"
+            src="https://storage.ghost.io/c/16/79/16794837-6459-4f6f-b4c4-2787d5771849/content/images/size/w1000/2026/07/versicherungstech_logo_white.png"
+            alt="VersicherungsTech Magazin"
+            loading="lazy"
+            decoding="async"
+            referrerpolicy="no-referrer"
+          >
+
+          <img
+            class="brand-logo brand-logo-footer footer-logo-print"
+            src="https://storage.ghost.io/c/16/79/16794837-6459-4f6f-b4c4-2787d5771849/content/images/size/w1000/2026/04/Logo--2-.png"
+            alt="VersicherungsTech Magazin"
+            loading="lazy"
+            decoding="async"
+            referrerpolicy="no-referrer"
+          >
+
+          <p style="margin-top: 1.5rem; max-width: 44ch;">
+            Digitales B2B-Fachmagazin für Technologie, Transformation und
+            Regulierung in der Versicherungswirtschaft.
+          </p>
+        </div>
+
+        <div>
+          <p class="meta">Dokument</p>
+          <p>
+            <strong>VTM Brand &amp; Design System</strong><br>
+            Version 4.2<br>
+            Luminous Editorial Edition<br>
+            Juli 2026
+          </p>
+        </div>
+
+        <div>
+          <p class="meta">Leitgedanke</p>
+          <p>
+            <strong>
+              Technologie verstehen.<br>
+              Versicherung verändern.
+            </strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span id="copyright-year">2026</span>
+          VersicherungsTech Magazin
+        </p>
+
+        <p>
+          Corporate Identity · Editorial Design · Digital Product
+        </p>
+
+        <a href="#top">
+          Zum Anfang
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- =======================================================
+       PROGRESSIVE ENHANCEMENT
+       Kerninhalte funktionieren ohne JavaScript.
+  ======================================================== -->
+  <script>
+    (function () {
+      "use strict";
+
+      document.documentElement.classList.add("js");
+
+      /* -----------------------------------------------------
+         Copyright-Jahr
+      ----------------------------------------------------- */
+      var yearElement = document.getElementById("copyright-year");
+
+      if (yearElement) {
+        yearElement.textContent = String(new Date().getFullYear());
+      }
+
+      /* -----------------------------------------------------
+         Motion-Präferenz
+      ----------------------------------------------------- */
+      var reduceMotionQuery = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
+
+      var supportsObserver = "IntersectionObserver" in window;
+
+      /* -----------------------------------------------------
+         Progressive Reveal
+         Ohne Unterstützung bleiben alle Inhalte sichtbar.
+      ----------------------------------------------------- */
+      if (!reduceMotionQuery.matches && supportsObserver) {
+        var motionItems = document.querySelectorAll(
+          ".chapter-head, " +
+          ".card, " +
+          ".story-card, " +
+          ".compare-card, " +
+          ".chart-card, " +
+          ".logo-stage, " +
+          ".type-specimen"
+        );
+
+        if (motionItems.length) {
+          document.documentElement.classList.add("motion-enabled");
+
+          motionItems.forEach(function (item) {
+            item.classList.add("motion-item");
+          });
+
+          var motionObserver = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (!entry.isIntersecting) {
+                  return;
+                }
+
+                entry.target.classList.add("is-visible");
+                motionObserver.unobserve(entry.target);
+              });
+            },
+            {
+              root: null,
+              rootMargin: "0px 0px -6% 0px",
+              threshold: 0.06
+            }
+          );
+
+          motionItems.forEach(function (item) {
+            motionObserver.observe(item);
+          });
+        }
+      }
+
+      /* -----------------------------------------------------
+         Aktive Hauptnavigation
+      ----------------------------------------------------- */
+      if (supportsObserver) {
+        var navigationLinks = Array.from(
+          document.querySelectorAll(".nav-links a[href^='#']")
+        );
+
+        var navigationMap = new Map();
+
+        navigationLinks.forEach(function (link) {
+          var targetId = link.getAttribute("href");
+
+          if (!targetId || targetId === "#") {
+            return;
+          }
+
+          var target = document.querySelector(targetId);
+
+          if (target) {
+            navigationMap.set(target, link);
+          }
+        });
+
+        var sectionObserver = new IntersectionObserver(
+          function (entries) {
+            var visibleEntries = entries
+              .filter(function (entry) {
+                return entry.isIntersecting;
+              })
+              .sort(function (a, b) {
+                return b.intersectionRatio - a.intersectionRatio;
+              });
+
+            if (!visibleEntries.length) {
+              return;
+            }
+
+            navigationLinks.forEach(function (link) {
+              link.removeAttribute("aria-current");
+            });
+
+            var activeLink = navigationMap.get(
+              visibleEntries[0].target
+            );
+
+            if (activeLink) {
+              activeLink.setAttribute("aria-current", "true");
+            }
+          },
+          {
+            root: null,
+            rootMargin: "-22% 0px -66% 0px",
+            threshold: [0, 0.08, 0.2]
+          }
+        );
+
+        navigationMap.forEach(function (link, section) {
+          sectionObserver.observe(section);
+        });
+      }
+
+      /* -----------------------------------------------------
+         Externe Links absichern
+      ----------------------------------------------------- */
+      var externalLinks = document.querySelectorAll(
+        'a[href^="http://"], a[href^="https://"]'
+      );
+
+      externalLinks.forEach(function (link) {
+        var relValues = (link.getAttribute("rel") || "")
+          .split(/\s+/)
+          .filter(Boolean);
+
+        ["noopener", "noreferrer"].forEach(function (value) {
+          if (relValues.indexOf(value) === -1) {
+            relValues.push(value);
+          }
+        });
+
+        link.setAttribute("rel", relValues.join(" "));
+      });
+
+      /* -----------------------------------------------------
+         Navigation nach Tastaturfokus sichtbar halten
+      ----------------------------------------------------- */
+      var navContainer = document.querySelector(".nav-links");
+
+      if (navContainer) {
+        navContainer.addEventListener("focusin", function (event) {
+          if (
+            event.target &&
+            typeof event.target.scrollIntoView === "function"
+          ) {
+            event.target.scrollIntoView({
+              behavior: reduceMotionQuery.matches ? "auto" : "smooth",
+              block: "nearest",
+              inline: "center"
+            });
+          }
+        });
+      }
+    }());
+  </script>
+</body>
+</html>
