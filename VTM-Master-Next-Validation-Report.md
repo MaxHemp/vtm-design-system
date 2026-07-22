@@ -1,7 +1,8 @@
 # VTM Master-Next · Validierungsbericht
 
-Datum: 22. Juli 2026
+Datum: 22. Juli 2026 (aktualisiert nach Merge-Review)
 Branch: `claude/vtm-master-designsystem-pvuyr8`
+Review-Empfehlung: **MERGE READY WITH KNOWN LIMITATIONS** (siehe Abschnitt „Abschließender Merge-Review“)
 
 ## Dateien
 
@@ -155,6 +156,94 @@ Ehrliche Einschränkungen der lokalen Prüfumgebung:
 
 Diese Abhängigkeiten stammen unverändert aus der Originaldatei und sind
 zusätzlich in der JSON-Spezifikation unter `openDependencies` erfasst.
+
+## Abschließender Merge-Review (22. Juli 2026)
+
+Vor dem Merge wurden die zehn Review-Punkte gezielt geprüft
+(Diff-Analyse, Skript-Prüfungen, Headless-Chromium-Renderings von
+Inhaltsübersicht und neuen Kapiteln bei 1280 px und 320 px):
+
+1. **Identität erhalten:** Das komplette Original-CSS und -JavaScript ist
+   verbatim in der Arbeitsfassung enthalten (programmatisch geprüft; die
+   einzige Abweichung ist Whitespace am Übergang zum additiven Block).
+   Alle Kernfarben (#121E39, #123FA6, #2468E8, #C99B32), alle sechs
+   Verlaufs-Token und alle vier Schriftrollen kommen exakt so oft vor wie
+   im Original und sind im Rendering sichtbar.
+2. **Keine Kapitel-Duplikate:** 29 Sections, alle IDs eindeutig; alle 11
+   Originalkapitel unverändert vorhanden; `data-index` 00–27 ohne
+   Doppelungen.
+3. **Löschungen im Diff:** Der Datei-Diff Original → Master-Next weist
+   9 entfernte Zeilen aus, die 7 logischen Änderungen entsprechen (drei
+   identische Story-Visual-Zeilen zählen als eine Änderung). Jede ist
+   eine beabsichtigte Ersetzung derselben Zeile durch eine erweiterte
+   Fassung – es wurde kein Inhalt entfernt:
+   1. Meta-Description → um Master-Next-Kennzeichnung erweitert
+      (Maschinenlesbarkeit der Arbeitsfassung).
+   2. `<title>` → „VTM Brand & Design System · Master-Next“
+      (eindeutige Bezeichnung, keine neue Versionsnummer).
+   3. Hero-Eyebrow → „… · 4.2 · Arbeitsfassung Master-Next“
+      (sichtbare Kennzeichnung der Arbeitsfassung).
+   4. `<div class="hero-atmosphere">` → um `data-media-role`/
+      `data-media-status="code-native"` erweitert (Pflichtkennzeichnung).
+   5. `<div class="grid-3">` (Story-System) → `data-example-only="true"`
+      ergänzt (Beispielkennzeichnung).
+   6. 3 × `<div class="story-visual">` → um `component-demonstration`-
+      Attribute erweitert (Pflichtkennzeichnung).
+   7. `<div id="article-demo">` → `data-example-only="true"` ergänzt
+      (Beispielkennzeichnung).
+   Keine Löschung betrifft CSS, JavaScript, Tokens, Verläufe oder
+   redaktionelle Inhalte.
+4. **Komponentenkonsistenz:** Alle neuen Kapitel nutzen die vorhandenen
+   VTM-Bausteine (`chapter-head` mit Stroke-Index, `kicker`, `card`,
+   `card-dark`, `card-research`, `table-wrap`, `rule-list`,
+   `number-list`, `note`, `tag`/`status`, `compare-card`); per Rendering
+   der Kapitel 12, 19, 20, 23, 24 verifiziert – kein zweites Designsystem.
+5. **Navigation & Inhaltsübersicht:** Desktop-Rendering zeigt die
+   unveränderte Sticky-Navigation (+1 Link „Inhalt“) und die
+   TOC-Gruppen A–G dreispaltig; bei 320 px bricht die Übersicht sauber
+   einspaltig um, Links mit ≥32 px Höhe, Hauptnavigation horizontal
+   scrollbar wie im Original.
+6. **Motion-Schalter:** Sichtbar (fixiert unten rechts), nativer
+   `<button>` (tastaturbedienbar, globales `:focus-visible`).
+   Headless-getestet: Standard „Bewegung pausieren“/Status „aktiv“;
+   bei Systemeinstellung Reduced Motion „Bewegung aktivieren“ +
+   Statusregion-Hinweis. **Korrektur im Review:** Ist Reduced Motion
+   systemseitig aktiv, trägt der Schalter jetzt zusätzlich
+   `aria-disabled="true"` (mit abgesenkter Optik), da die
+   Systemeinstellung Vorrang hat und ein Klick die Animationen nicht
+   reaktivieren kann. Beschriftung und tatsächlicher Zustand stimmen in
+   allen Zuständen überein.
+7. **Assetregister:** Kein Eintrag mit `production-required`, kein
+   Eintrag mit `generationAllowed: true` (programmatisch geprüft). Der
+   String `data-generation-allowed="true"` existiert ausschließlich als
+   `<code>`-Zitat der geforderten Interpretationsregel in Kapitel 00 –
+   kein Element trägt ihn als Attribut.
+8. **Logos:** Alle 6 Logo-Elemente (Nav, 2 Specimens, Schutzraum,
+   2 Footer) tragen `data-media-status="approved-brand-asset"` und
+   `data-generation-allowed="false"`; Register bestätigt beide Logos als
+   `approved-brand-asset` mit Generierungsverbot und Human-Review-Pflicht.
+9. **Beispielkennzeichnung:** 22 × `data-example-only`; Beispieldaten,
+   Bildplatzhalter, Angebotssoftware-Ansicht und Foliensystem sind
+   dreifach gekennzeichnet (data-Attribute, sichtbare Badges
+   „Beispiel“/„Kein Produktionsauftrag“, Registereinträge).
+10. **Externe Zugriffe:** Ladende Ressourcen unverändert (Hosts:
+    fonts.googleapis.com, fonts.gstatic.com, storage.ghost.io); keine
+    neuen `preconnect`-Einträge, keine externen `<script src>`. Einzige
+    neue externe URL ist das reine Linkziel
+    `https://www.versicherungstech-magazin.de` in der
+    E-Mail-Signatur-Demo (Kapitel 22 verlangt „Website als echte Links“);
+    es wird beim Seitenaufruf nicht geladen und erzeugt keine
+    Abhängigkeit. Als bekannte Einschränkung ausgewiesen.
+
+**Review-Korrekturen:** ausschließlich die unter Punkt 6 beschriebene
+`aria-disabled`-Ergänzung (JS + 5 Zeilen CSS). Keine neuen Kapitel,
+keine Medien, keine gestalterischen Änderungen.
+
+**Empfehlung: MERGE READY WITH KNOWN LIMITATIONS** – die bekannten
+Einschränkungen sind die oben dokumentierten, lokal nicht
+automatisierbaren Prüfungen (Screenreader, Forced-Colors-Anzeige,
+Browser-Matrix, instrumentelle Kontrastmessung) sowie das Link-only-Ziel
+aus Punkt 10. Blocker bestehen keine.
 
 ## Bestätigungen
 

@@ -3363,6 +3363,14 @@
       box-shadow: 0 0 0 3px rgb(18 30 57 / 0.08);
     }
 
+    /* Systemeinstellung "Reduzierte Bewegung" hat Vorrang:
+       Der Schalter bleibt sichtbar und fokussierbar, ist aber
+       ehrlich als nicht wirksam gekennzeichnet. */
+    .motion-toggle[aria-disabled="true"] {
+      cursor: not-allowed;
+      opacity: 0.78;
+    }
+
     /* Pausenstatus: wiederkehrende dekorative Animationen anhalten */
     .motion-paused .brand-rail::after,
     .motion-paused .hero-orbit-a,
@@ -9665,6 +9673,12 @@ const assets = spec.assetRegister;</code></pre>
           : "Bewegung pausieren";
 
         toggleButton.setAttribute("aria-label", label);
+
+        if (reduceMotionQuery.matches) {
+          toggleButton.setAttribute("aria-disabled", "true");
+        } else {
+          toggleButton.removeAttribute("aria-disabled");
+        }
 
         var labelElement = toggleButton.querySelector(
           ".motion-toggle-label"
