@@ -1,0 +1,3294 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FCFBF7">
+  <meta
+    name="description"
+    content="Human Signal, das Editorial Knowledge System des VersicherungsTech Magazins: eine immersive, helle Markenwelt, die Signale ordnet, Wissen strukturiert und Fortschritt möglich macht."
+  >
+  <meta name="color-scheme" content="light">
+  <title>VTM · Human Signal · Editorial Knowledge System</title>
+
+  <!--
+    HUMAN SIGNAL · EDITORIAL KNOWLEDGE SYSTEM
+    Creative Direction für das VersicherungsTech Magazin (VTM).
+
+    Vorschau-Einbindung der Schriften über Google Fonts.
+    PRODUKTION: alle vier Familien lokal als WOFF2 hosten
+    (siehe Kapitel "Machine Experience" und JSON-Spezifikation).
+    Es existieren keine weiteren Netzwerkabhängigkeiten.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&amp;family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
+    rel="stylesheet"
+  >
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "VTM Human Signal, Editorial Knowledge System",
+    "inLanguage": "de",
+    "description": "Immersive Creative Direction des VersicherungsTech Magazins: ein lebendiges Wissenssystem aus Inhalten, Daten, Perspektiven und menschlicher Entscheidung.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "VersicherungsTech Magazin",
+      "url": "https://www.versicherungstech-magazin.de"
+    },
+    "about": {
+      "@type": "Organization",
+      "name": "VersicherungsTech Magazin",
+      "alternateName": "VTM",
+      "description": "Digitales B2B-Fachmagazin für Technologie, Transformation und Regulierung in der Versicherungswirtschaft."
+    }
+  }
+  </script>
+
+  <style>
+    /* =========================================================
+       HUMAN SIGNAL · EDITORIAL KNOWLEDGE SYSTEM
+       01 · TOKENS
+    ========================================================= */
+
+    :root {
+      /* Flächen: warmes Editorial White / Paper */
+      --paper: #fcfbf7;
+      --paper-soft: #f7f5ee;
+      --paper-deep: #f1eee4;
+
+      /* Struktur und Autorität */
+      --cobalt: #121e39;
+      --cobalt-soft: #1b2a4e;
+      --ink: #16223f;
+      --ink-60: rgb(22 34 63 / 0.64);
+      --ink-40: rgb(22 34 63 / 0.42);
+
+      /* Aktivität */
+      --electric: #123fa6;
+      --electric-bright: #2468e8;
+
+      /* Erkenntnis und Erfolg */
+      --brass: #c99b32;
+      --brass-deep: #8a6a1c;
+      --brass-light: #f2e7c8;
+
+      /* Menschliche Wärme (zurückhaltend) */
+      --coral: #d96a48;
+      --coral-deep: #a8432a;
+      --coral-soft: #f8e5dd;
+
+      /* Positive funktionale Zustände (zurückhaltend) */
+      --mint: #2f7d5c;
+      --mint-soft: #e2f0e8;
+
+      /* Linien */
+      --line: rgb(18 30 57 / 0.16);
+      --line-strong: rgb(18 30 57 / 0.34);
+      --line-faint: rgb(18 30 57 / 0.08);
+
+      /* Typografie */
+      --font-display: "Bricolage Grotesque", "Arial Black", "Segoe UI", sans-serif;
+      --font-ui: "Instrument Sans", "Segoe UI", Arial, sans-serif;
+      --font-editorial: "Newsreader", "Iowan Old Style", Georgia, serif;
+      --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+      --text-xs: clamp(0.68rem, 0.65rem + 0.1vw, 0.75rem);
+      --text-s: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
+      --text-m: clamp(1rem, 0.96rem + 0.2vw, 1.12rem);
+      --text-l: clamp(1.25rem, 1.15rem + 0.5vw, 1.6rem);
+      --text-xl: clamp(1.7rem, 1.4rem + 1.4vw, 2.6rem);
+      --text-2xl: clamp(2.3rem, 1.8rem + 2.6vw, 4rem);
+      --text-display: clamp(2.9rem, 1.9rem + 5.2vw, 7rem);
+      --text-colossal: clamp(2.55rem, 1.5rem + 4.2vw, 5.9rem);
+
+      /* Raum */
+      --gap-1: 0.5rem;
+      --gap-2: 1rem;
+      --gap-3: 1.5rem;
+      --gap-4: 2.5rem;
+      --gap-5: 4rem;
+      --gap-6: 6.5rem;
+      --gap-7: 10rem;
+
+      --edge: clamp(1.25rem, 5vw, 5rem);
+      --measure: 64ch;
+
+      /* Bewegung */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+      --dur-1: 180ms;
+      --dur-2: 420ms;
+      --dur-3: 900ms;
+
+      /* Ebenen */
+      --z-stage: 1;
+      --z-content: 2;
+      --z-nav: 60;
+      --z-fixed: 70;
+      --z-grain: 80;
+      --z-skip: 100;
+    }
+
+    /* =========================================================
+       02 · RESET UND GRUNDLAGE
+    ========================================================= */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5.5rem;
+      background: var(--paper);
+    }
+
+    body {
+      min-width: 320px;
+      margin: 0;
+      overflow-x: clip;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--font-ui);
+      font-size: var(--text-m);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    main {
+      display: block;
+    }
+
+    img,
+    svg,
+    canvas {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--electric);
+    }
+
+    button {
+      color: inherit;
+      font: inherit;
+    }
+
+    p,
+    ul,
+    ol,
+    blockquote,
+    figure {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin-top: 0;
+      font-family: var(--font-display);
+      font-weight: 700;
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      text-wrap: balance;
+    }
+
+    ::selection {
+      color: var(--paper);
+      background: var(--electric);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--electric-bright);
+      outline-offset: 3px;
+    }
+
+    [id] {
+      scroll-margin-top: 5.5rem;
+    }
+
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: var(--z-skip);
+      padding: 0.85rem 1.2rem;
+      color: var(--paper);
+      background: var(--electric);
+      font-weight: 600;
+      text-decoration: none;
+      transform: translateY(-220%);
+      transition: transform var(--dur-1) ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       03 · TEXTUR: GRAIN UND PAPIER
+       Fixe, nicht interaktive Ebene; reine Dekoration.
+    ========================================================= */
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: var(--z-grain);
+      pointer-events: none;
+      opacity: 0.28;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.07 0 0 0 0 0.11 0 0 0 0 0.22 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 160px 160px;
+    }
+
+    /* =========================================================
+       04 · SCROLL-FORTSCHRITT
+    ========================================================= */
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: var(--z-fixed);
+      width: 100%;
+      height: 2px;
+      background: transparent;
+      pointer-events: none;
+    }
+
+    .scroll-progress-bar {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--electric), var(--electric-bright) 72%, var(--brass) 100%);
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    /* =========================================================
+       05 · MOTION-SCHALTER
+    ========================================================= */
+
+    .motion-toggle {
+      position: fixed;
+      right: clamp(0.75rem, 2vw, 1.5rem);
+      bottom: clamp(0.75rem, 2vw, 1.5rem);
+      z-index: var(--z-fixed);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      min-height: 44px;
+      padding: 0.65rem 1.05rem;
+      color: var(--ink);
+      background: rgb(252 251 247 / 0.92);
+      border: 1px solid var(--line-strong);
+      border-radius: 2px;
+      box-shadow:
+        4px 4px 0 rgb(18 30 57 / 0.08),
+        0 10px 30px rgb(18 30 57 / 0.10);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .motion-toggle:hover {
+      border-color: var(--electric);
+      color: var(--electric);
+    }
+
+    .motion-toggle:active {
+      transform: translate(1px, 1px);
+      box-shadow:
+        2px 2px 0 rgb(18 30 57 / 0.08),
+        0 6px 18px rgb(18 30 57 / 0.10);
+    }
+
+    .motion-toggle-dot {
+      width: 8px;
+      height: 8px;
+      flex: none;
+      background: var(--electric-bright);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgb(36 104 232 / 0.16);
+    }
+
+    .hs-motion-off .motion-toggle-dot {
+      background: var(--ink-40);
+      box-shadow: 0 0 0 3px rgb(18 30 57 / 0.08);
+    }
+
+    .motion-toggle[aria-disabled="true"] {
+      cursor: not-allowed;
+      opacity: 0.75;
+    }
+
+    /* =========================================================
+       06 · NAVIGATION
+    ========================================================= */
+
+    .site-top {
+      position: sticky;
+      top: 0;
+      z-index: var(--z-nav);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--gap-3);
+      height: 68px;
+      padding-inline: var(--edge);
+      background: rgb(252 251 247 / 0.88);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px) saturate(140%);
+      -webkit-backdrop-filter: blur(14px) saturate(140%);
+    }
+
+    .wordmark {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.55rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .wordmark strong {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .wordmark span {
+      color: var(--ink-60);
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .site-top nav {
+      min-width: 0;
+    }
+
+    .top-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(0.9rem, 2vw, 1.8rem);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .top-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .top-links a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      color: var(--ink-60);
+      font-size: 0.86rem;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .top-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: 8px;
+      height: 2px;
+      background: var(--electric-bright);
+      transition: right var(--dur-2) var(--ease-out);
+    }
+
+    .top-links a:hover,
+    .top-links a:focus-visible {
+      color: var(--electric);
+    }
+
+    .top-links a:hover::after,
+    .top-links a:focus-visible::after {
+      right: 0;
+    }
+
+    /* =========================================================
+       07 · LINK- UND BUTTON-SPRACHE
+    ========================================================= */
+
+    .action {
+      position: relative;
+      isolation: isolate;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      min-height: 48px;
+      padding: 0.8rem 1.5rem;
+      overflow: hidden;
+      border: 1px solid var(--cobalt);
+      border-radius: 2px;
+      font-family: var(--font-ui);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition:
+        color var(--dur-1) ease,
+        background var(--dur-1) ease,
+        border-color var(--dur-1) ease,
+        transform var(--dur-1) var(--ease-out),
+        box-shadow var(--dur-1) ease;
+    }
+
+    .action-primary {
+      color: var(--paper);
+      background: var(--electric);
+      border-color: var(--electric);
+      box-shadow: 4px 4px 0 rgb(18 63 166 / 0.18);
+    }
+
+    .action-primary::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        100deg,
+        transparent 0 30%,
+        rgb(255 255 255 / 0.28) 45%,
+        transparent 60% 100%
+      );
+      transform: translateX(-130%);
+      transition: transform 640ms var(--ease-out);
+    }
+
+    .action-primary:hover,
+    .action-primary:focus-visible {
+      background: var(--cobalt);
+      border-color: var(--cobalt);
+      transform: translate(-1px, -1px);
+      box-shadow: 6px 6px 0 rgb(18 30 57 / 0.16);
+    }
+
+    .action-primary:hover::before {
+      transform: translateX(130%);
+    }
+
+    .action-secondary {
+      color: var(--ink);
+      background: transparent;
+      box-shadow: 4px 4px 0 rgb(18 30 57 / 0.10);
+    }
+
+    .action-secondary:hover,
+    .action-secondary:focus-visible {
+      color: var(--electric);
+      border-color: var(--electric);
+      transform: translate(-1px, -1px);
+      box-shadow: 6px 6px 0 rgb(18 63 166 / 0.14);
+    }
+
+    .action:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 rgb(18 30 57 / 0.14);
+    }
+
+    .inline-link {
+      color: var(--electric);
+      font-weight: 600;
+      text-decoration: none;
+      background-image: linear-gradient(90deg, var(--electric-bright), var(--electric-bright));
+      background-repeat: no-repeat;
+      background-position: 0 100%;
+      background-size: 100% 1px;
+      transition: background-size var(--dur-2) var(--ease-out);
+      padding-bottom: 2px;
+    }
+
+    .inline-link:hover,
+    .inline-link:focus-visible {
+      background-size: 100% 2px;
+    }
+
+    /* =========================================================
+       08 · GEMEINSAME BAUSTEINE
+    ========================================================= */
+
+    .frame {
+      padding-inline: var(--edge);
+    }
+
+    .mono-note {
+      color: var(--ink-60);
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .rule-h {
+      border: 0;
+      height: 1px;
+      margin: 0;
+      background: var(--line);
+    }
+
+    .offset-panel {
+      position: relative;
+      background: #fff;
+      border: 1px solid var(--line-strong);
+      border-radius: 2px;
+    }
+
+    .offset-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      transform: translate(10px, 10px);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      background: transparent;
+      pointer-events: none;
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    .hs-motion-on .reveal:not(.is-in) {
+      opacity: 0;
+      transform: translate3d(0, 18px, 0);
+    }
+
+    .hs-motion-on .reveal.is-in {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition:
+        opacity 700ms ease,
+        transform 900ms var(--ease-out);
+    }
+
+    /* =========================================================
+       09 · HEADER: RÄUMLICHES WISSENSMODELL
+       Helle immersive Bühne aus Ebenen, Punkten und Pfaden.
+       Canvas (WebGL) verstärkt; SVG/CSS bleibt der Kern.
+    ========================================================= */
+
+    .knowledge-header {
+      position: relative;
+      isolation: isolate;
+      min-height: min(920px, 100svh);
+      display: grid;
+      align-items: center;
+      overflow: clip;
+      background:
+        radial-gradient(circle at 84% 12%, rgb(36 104 232 / 0.10), transparent 32%),
+        radial-gradient(circle at 12% 88%, rgb(201 155 50 / 0.10), transparent 30%),
+        linear-gradient(180deg, #f4f2ea 0%, var(--paper) 64%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .knowledge-stage {
+      position: absolute;
+      inset: 0;
+      z-index: var(--z-stage);
+      pointer-events: none;
+    }
+
+    .knowledge-stage canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Konstruktionsachsen */
+    .knowledge-stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.5;
+      background-image:
+        linear-gradient(90deg, var(--line-faint) 1px, transparent 1px),
+        linear-gradient(var(--line-faint) 1px, transparent 1px);
+      background-size: 96px 96px;
+      -webkit-mask-image: radial-gradient(circle at 72% 40%, #000 0 46%, transparent 78%);
+      mask-image: radial-gradient(circle at 72% 40%, #000 0 46%, transparent 78%);
+    }
+
+    .stage-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Redaktionelle Ebenen im Raum */
+    .plane {
+      position: absolute;
+      border: 1px solid var(--line-strong);
+      border-radius: 2px;
+      background: rgb(255 255 255 / 0.55);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      box-shadow: 0 24px 60px rgb(18 30 57 / 0.07);
+      transition: transform var(--dur-3) var(--ease-out);
+    }
+
+    .plane-a {
+      top: 14%;
+      right: 8%;
+      width: min(30vw, 380px);
+      aspect-ratio: 4 / 3;
+      transform: rotate(-3deg);
+    }
+
+    .plane-b {
+      top: 38%;
+      right: 22%;
+      width: min(22vw, 280px);
+      aspect-ratio: 5 / 4;
+      background: rgb(242 231 200 / 0.5);
+      border-color: rgb(138 106 28 / 0.35);
+      transform: rotate(2deg);
+    }
+
+    .plane-c {
+      top: 58%;
+      right: 5%;
+      width: min(24vw, 300px);
+      aspect-ratio: 16 / 10;
+      background: rgb(18 63 166 / 0.05);
+      border-color: rgb(18 63 166 / 0.30);
+      transform: rotate(-1.5deg);
+    }
+
+    .plane-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.55rem 0.7rem;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink-60);
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .plane-lines {
+      display: grid;
+      gap: 7px;
+      padding: 0.7rem;
+    }
+
+    .plane-lines span {
+      height: 5px;
+      border-radius: 1px;
+      background: var(--line);
+    }
+
+    .plane-lines span:nth-child(2) { width: 82%; }
+    .plane-lines span:nth-child(3) { width: 64%; }
+    .plane-lines span:nth-child(4) { width: 90%; }
+
+    .plane-b .plane-lines span { background: rgb(138 106 28 / 0.28); }
+    .plane-c .plane-lines span { background: rgb(18 63 166 / 0.22); }
+
+    .hs-motion-on .plane {
+      animation: plane-drift 12s var(--ease-soft) infinite alternate;
+    }
+
+    .hs-motion-on .plane-b { animation-delay: -4s; animation-duration: 14s; }
+    .hs-motion-on .plane-c { animation-delay: -8s; animation-duration: 16s; }
+
+    @keyframes plane-drift {
+      from { translate: 0 0; }
+      to { translate: -10px 8px; }
+    }
+
+    .header-inner {
+      position: relative;
+      z-index: var(--z-content);
+      width: 100%;
+      padding: 4.5rem var(--edge) 4rem;
+    }
+
+    .header-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      gap: var(--gap-4);
+    }
+
+    .header-copy {
+      max-width: 880px;
+    }
+
+    .header-topic {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: var(--gap-3);
+    }
+
+    .header-topic::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--cobalt);
+    }
+
+    .headline {
+      margin-bottom: var(--gap-3);
+      font-size: var(--text-colossal);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.045em;
+    }
+
+    .headline .h-line {
+      display: block;
+    }
+
+    .headline .h-line-2 {
+      margin-left: clamp(1.5rem, 6vw, 6rem);
+      color: var(--electric);
+    }
+
+    .headline .h-line-3 {
+      margin-top: 0.35em;
+      margin-left: clamp(0.5rem, 2vw, 2rem);
+      font-family: var(--font-editorial);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 0.52em;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--brass-deep);
+      padding-bottom: 0.12em;
+    }
+
+    .hs-motion-on .headline .h-line {
+      opacity: 0;
+      transform: translate3d(0, 26px, 0);
+      animation: line-rise 950ms var(--ease-out) forwards;
+    }
+
+    .hs-motion-on .headline .h-line-2 { animation-delay: 140ms; }
+    .hs-motion-on .headline .h-line-3 { animation-delay: 300ms; }
+
+    @keyframes line-rise {
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .header-lead {
+      max-width: 46ch;
+      margin-bottom: var(--gap-4);
+      color: var(--ink-60);
+      font-size: clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
+      line-height: 1.55;
+      text-wrap: pretty;
+    }
+
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--gap-2);
+    }
+
+    .header-side {
+      position: relative;
+      display: grid;
+      align-content: end;
+      justify-items: start;
+      gap: var(--gap-2);
+      min-height: 300px;
+    }
+
+    .signal-card {
+      position: relative;
+      padding: 1.1rem 1.3rem;
+      background: rgb(255 255 255 / 0.7);
+      border: 1px solid var(--line-strong);
+      border-radius: 2px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      box-shadow: 6px 6px 0 rgb(18 30 57 / 0.06);
+      max-width: 34ch;
+    }
+
+    .signal-card p {
+      margin: 0.35rem 0 0;
+      font-size: var(--text-s);
+      color: var(--ink-60);
+    }
+
+    /* =========================================================
+       10 · EDITORIAL MANIFEST
+    ========================================================= */
+
+    .manifesto {
+      position: relative;
+      padding: var(--gap-7) var(--edge);
+    }
+
+    .manifesto-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 9fr) minmax(0, 2fr);
+      gap: var(--gap-3);
+    }
+
+    .manifesto-axis {
+      position: relative;
+    }
+
+    .manifesto-axis::before {
+      content: "";
+      position: absolute;
+      top: 0.4rem;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: linear-gradient(180deg, var(--cobalt), var(--brass) 80%, transparent);
+    }
+
+    .manifesto blockquote {
+      margin: 0;
+      font-family: var(--font-editorial);
+      font-size: var(--text-2xl);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.22;
+      letter-spacing: -0.015em;
+      max-width: 26ch;
+      text-wrap: balance;
+    }
+
+    .manifesto blockquote strong {
+      font-style: normal;
+      font-weight: 500;
+      color: var(--electric);
+    }
+
+    .manifesto blockquote .mark-brass {
+      font-style: normal;
+      font-weight: 500;
+      color: var(--brass-deep);
+    }
+
+    .manifesto footer {
+      margin-top: var(--gap-3);
+    }
+
+    /* =========================================================
+       11 · SCROLLYTELLING: FÜNF ZUSTÄNDE DES WISSENS
+    ========================================================= */
+
+    .story {
+      position: relative;
+      background:
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-soft) 12% 88%, var(--paper) 100%);
+      border-block: 1px solid var(--line);
+    }
+
+    .story-head {
+      padding: var(--gap-6) var(--edge) var(--gap-4);
+      max-width: 900px;
+    }
+
+    .story-head h2 {
+      font-size: var(--text-2xl);
+      letter-spacing: -0.035em;
+    }
+
+    .story-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 0 var(--gap-4);
+      padding-inline: var(--edge);
+    }
+
+    .story-stagewrap {
+      position: relative;
+    }
+
+    .story-stage {
+      position: sticky;
+      top: 84px;
+      height: calc(100svh - 120px);
+      max-height: 720px;
+      display: grid;
+      place-items: center;
+      padding: var(--gap-3);
+    }
+
+    .stage-frame {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+      aspect-ratio: 1 / 1;
+      border: 1px solid var(--line-strong);
+      border-radius: 2px;
+      background:
+        radial-gradient(circle at 30% 24%, rgb(36 104 232 / 0.06), transparent 40%),
+        #fff;
+      box-shadow: 10px 10px 0 rgb(18 30 57 / 0.05);
+      overflow: hidden;
+    }
+
+    .stage-frame > svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .stage-caption {
+      position: absolute;
+      left: 0.9rem;
+      bottom: 0.7rem;
+      display: flex;
+      gap: 0.8rem;
+      align-items: baseline;
+    }
+
+    .stage-caption strong {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--electric);
+    }
+
+    /* Bühnenzustände: Gruppen erscheinen je Schritt.
+       Ohne JavaScript trägt die Bühne data-step="impact":
+       das vollständige Bild bleibt sichtbar. */
+    .st-signal, .st-connect, .st-structure, .st-human, .st-impact {
+      transition:
+        opacity var(--dur-3) var(--ease-soft),
+        transform var(--dur-3) var(--ease-out);
+    }
+
+    .stage-frame[data-step="signal"] .st-connect,
+    .stage-frame[data-step="signal"] .st-structure,
+    .stage-frame[data-step="signal"] .st-human,
+    .stage-frame[data-step="signal"] .st-impact { opacity: 0; }
+
+    .stage-frame[data-step="connect"] .st-structure,
+    .stage-frame[data-step="connect"] .st-human,
+    .stage-frame[data-step="connect"] .st-impact { opacity: 0; }
+
+    .stage-frame[data-step="structure"] .st-human,
+    .stage-frame[data-step="structure"] .st-impact { opacity: 0; }
+
+    .stage-frame[data-step="human"] .st-impact { opacity: 0; }
+
+    .stage-frame[data-step="signal"] .st-noise { opacity: 1; }
+    .stage-frame:not([data-step="signal"]) .st-noise { opacity: 0.22; }
+
+    .stage-frame[data-step="structure"] .st-connect,
+    .stage-frame[data-step="human"] .st-connect,
+    .stage-frame[data-step="impact"] .st-connect { opacity: 0.5; }
+
+    .stage-frame[data-step="human"] .st-human,
+    .stage-frame[data-step="impact"] .st-human { opacity: 1; }
+
+    .story-steps {
+      display: grid;
+      gap: var(--gap-5);
+      padding-block: var(--gap-5) var(--gap-6);
+    }
+
+    .story-step {
+      position: relative;
+      max-width: 46ch;
+      padding: var(--gap-3) 0 var(--gap-3) 1.6rem;
+      border-left: 1px solid var(--line);
+      transition: border-color var(--dur-2) ease;
+    }
+
+    .story-step.is-active {
+      border-left-color: var(--electric-bright);
+    }
+
+    .story-step .step-key {
+      display: inline-block;
+      margin-bottom: 0.7rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--electric);
+    }
+
+    .story-step[data-step="human"] .step-key { color: var(--coral-deep); }
+    .story-step[data-step="impact"] .step-key { color: var(--brass-deep); }
+
+    .story-step h3 {
+      margin-bottom: 0.7rem;
+      font-size: var(--text-xl);
+      letter-spacing: -0.03em;
+    }
+
+    .story-step p {
+      color: var(--ink-60);
+      margin-bottom: 0;
+    }
+
+    /* =========================================================
+       12 · VISUAL WORLD: DREI MOTIVWELTEN
+       Code-native Stilreferenzen; ausdrücklich Beispiele.
+    ========================================================= */
+
+    .worlds {
+      padding: var(--gap-7) var(--edge);
+    }
+
+    .worlds-head {
+      max-width: 820px;
+      margin-bottom: var(--gap-5);
+    }
+
+    .worlds-head h2 {
+      font-size: var(--text-2xl);
+    }
+
+    .world-row {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: var(--gap-4);
+      align-items: center;
+      padding-block: var(--gap-5);
+      border-top: 1px solid var(--line);
+    }
+
+    .world-row:nth-child(even) {
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    }
+
+    .world-row:nth-child(even) .world-copy {
+      order: 2;
+    }
+
+    .world-copy h3 {
+      font-size: var(--text-xl);
+      margin-bottom: var(--gap-2);
+    }
+
+    .world-copy p {
+      color: var(--ink-60);
+      max-width: 52ch;
+    }
+
+    .world-copy ul {
+      margin: var(--gap-2) 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.45rem;
+      color: var(--ink);
+      font-size: var(--text-s);
+    }
+
+    .world-copy li {
+      display: flex;
+      gap: 0.6rem;
+      align-items: baseline;
+    }
+
+    .world-copy li::before {
+      content: "";
+      width: 0.85rem;
+      height: 1px;
+      flex: none;
+      transform: translateY(-0.28em);
+      background: var(--electric);
+    }
+
+    .world-visual {
+      position: relative;
+    }
+
+    .world-visual svg {
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line-strong);
+      border-radius: 2px;
+      background: #fff;
+      box-shadow: 8px 8px 0 rgb(18 30 57 / 0.05);
+    }
+
+    .world-visual figcaption {
+      margin-top: 0.6rem;
+    }
+
+    /* =========================================================
+       13 · EXPERIENCE LEVELS
+    ========================================================= */
+
+    .levels {
+      position: relative;
+      padding: var(--gap-7) var(--edge);
+      background: var(--cobalt);
+      color: rgb(252 251 247 / 0.82);
+    }
+
+    .levels h2,
+    .levels h3 {
+      color: #fdfcf9;
+    }
+
+    .levels-head {
+      max-width: 780px;
+      margin-bottom: var(--gap-5);
+    }
+
+    .levels-head h2 {
+      font-size: var(--text-2xl);
+    }
+
+    .levels-head .mono-note,
+    .levels .mono-note {
+      color: rgb(252 251 247 / 0.55);
+    }
+
+    .level-stack {
+      display: grid;
+      gap: var(--gap-3);
+    }
+
+    .level {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 6fr) minmax(0, 3fr);
+      gap: var(--gap-3);
+      align-items: start;
+      padding: var(--gap-4);
+      border: 1px solid rgb(252 251 247 / 0.22);
+      border-radius: 2px;
+      background: rgb(252 251 247 / 0.03);
+      transition: transform var(--dur-2) var(--ease-out), background var(--dur-2) ease;
+    }
+
+    .level:hover {
+      background: rgb(252 251 247 / 0.06);
+      transform: translateX(6px);
+    }
+
+    .level:nth-child(2) { margin-left: clamp(0rem, 4vw, 4rem); }
+    .level:nth-child(3) { margin-left: clamp(0rem, 8vw, 8rem); }
+
+    .level-letter {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 800;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      color: transparent;
+      -webkit-text-stroke: 1px rgb(252 251 247 / 0.65);
+    }
+
+    .level[data-level="a"] .level-letter { -webkit-text-stroke-color: var(--electric-bright); }
+    .level[data-level="b"] .level-letter { -webkit-text-stroke-color: rgb(252 251 247 / 0.75); }
+    .level[data-level="c"] .level-letter { -webkit-text-stroke-color: var(--brass); }
+
+    .level h3 {
+      margin-bottom: 0.6rem;
+      font-size: var(--text-l);
+    }
+
+    .level p {
+      margin-bottom: 0;
+      font-size: var(--text-s);
+      color: rgb(252 251 247 / 0.68);
+      max-width: 52ch;
+    }
+
+    .level ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: rgb(252 251 247 / 0.62);
+    }
+
+    .level li {
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .level li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 0.5rem;
+      height: 1px;
+      background: var(--brass);
+    }
+
+    /* =========================================================
+       14 · INTENT-AWARENESS
+    ========================================================= */
+
+    .intent {
+      padding: var(--gap-7) var(--edge);
+    }
+
+    .intent-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+      gap: var(--gap-5);
+      align-items: start;
+    }
+
+    .intent-copy h2 {
+      font-size: var(--text-2xl);
+      max-width: 16ch;
+    }
+
+    .intent-copy > p {
+      color: var(--ink-60);
+      max-width: 54ch;
+    }
+
+    .intent-lists {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gap-3);
+      margin-top: var(--gap-4);
+    }
+
+    .intent-list {
+      padding: 1.2rem 1.3rem;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      background: #fff;
+    }
+
+    .intent-list.negative {
+      border-style: dashed;
+      background: transparent;
+    }
+
+    .intent-list h3 {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mint);
+      margin-bottom: 0.8rem;
+    }
+
+    .intent-list.negative h3 {
+      color: var(--coral-deep);
+    }
+
+    .intent-list ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+      font-size: var(--text-s);
+      color: var(--ink-60);
+    }
+
+    .intent-panel {
+      position: relative;
+      padding: 1.6rem;
+      background: #fff;
+      border: 1px solid var(--line-strong);
+      border-radius: 2px;
+      box-shadow: 10px 10px 0 rgb(18 30 57 / 0.05);
+    }
+
+    .intent-panel h3 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      font-size: var(--text-l);
+    }
+
+    .intent-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mint);
+    }
+
+    .intent-live::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--mint);
+    }
+
+    .hs-motion-on .intent-live::before {
+      animation: live-pulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes live-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgb(47 125 92 / 0.35); }
+      50% { box-shadow: 0 0 0 6px rgb(47 125 92 / 0); }
+    }
+
+    .intent-readout {
+      display: grid;
+      gap: 0;
+      margin: 0;
+    }
+
+    .intent-readout > div {
+      display: grid;
+      grid-template-columns: minmax(110px, 38%) 1fr;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-top: 1px solid var(--line-faint);
+    }
+
+    .intent-readout dt {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-60);
+      align-self: center;
+    }
+
+    .intent-readout dd {
+      margin: 0;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .intent-next {
+      margin-top: 1.4rem;
+      padding: 1rem 1.1rem;
+      border: 1px solid rgb(18 63 166 / 0.25);
+      border-radius: 2px;
+      background: rgb(18 63 166 / 0.04);
+      font-size: var(--text-s);
+    }
+
+    .intent-next strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--electric);
+    }
+
+    /* =========================================================
+       15 · MACHINE EXPERIENCE
+    ========================================================= */
+
+    .machine {
+      padding: var(--gap-7) var(--edge);
+      background: var(--paper-soft);
+      border-block: 1px solid var(--line);
+    }
+
+    .machine-head {
+      max-width: 860px;
+      margin-bottom: var(--gap-5);
+    }
+
+    .machine-head h2 {
+      font-size: var(--text-2xl);
+    }
+
+    .machine-cols {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: var(--gap-4);
+      align-items: start;
+    }
+
+    .machine-block {
+      padding: 1.4rem 1.5rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+    }
+
+    .machine-block h3 {
+      font-size: var(--text-l);
+      margin-bottom: 0.8rem;
+    }
+
+    .machine-block p {
+      color: var(--ink-60);
+      font-size: var(--text-s);
+    }
+
+    .machine-block ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+      font-size: var(--text-s);
+      color: var(--ink-60);
+    }
+
+    .machine-block li {
+      position: relative;
+      padding-left: 1.3rem;
+    }
+
+    .machine-block li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 0.7rem;
+      height: 1px;
+      background: var(--brass);
+    }
+
+    .machine-block code {
+      font-family: var(--font-mono);
+      font-size: 0.8em;
+      color: var(--electric);
+      background: rgb(18 63 166 / 0.06);
+      padding: 0.1em 0.35em;
+      border-radius: 2px;
+      overflow-wrap: anywhere;
+    }
+
+    .machine pre {
+      margin: 0;
+      padding: 1.2rem 1.3rem;
+      overflow-x: auto;
+      color: #e7ecf9;
+      background: var(--cobalt);
+      border-radius: 2px;
+      border: 1px solid rgb(252 251 247 / 0.14);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      line-height: 1.7;
+      tab-size: 2;
+    }
+
+    /* =========================================================
+       16 · FOOTER: DUNKLER ANKER
+    ========================================================= */
+
+    .site-end {
+      position: relative;
+      padding: var(--gap-6) var(--edge) var(--gap-4);
+      color: rgb(252 251 247 / 0.72);
+      background:
+        radial-gradient(circle at 82% 0%, rgb(36 104 232 / 0.22), transparent 34%),
+        var(--cobalt);
+      overflow: clip;
+    }
+
+    .site-end::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--electric-bright) 0 62%, var(--brass) 62% 74%, transparent 74%);
+    }
+
+    .end-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 6fr) minmax(0, 3fr) minmax(0, 3fr);
+      gap: var(--gap-4);
+      align-items: end;
+    }
+
+    .end-statement {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: #fdfcf9;
+      max-width: 14ch;
+    }
+
+    .end-statement em {
+      font-family: var(--font-editorial);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--brass);
+      padding-bottom: 0.1em;
+    }
+
+    .site-end .mono-note {
+      color: rgb(252 251 247 / 0.5);
+    }
+
+    .site-end a {
+      color: #fdfcf9;
+    }
+
+    .end-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: var(--gap-2);
+      margin-top: var(--gap-5);
+      padding-top: var(--gap-3);
+      border-top: 1px solid rgb(252 251 247 / 0.16);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: rgb(252 251 247 / 0.5);
+    }
+
+    /* =========================================================
+       17 · RESPONSIVE
+       Mobile ist eine eigene vertikale Dramaturgie.
+    ========================================================= */
+
+    @media (max-width: 1100px) {
+      .header-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .header-side {
+        min-height: 0;
+      }
+
+      .plane-a { right: -6%; }
+      .plane-c { display: none; }
+
+      .level {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 7fr);
+      }
+
+      .level ul {
+        grid-column: 2;
+      }
+
+      .intent-grid,
+      .machine-cols {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 820px) {
+      .story-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+      }
+
+      /* Kompakte sticky Bühne oberhalb der Schritte */
+      .story-stage {
+        position: sticky;
+        top: 68px;
+        z-index: 3;
+        height: auto;
+        max-height: none;
+        padding: 0.9rem 0;
+        background: linear-gradient(180deg, var(--paper-soft) 82%, transparent);
+      }
+
+      .stage-frame {
+        max-width: none;
+        aspect-ratio: 16 / 10;
+        box-shadow: 6px 6px 0 rgb(18 30 57 / 0.05);
+      }
+
+      .story-steps {
+        padding-top: var(--gap-4);
+      }
+
+      .world-row,
+      .world-row:nth-child(even) {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .world-row:nth-child(even) .world-copy {
+        order: 0;
+      }
+
+      .end-grid {
+        grid-template-columns: minmax(0, 1fr);
+        align-items: start;
+      }
+
+      .manifesto-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .manifesto-axis {
+        display: none;
+      }
+
+      .headline .h-line-2 {
+        margin-left: clamp(0.75rem, 8vw, 2.5rem);
+      }
+    }
+
+    @media (max-width: 560px) {
+      :root {
+        --edge: 1.1rem;
+      }
+
+      .site-top {
+        height: 60px;
+      }
+
+      .top-links a:nth-child(n) {
+        font-size: 0.8rem;
+      }
+
+      .plane-a {
+        top: 6%;
+        width: 52vw;
+        opacity: 0.75;
+      }
+
+      .plane-b {
+        top: 26%;
+        right: 4%;
+        width: 40vw;
+        opacity: 0.75;
+      }
+
+      .header-inner {
+        padding-top: 4.5rem;
+        padding-bottom: 3.5rem;
+      }
+
+      .header-actions .action {
+        width: 100%;
+      }
+
+      .intent-lists {
+        grid-template-columns: 1fr;
+      }
+
+      .level {
+        grid-template-columns: 1fr;
+      }
+
+      .level:nth-child(2),
+      .level:nth-child(3) {
+        margin-left: 0;
+      }
+
+      .level ul {
+        grid-column: auto;
+      }
+
+      .intent-readout > div {
+        grid-template-columns: 1fr;
+        gap: 0.15rem;
+      }
+    }
+
+    /* Touch-Eingabe: großzügigere Ziele, Aktion näher am Daumen */
+    .input-touch .motion-toggle {
+      right: 50%;
+      transform: translateX(50%);
+      bottom: 0.9rem;
+    }
+
+    .input-touch .motion-toggle:active {
+      transform: translateX(50%) translateY(1px);
+    }
+
+    @media (min-width: 821px) {
+      .input-touch .motion-toggle {
+        right: clamp(0.75rem, 2vw, 1.5rem);
+        transform: none;
+      }
+    }
+
+    /* =========================================================
+       18 · REDUCED MOTION, FORCED COLORS, SAVE DATA, PRINT
+    ========================================================= */
+
+    .hs-motion-off .scroll-progress-bar {
+      transition: none;
+    }
+
+    .hs-motion-off .plane,
+    .hs-motion-off .intent-live::before,
+    .hs-motion-off .headline .h-line {
+      animation: none !important;
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Intent: Beim schnellen Überfliegen sinkt die Bewegungsdichte. */
+    .intent-calm .plane {
+      animation-play-state: paused;
+    }
+
+    .intent-calm .intent-live::before {
+      animation-play-state: paused;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+
+      .plane,
+      .intent-live::before,
+      .headline .h-line {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .reveal,
+      .hs-motion-on .reveal:not(.is-in) {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    @media (forced-colors: active) {
+      .grain,
+      .knowledge-stage::before {
+        display: none;
+      }
+
+      .offset-panel,
+      .signal-card,
+      .plane,
+      .stage-frame,
+      .level,
+      .intent-panel,
+      .intent-list,
+      .machine-block,
+      .action,
+      .motion-toggle {
+        border: 1px solid CanvasText;
+        box-shadow: none;
+      }
+
+      .scroll-progress-bar {
+        background: Highlight;
+      }
+    }
+
+    @media print {
+      .grain,
+      .scroll-progress,
+      .motion-toggle,
+      .site-top,
+      .knowledge-stage canvas {
+        display: none !important;
+      }
+
+      body {
+        color: #000;
+        background: #fff;
+      }
+
+      .levels,
+      .site-end {
+        color: #000;
+        background: #fff;
+        border: 1px solid #000;
+      }
+
+      .levels h2,
+      .levels h3,
+      .end-statement {
+        color: #000;
+      }
+
+      .story-stage {
+        position: static;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body id="top" data-component="human-signal-page">
+  <a class="skip-link" href="#main-content">Direkt zum Inhalt</a>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Globaler Motion-Schalter. Ohne JavaScript bleibt er verborgen;
+       alle Inhalte sind unabhängig davon vollständig nutzbar. -->
+  <button
+    class="motion-toggle"
+    id="motion-toggle"
+    type="button"
+    aria-label="Bewegung pausieren"
+    hidden
+  >
+    <span class="motion-toggle-dot" aria-hidden="true"></span>
+    <span class="motion-toggle-label">Bewegung pausieren</span>
+  </button>
+  <p class="sr-only" id="motion-toggle-state" role="status" aria-live="polite"></p>
+
+  <header class="site-top" data-component="top-navigation">
+    <a class="wordmark" href="#top" aria-label="VTM, VersicherungsTech Magazin, zum Seitenanfang">
+      <strong>VTM</strong>
+      <span>Human Signal</span>
+    </a>
+
+    <nav aria-label="Kapitelnavigation">
+      <ul class="top-links">
+        <li><a href="#story">Narrativ</a></li>
+        <li><a href="#worlds">Motivwelten</a></li>
+        <li><a href="#levels">Experience Levels</a></li>
+        <li><a href="#intent">Intent</a></li>
+        <li><a href="#machine">Machine</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- =====================================================
+       HEADER · RÄUMLICHES WISSENSMODELL
+       Kern in HTML/SVG/CSS; Canvas (WebGL) verstärkt nur.
+  ====================================================== -->
+  <section
+    class="knowledge-header"
+    id="knowledge-header"
+    aria-labelledby="headline-title"
+    data-component="knowledge-header"
+    data-intent-topic="system"
+  >
+    <div class="knowledge-stage" aria-hidden="true">
+      <!-- SVG-Fallback: Datenpunkte und Informationspfade.
+           Bleibt auch mit aktivem WebGL als Grundebene sichtbar. -->
+      <svg
+        class="stage-svg"
+        viewBox="0 0 1200 800"
+        preserveAspectRatio="xMidYMid slice"
+        data-media-status="example-only"
+        data-generation-allowed="false"
+        data-example-only="true"
+      >
+        <g fill="none" stroke="#123fa6" stroke-opacity="0.25" stroke-width="1">
+          <path d="M 180 620 C 340 540, 520 560, 700 430 S 1020 260, 1140 300"></path>
+          <path d="M 240 700 C 460 660, 640 520, 820 500 S 1080 470, 1180 380"></path>
+          <path d="M 700 430 L 860 250"></path>
+          <path d="M 820 500 L 1010 560"></path>
+        </g>
+        <g fill="none" stroke="#c99b32" stroke-opacity="0.4" stroke-width="1">
+          <path d="M 860 250 C 940 210, 1030 200, 1120 160"></path>
+        </g>
+        <g>
+          <circle cx="180" cy="620" r="4" fill="#123fa6" fill-opacity="0.55"></circle>
+          <circle cx="700" cy="430" r="5" fill="#2468e8"></circle>
+          <circle cx="860" cy="250" r="5" fill="#c99b32"></circle>
+          <circle cx="820" cy="500" r="4" fill="#123fa6" fill-opacity="0.55"></circle>
+          <circle cx="1010" cy="560" r="3.5" fill="#2468e8" fill-opacity="0.6"></circle>
+          <circle cx="1120" cy="160" r="3.5" fill="#c99b32" fill-opacity="0.7"></circle>
+          <circle cx="240" cy="700" r="3" fill="#16223f" fill-opacity="0.4"></circle>
+        </g>
+      </svg>
+
+      <!-- WebGL-Verstärkung (Progressive Enhancement) -->
+      <canvas id="knowledge-canvas"></canvas>
+
+      <!-- Überlagerte redaktionelle Ebenen -->
+      <div class="plane plane-a" data-depth="0.35">
+        <div class="plane-head"><span>Analyse</span><span>A·01</span></div>
+        <div class="plane-lines"><span></span><span></span><span></span><span></span></div>
+      </div>
+      <div class="plane plane-b" data-depth="0.6">
+        <div class="plane-head"><span>Research</span><span>R·07</span></div>
+        <div class="plane-lines"><span></span><span></span><span></span></div>
+      </div>
+      <div class="plane plane-c" data-depth="0.2">
+        <div class="plane-head"><span>Praxis</span><span>P·12</span></div>
+        <div class="plane-lines"><span></span><span></span><span></span><span></span></div>
+      </div>
+    </div>
+
+    <div class="header-inner">
+      <div class="header-grid">
+        <div class="header-copy">
+          <p class="header-topic mono-note">VTM · Editorial Knowledge System</p>
+
+          <h1 class="headline" id="headline-title">
+            <span class="h-line">Signale ordnen.</span>
+            <span class="h-line h-line-2">Wissen schaffen.</span>
+            <span class="h-line h-line-3">Fortschritt möglich machen.</span>
+          </h1>
+
+          <p class="header-lead">
+            VTM verbindet Informationen, ordnet Zusammenhänge ein und
+            übersetzt Technologie in Entscheidungen für die
+            Versicherungswirtschaft.
+          </p>
+
+          <div class="header-actions">
+            <a class="action action-primary" href="#story">Das System erleben</a>
+            <a class="action action-secondary" href="#worlds">Motivwelten ansehen</a>
+          </div>
+        </div>
+
+        <div class="header-side">
+          <div class="signal-card offset-panel">
+            <p class="mono-note">Leitmotiv</p>
+            <p>
+              Ein lebendiges Wissenssystem aus Inhalten, Daten, Perspektiven
+              und menschlicher Entscheidung.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <!-- =====================================================
+         EDITORIAL MANIFEST
+    ====================================================== -->
+    <section
+      class="manifesto"
+      id="manifesto"
+      aria-labelledby="manifesto-title"
+      data-component="manifesto"
+      data-intent-topic="system"
+    >
+      <h2 class="sr-only" id="manifesto-title">Haltung</h2>
+      <div class="manifesto-grid">
+        <div class="manifesto-axis" aria-hidden="true"></div>
+        <blockquote class="reveal">
+          Technologie wird erst dann zu Fortschritt, wenn
+          <strong>Menschen</strong> sie verstehen, einordnen und
+          <span class="mark-brass">entscheiden</span> können.
+          <footer class="mono-note">VTM · Haltung der Marke</footer>
+        </blockquote>
+        <div></div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SCROLLYTELLING · FÜNF ZUSTÄNDE DES WISSENS
+         Alle Texte sind ohne JavaScript vollständig sichtbar.
+         Die Bühne startet ohne JavaScript im Endzustand.
+    ====================================================== -->
+    <section
+      class="story"
+      id="story"
+      aria-labelledby="story-title"
+      data-component="scrollytelling"
+      data-intent-topic="narrativ"
+    >
+      <div class="story-head">
+        <p class="mono-note">Motion Narrative</p>
+        <h2 id="story-title">Vom Signal zur Entscheidung</h2>
+      </div>
+
+      <div class="story-layout">
+        <div class="story-stagewrap">
+          <div class="story-stage">
+            <div
+              class="stage-frame"
+              id="stage-frame"
+              data-step="impact"
+              role="img"
+              aria-label="Visuelles Wissensmodell in fünf Zuständen: verstreute Signale verbinden sich, werden strukturiert, um den Menschen zentriert und führen zu messbarer Wirkung."
+              data-media-status="example-only"
+              data-generation-allowed="false"
+              data-example-only="true"
+            >
+              <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <!-- Zustand 1 · Signal: ungeordnete Punkte -->
+                <g class="st-signal st-noise" fill="#16223f" fill-opacity="0.5">
+                  <circle cx="84" cy="112" r="3"></circle>
+                  <circle cx="497" cy="88" r="2.5"></circle>
+                  <circle cx="132" cy="486" r="3"></circle>
+                  <circle cx="530" cy="420" r="2.5"></circle>
+                  <circle cx="66" cy="300" r="2.5"></circle>
+                  <circle cx="330" cy="64" r="2.5"></circle>
+                  <circle cx="470" cy="540" r="3"></circle>
+                  <circle cx="250" cy="546" r="2.5"></circle>
+                </g>
+                <g class="st-signal" fill="#123fa6">
+                  <circle cx="180" cy="180" r="4.5"></circle>
+                  <circle cx="420" cy="150" r="4"></circle>
+                  <circle cx="150" cy="380" r="4"></circle>
+                  <circle cx="450" cy="360" r="4.5"></circle>
+                  <circle cx="300" cy="470" r="4"></circle>
+                  <circle cx="320" cy="230" r="4.5"></circle>
+                </g>
+
+                <!-- Zustand 2 · Connect: Beziehungen werden sichtbar -->
+                <g class="st-connect" fill="none" stroke="#2468e8" stroke-opacity="0.55" stroke-width="1.2">
+                  <path d="M 180 180 L 320 230"></path>
+                  <path d="M 320 230 L 420 150"></path>
+                  <path d="M 320 230 L 450 360"></path>
+                  <path d="M 150 380 L 320 230"></path>
+                  <path d="M 150 380 L 300 470"></path>
+                  <path d="M 300 470 L 450 360"></path>
+                </g>
+
+                <!-- Zustand 3 · Structure: Ordnungsebenen -->
+                <g class="st-structure">
+                  <rect x="120" y="130" width="360" height="340" fill="none" stroke="#121e39" stroke-opacity="0.35" stroke-width="1"></rect>
+                  <rect x="150" y="160" width="360" height="340" fill="none" stroke="#123fa6" stroke-opacity="0.30" stroke-width="1"></rect>
+                  <line x1="120" y1="300" x2="480" y2="300" stroke="#121e39" stroke-opacity="0.18" stroke-width="1"></line>
+                  <line x1="300" y1="130" x2="300" y2="470" stroke="#121e39" stroke-opacity="0.18" stroke-width="1"></line>
+                </g>
+
+                <!-- Zustand 4 · Human: der Mensch im Mittelpunkt -->
+                <g class="st-human">
+                  <circle cx="300" cy="300" r="56" fill="#f8e5dd" fill-opacity="0.9"></circle>
+                  <circle cx="300" cy="300" r="56" fill="none" stroke="#a8432a" stroke-width="1.4"></circle>
+                  <circle cx="300" cy="282" r="12" fill="none" stroke="#a8432a" stroke-width="1.4"></circle>
+                  <path d="M 276 330 C 276 312, 324 312, 324 330" fill="none" stroke="#a8432a" stroke-width="1.4"></path>
+                  <line x1="300" y1="244" x2="300" y2="212" stroke="#a8432a" stroke-opacity="0.5" stroke-width="1"></line>
+                  <line x1="300" y1="356" x2="300" y2="388" stroke="#a8432a" stroke-opacity="0.5" stroke-width="1"></line>
+                </g>
+
+                <!-- Zustand 5 · Impact: Erkenntnis mit Richtung -->
+                <g class="st-impact">
+                  <path d="M 300 300 C 380 260, 440 220, 500 150" fill="none" stroke="#c99b32" stroke-width="2"></path>
+                  <path d="M 488 172 L 500 150 L 476 152" fill="none" stroke="#c99b32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <circle cx="500" cy="150" r="6" fill="#c99b32"></circle>
+                  <circle cx="500" cy="150" r="14" fill="none" stroke="#c99b32" stroke-opacity="0.4" stroke-width="1"></circle>
+                  <path d="M 300 300 C 240 350, 200 380, 140 470" fill="none" stroke="#c99b32" stroke-opacity="0.45" stroke-width="1.2"></path>
+                  <circle cx="140" cy="470" r="4" fill="#c99b32" fill-opacity="0.8"></circle>
+                </g>
+              </svg>
+
+              <p class="stage-caption">
+                <strong id="stage-label">Impact</strong>
+                <span class="mono-note" id="stage-index">5 / 5</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-steps" id="story-steps">
+          <article class="story-step" data-step="signal" data-intent-topic="narrativ">
+            <span class="step-key">Signal</span>
+            <h3>Informationen entstehen zunächst ungeordnet.</h3>
+            <p>
+              Pressemitteilungen, Regulierung, Forschung, Marktbewegung:
+              Jeden Tag entstehen tausende Signale. Einzeln betrachtet sind
+              sie Rauschen, keine Erkenntnis.
+            </p>
+          </article>
+
+          <article class="story-step" data-step="connect" data-intent-topic="narrativ">
+            <span class="step-key">Connect</span>
+            <h3>Zusammenhänge und Beziehungen werden sichtbar.</h3>
+            <p>
+              Die Redaktion verbindet Signale zu Mustern: Welche Technologie
+              betrifft welchen Prozess? Welche Entscheidung hängt an welcher
+              Abhängigkeit?
+            </p>
+          </article>
+
+          <article class="story-step" data-step="structure" data-intent-topic="narrativ">
+            <span class="step-key">Structure</span>
+            <h3>VTM ordnet Relevanz, Evidenz und Abhängigkeiten.</h3>
+            <p>
+              Aus Mustern wird Struktur: geprüfte Quellen, eingeordnete
+              Relevanz, klar benannte Unsicherheit. Das ist der Unterschied
+              zwischen Nachricht und Wissen.
+            </p>
+          </article>
+
+          <article class="story-step" data-step="human" data-intent-topic="narrativ">
+            <span class="step-key">Human</span>
+            <h3>Der Mensch wird zum Mittelpunkt der Betrachtung.</h3>
+            <p>
+              Technologie ist nie Selbstzweck. Im Zentrum steht die Person,
+              die verantworten, bewerten und entscheiden muss. Für sie
+              schreibt, prüft und gewichtet VTM.
+            </p>
+          </article>
+
+          <article class="story-step" data-step="impact" data-intent-topic="narrativ">
+            <span class="step-key">Impact</span>
+            <h3>Wissen wird zur Grundlage für Fortschritt.</h3>
+            <p>
+              Eingeordnetes Wissen gibt Entscheidungen Richtung: Brass
+              markiert den Moment, in dem aus Analyse Wirkung wird, im
+              Produkt, im Prozess, im Unternehmen.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         VISUAL WORLD · DREI MOTIVWELTEN
+         Ausschließlich code-native Stilreferenzen (SVG/CSS).
+    ====================================================== -->
+    <section
+      class="worlds"
+      id="worlds"
+      aria-labelledby="worlds-title"
+      data-component="visual-world"
+      data-intent-topic="motivwelten"
+    >
+      <div class="worlds-head">
+        <p class="mono-note">Visual World</p>
+        <h2 id="worlds-title">Drei Motivwelten, eine Erzählung</h2>
+        <p>
+          Die Bildsprache von Human Signal ist dokumentarisch, warm und
+          präzise. Die folgenden Referenzen sind abstrakte Stilstudien in
+          Code, keine fertigen Motive und kein Produktionsauftrag.
+        </p>
+      </div>
+
+      <div class="world-row reveal">
+        <div class="world-copy">
+          <h3>Human Perspective</h3>
+          <p>
+            Glaubwürdige Menschen in konzentrierten, positiven
+            Arbeitssituationen. Natürliche Präsenz statt Stock-Gesten: Der
+            Mensch ist aktiver Gestalter, nicht Staffage.
+          </p>
+          <ul>
+            <li>Reale Personen, reale Verantwortung</li>
+            <li>Warme, natürliche Lichtführung</li>
+            <li>Coral als Akzent menschlicher Nähe</li>
+            <li>Keine inszenierten Handshake-Motive</li>
+          </ul>
+        </div>
+        <figure
+          class="world-visual"
+          data-media-status="example-only"
+          data-generation-allowed="false"
+          data-example-only="true"
+        >
+          <svg viewBox="0 0 640 400" role="img" aria-label="Abstrakte Stilstudie Human Perspective: warme Farbfläche mit menschlicher Silhouette und Fokusrahmen">
+            <rect width="640" height="400" fill="#fcfbf7"></rect>
+            <rect x="40" y="40" width="360" height="320" fill="#f8e5dd"></rect>
+            <rect x="60" y="60" width="360" height="320" fill="none" stroke="#a8432a" stroke-opacity="0.5" stroke-width="1"></rect>
+            <circle cx="240" cy="180" r="46" fill="none" stroke="#a8432a" stroke-width="1.5"></circle>
+            <path d="M 194 300 C 194 244, 286 244, 286 300 L 286 360 L 194 360 Z" fill="none" stroke="#a8432a" stroke-width="1.5"></path>
+            <line x1="420" y1="120" x2="560" y2="120" stroke="#16223f" stroke-opacity="0.35" stroke-width="1"></line>
+            <line x1="420" y1="150" x2="530" y2="150" stroke="#16223f" stroke-opacity="0.25" stroke-width="1"></line>
+            <line x1="420" y1="180" x2="545" y2="180" stroke="#16223f" stroke-opacity="0.25" stroke-width="1"></line>
+            <circle cx="480" cy="280" r="4" fill="#d96a48"></circle>
+            <text x="496" y="285" font-family="IBM Plex Mono, monospace" font-size="12" fill="#a8432a">MENSCH · AKTIV</text>
+          </svg>
+          <figcaption class="mono-note">Stilstudie · example-only · keine Generierung</figcaption>
+        </figure>
+      </div>
+
+      <div class="world-row reveal">
+        <div class="world-copy">
+          <h3>Systems in Motion</h3>
+          <p>
+            Räumliche Informationsarchitektur mit hochwertiger physischer
+            Materialität: Datenflüsse und Systembeziehungen werden sichtbar,
+            ohne Science-Fiction-Klischees.
+          </p>
+          <ul>
+            <li>Ebenen, Achsen und Verbindungen</li>
+            <li>Electric als Farbe der Aktivität</li>
+            <li>Papier, Glas, Licht statt Chrom</li>
+            <li>Keine Hologramme, keine Neon-Tunnel</li>
+          </ul>
+        </div>
+        <figure
+          class="world-visual"
+          data-media-status="example-only"
+          data-generation-allowed="false"
+          data-example-only="true"
+        >
+          <svg viewBox="0 0 640 400" role="img" aria-label="Abstrakte Stilstudie Systems in Motion: verschobene Ebenen, verbundene Datenpunkte und Informationspfade">
+            <rect width="640" height="400" fill="#fcfbf7"></rect>
+            <rect x="70" y="60" width="300" height="200" fill="rgb(18,63,166)" fill-opacity="0.05" stroke="#123fa6" stroke-opacity="0.4" stroke-width="1"></rect>
+            <rect x="110" y="100" width="300" height="200" fill="none" stroke="#121e39" stroke-opacity="0.3" stroke-width="1"></rect>
+            <rect x="150" y="140" width="300" height="200" fill="#ffffff" fill-opacity="0.6" stroke="#123fa6" stroke-opacity="0.55" stroke-width="1"></rect>
+            <path d="M 180 320 C 260 260, 380 300, 470 200" fill="none" stroke="#2468e8" stroke-width="1.4"></path>
+            <circle cx="180" cy="320" r="4.5" fill="#123fa6"></circle>
+            <circle cx="330" cy="285" r="4" fill="#2468e8"></circle>
+            <circle cx="470" cy="200" r="5" fill="#2468e8"></circle>
+            <line x1="470" y1="200" x2="560" y2="140" stroke="#2468e8" stroke-opacity="0.5" stroke-width="1"></line>
+            <circle cx="560" cy="140" r="3.5" fill="#123fa6" fill-opacity="0.7"></circle>
+            <text x="70" y="380" font-family="IBM Plex Mono, monospace" font-size="12" fill="#123fa6">SYSTEM · VERBINDUNG</text>
+          </svg>
+          <figcaption class="mono-note">Stilstudie · example-only · keine Generierung</figcaption>
+        </figure>
+      </div>
+
+      <div class="world-row reveal">
+        <div class="world-copy">
+          <h3>Progress and Impact</h3>
+          <p>
+            Der Übergang von Komplexität zu Klarheit: Energie mit Richtung,
+            sichtbare Wirkung. Brass ist das Signal für Erkenntnis und
+            Erfolg, sparsam und dadurch wertvoll.
+          </p>
+          <ul>
+            <li>Verdichtung von vielen zu wenigen Linien</li>
+            <li>Brass ausschließlich am Zielpunkt</li>
+            <li>Mint für bestätigte, positive Zustände</li>
+            <li>Keine leeren Wachstumskurven-Klischees</li>
+          </ul>
+        </div>
+        <figure
+          class="world-visual"
+          data-media-status="example-only"
+          data-generation-allowed="false"
+          data-example-only="true"
+        >
+          <svg viewBox="0 0 640 400" role="img" aria-label="Abstrakte Stilstudie Progress and Impact: viele ungeordnete Linien laufen zu einem klaren Brass-Zielpunkt zusammen">
+            <rect width="640" height="400" fill="#fcfbf7"></rect>
+            <g stroke="#16223f" stroke-opacity="0.22" stroke-width="1" fill="none">
+              <path d="M 40 80 C 160 120, 240 90, 340 150"></path>
+              <path d="M 40 180 C 150 200, 260 160, 340 170"></path>
+              <path d="M 40 280 C 170 260, 250 230, 340 190"></path>
+              <path d="M 40 350 C 180 330, 260 260, 340 210"></path>
+            </g>
+            <path d="M 340 180 C 420 180, 480 160, 560 120" fill="none" stroke="#c99b32" stroke-width="2.2"></path>
+            <path d="M 546 142 L 560 120 L 534 122" fill="none" stroke="#c99b32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="560" cy="120" r="7" fill="#c99b32"></circle>
+            <circle cx="560" cy="120" r="16" fill="none" stroke="#c99b32" stroke-opacity="0.35" stroke-width="1"></circle>
+            <rect x="480" y="300" width="120" height="34" fill="#e2f0e8"></rect>
+            <text x="496" y="322" font-family="IBM Plex Mono, monospace" font-size="12" fill="#2f7d5c">WIRKUNG ✓</text>
+          </svg>
+          <figcaption class="mono-note">Stilstudie · example-only · keine Generierung</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         EXPERIENCE LEVELS
+    ====================================================== -->
+    <section
+      class="levels"
+      id="levels"
+      aria-labelledby="levels-title"
+      data-component="experience-levels"
+      data-intent-topic="levels"
+    >
+      <div class="levels-head">
+        <p class="mono-note">Experience Levels</p>
+        <h2 id="levels-title">Drei Stufen einer Erfahrung</h2>
+        <p>
+          Nicht jede Anwendung trägt die volle Inszenierung. Human Signal
+          skaliert kontrolliert von immersiv bis präzise nüchtern.
+        </p>
+      </div>
+
+      <div class="level-stack">
+        <article class="level reveal" data-level="a" data-intent-topic="levels">
+          <span class="level-letter" aria-hidden="true">A</span>
+          <div>
+            <h3>Immersive Brand Experience</h3>
+            <p>
+              Für Corporate Website, Kampagnen, Event Experiences und
+              besondere Dossiers: die volle räumliche und kinetische Kraft
+              der Marke.
+            </p>
+          </div>
+          <ul>
+            <li>WebGL und 3D</li>
+            <li>Scrollytelling</li>
+            <li>Starke Motion</li>
+            <li>Räumliche Übergänge</li>
+            <li>Kinetische Typografie</li>
+          </ul>
+        </article>
+
+        <article class="level reveal" data-level="b" data-intent-topic="levels">
+          <span class="level-letter" aria-hidden="true">B</span>
+          <div>
+            <h3>Expressive Editorial</h3>
+            <p>
+              Für Magazin, Artikel, Research und Präsentationen: starke
+              Typografie und redaktionelle Übergänge, die dem Inhalt dienen.
+            </p>
+          </div>
+          <ul>
+            <li>Starke Typografie</li>
+            <li>Bildlayer</li>
+            <li>Datenanimation</li>
+            <li>Redaktionelle Übergänge</li>
+            <li>Illustrative Systeme</li>
+          </ul>
+        </article>
+
+        <article class="level reveal" data-level="c" data-intent-topic="levels">
+          <span class="level-letter" aria-hidden="true">C</span>
+          <div>
+            <h3>Premium Utility</h3>
+            <p>
+              Für Webanwendungen, Dashboards und interne Tools: eine
+              eigenständige, hochwertige App Shell, die niemals wie ein
+              Standard-Admin-Template aussieht.
+            </p>
+          </div>
+          <ul>
+            <li>Eigenständige App Shell</li>
+            <li>Funktionale Micro-Interactions</li>
+            <li>Eigene Icons</li>
+            <li>Charakteristische Leerstates</li>
+            <li>Präzise Datenvisualisierung</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         INTENT-AWARENESS
+    ====================================================== -->
+    <section
+      class="intent"
+      id="intent"
+      aria-labelledby="intent-title"
+      data-component="intent-awareness"
+      data-intent-topic="intent"
+    >
+      <div class="intent-grid">
+        <div class="intent-copy">
+          <p class="mono-note">Intent Awareness</p>
+          <h2 id="intent-title">Die Seite hört zu, ohne zu sammeln</h2>
+          <p>
+            Human Signal passt sich dezent an die aktuelle Sitzung an:
+            Eingabeart, Lesetempo und aktives Thema beeinflussen
+            Empfehlungen und Bewegungsdichte. Alles bleibt lokal im
+            Browser, nichts verlässt das Gerät.
+          </p>
+
+          <div class="intent-lists">
+            <div class="intent-list">
+              <h3>Erlaubte Signale</h3>
+              <ul>
+                <li>Aktuelles Kapitel</li>
+                <li>Überfliegen oder Lesen</li>
+                <li>Touch, Pointer oder Tastatur</li>
+                <li>Reduced Motion</li>
+                <li>Save Data</li>
+                <li>Wiederholte Themen-Interaktion</li>
+              </ul>
+            </div>
+            <div class="intent-list negative">
+              <h3>Ausgeschlossen</h3>
+              <ul>
+                <li>Externe Analytics</li>
+                <li>Cookies und Profile</li>
+                <li>Fingerprinting</li>
+                <li>Manipulative Dringlichkeit</li>
+                <li>Versteckter Inhaltsaustausch</li>
+                <li>Automatische Navigation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="intent-panel offset-panel" data-component="intent-demo">
+          <h3>
+            Lokale Sitzung
+            <span class="intent-live">Live</span>
+          </h3>
+
+          <dl class="intent-readout">
+            <div>
+              <dt>Input</dt>
+              <dd id="intent-input">Pointer</dd>
+            </div>
+            <div>
+              <dt>Reading Mode</dt>
+              <dd id="intent-reading">Lesen</dd>
+            </div>
+            <div>
+              <dt>Active Topic</dt>
+              <dd id="intent-topic">System</dd>
+            </div>
+            <div>
+              <dt>Motion</dt>
+              <dd id="intent-motion">Aktiv</dd>
+            </div>
+            <div>
+              <dt>Save Data</dt>
+              <dd id="intent-savedata">Aus</dd>
+            </div>
+          </dl>
+
+          <p class="intent-next" id="intent-next">
+            <strong>Empfehlung</strong>
+            <a class="inline-link" id="intent-next-link" href="#story">Weiter zum Motion Narrative</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         MACHINE EXPERIENCE
+    ====================================================== -->
+    <section
+      class="machine"
+      id="machine"
+      aria-labelledby="machine-title"
+      data-component="machine-experience"
+      data-intent-topic="machine"
+    >
+      <div class="machine-head">
+        <p class="mono-note">Machine Experience</p>
+        <h2 id="machine-title">Lesbar für Menschen, Suchmaschinen und Agenten</h2>
+        <p>
+          Diese Datei ist semantisch aufgebaut, ohne JavaScript vollständig
+          verständlich und über eingebettete Spezifikationen maschinenlesbar.
+        </p>
+      </div>
+
+      <div class="machine-cols">
+        <div class="machine-block">
+          <h3>Semantik und Attribute</h3>
+          <ul>
+            <li>Landmarks: <code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code></li>
+            <li>Logische Überschriftenhierarchie H1 bis H3</li>
+            <li><code>data-component</code> benennt jede Systemkomponente</li>
+            <li><code>data-intent-topic</code> trägt das Thema jedes Kapitels</li>
+            <li><code>data-media-status="example-only"</code> und <code>data-generation-allowed="false"</code> an allen Stilreferenzen</li>
+            <li>JSON-LD (schema.org WebPage) im Dokumentkopf</li>
+            <li>Beschreibende IDs und verständliche ARIA-Namen</li>
+            <li>Alle Kerninhalte als echter Text, nie nur im Canvas</li>
+          </ul>
+        </div>
+
+        <div class="machine-block">
+          <h3>Typografie in Produktion</h3>
+          <p>
+            Die Vorschau lädt Bricolage Grotesque, Instrument Sans,
+            Newsreader und IBM Plex Mono über Google Fonts. In
+            Produktionssystemen werden alle vier Familien lokal als WOFF2
+            gehostet; die Google-Fonts-Verbindung entfällt dann vollständig.
+          </p>
+          <ul>
+            <li>Display: <code>Bricolage Grotesque</code> 400 bis 800</li>
+            <li>UI und Fließtext: <code>Instrument Sans</code></li>
+            <li>Editorial und Zitate: <code>Newsreader</code></li>
+            <li>Daten und Quellen: <code>IBM Plex Mono</code></li>
+          </ul>
+        </div>
+
+        <div class="machine-block">
+          <h3>Technik-Entscheidungen</h3>
+          <ul>
+            <li>Kein Framework, keine externe Bibliothek, kein Three.js</li>
+            <li>WebGL direkt, mit SVG/CSS-Fallback und DPR-Begrenzung</li>
+            <li>Lottie nur als mögliche spätere Produktionsform dokumentiert; keine Bibliothek eingebunden</li>
+            <li>WebGPU als dokumentierte Zukunftsoption, keine Voraussetzung</li>
+            <li>Animation über <code>requestAnimationFrame</code>, pausiert bei verborgenem Tab</li>
+            <li>Scroll- und Pointer-Events passiv und gedrosselt</li>
+          </ul>
+        </div>
+
+        <div class="machine-block">
+          <h3>Eingebettete Spezifikation</h3>
+          <p>
+            Werkzeuge lesen die verbindlichen Interpretationsregeln aus dem
+            JSON-Block <code>#vtm-human-signal-specification</code>:
+          </p>
+          <pre><code>const spec = JSON.parse(
+  document.getElementById(
+    "vtm-human-signal-specification"
+  ).textContent
+);</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================
+       FOOTER · DUNKLER ANKER
+  ====================================================== -->
+  <footer class="site-end" data-component="footer">
+    <div class="end-grid">
+      <p class="end-statement">
+        Wissen wird <em>Fortschritt.</em>
+      </p>
+
+      <div>
+        <p class="mono-note">System</p>
+        <p>
+          Human Signal<br>
+          Editorial Knowledge System<br>
+          Creative Direction · Entwurf
+        </p>
+      </div>
+
+      <div>
+        <p class="mono-note">Marke</p>
+        <p>
+          VersicherungsTech Magazin<br>
+          Technologie verstehen.<br>
+          Versicherung verändern.
+        </p>
+      </div>
+    </div>
+
+    <div class="end-bottom">
+      <p>© 2026 VersicherungsTech Magazin</p>
+      <a href="#top">Zum Anfang</a>
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       MASCHINENLESBARE DESIGNSYSTEM-SPEZIFIKATION
+  ====================================================== -->
+  <script type="application/json" id="vtm-human-signal-specification">
+{
+  "schemaVersion": "1.0",
+  "system": {
+    "name": "VTM Human Signal",
+    "subtitle": "Editorial Knowledge System",
+    "brand": "VersicherungsTech Magazin",
+    "kind": "creative-direction",
+    "status": "draft",
+    "relatedDocuments": [
+      "VTM-Brand-Design-System-4.2-Luminous-Editorial-Original.html.html",
+      "VTM-Brand-Design-System-Master-Next.html"
+    ]
+  },
+  "interpretationRules": {
+    "examplesAreProductionOrders": false,
+    "generateMediaWithoutBrief": false,
+    "copyAsUniversalLayout": false,
+    "useGenericSaaSPatterns": false,
+    "humanReviewRequired": true,
+    "accessibilityRequired": true,
+    "motionMustHaveMeaning": true
+  },
+  "colorRoles": {
+    "paper": { "value": "#FCFBF7", "role": "Hauptfläche, warm und hell" },
+    "cobalt": { "value": "#121E39", "role": "Struktur, Autorität, Kapitelanker, Footer" },
+    "electric": { "value": "#123FA6", "role": "Aktivität, Aktionen, Fokus" },
+    "electricBright": { "value": "#2468E8", "role": "Signal, aktive Verbindungen" },
+    "brass": { "value": "#C99B32", "role": "Erkenntnis, Erfolg, Wirkung; sparsam" },
+    "coral": { "value": "#D96A48", "role": "Menschliche Wärme; zurückhaltend" },
+    "mint": { "value": "#2F7D5C", "role": "Positive funktionale Zustände; zurückhaltend" }
+  },
+  "typography": {
+    "display": "Bricolage Grotesque",
+    "ui": "Instrument Sans",
+    "editorial": "Newsreader",
+    "mono": "IBM Plex Mono",
+    "previewDelivery": "Google Fonts (nur Vorschau)",
+    "productionDelivery": "Lokales WOFF2-Hosting, verbindlich"
+  },
+  "experienceLevels": [
+    { "level": "A", "name": "Immersive Brand Experience", "for": ["Corporate Website", "Kampagnen", "Event Experiences", "Besondere Dossiers"], "allows": ["WebGL", "3D", "Scrollytelling", "Starke Motion", "Räumliche Übergänge", "Kinetische Typografie"] },
+    { "level": "B", "name": "Expressive Editorial", "for": ["Magazin", "Artikel", "Research", "Präsentationen"], "allows": ["Starke Typografie", "Bildlayer", "Datenanimation", "Redaktionelle Übergänge", "Illustrative Systeme"] },
+    { "level": "C", "name": "Premium Utility", "for": ["Webanwendungen", "Dashboards", "Interne Tools"], "allows": ["Eigenständige App Shell", "Funktionale Micro-Interactions", "Eigene Icons", "Charakteristische Leerstates", "Präzise Datenvisualisierung"], "note": "Darf nicht wie ein Standard-Admin-Template aussehen." }
+  ],
+  "motionNarrative": {
+    "steps": ["Signal", "Connect", "Structure", "Human", "Impact"],
+    "withoutJavaScript": "Alle Texte sichtbar; Bühne zeigt den Endzustand Impact."
+  },
+  "intentAwareness": {
+    "scope": "Nur lokale Sitzung, kein Speicher über die Sitzung hinaus, keine Übertragung",
+    "signals": ["INPUT", "READING MODE", "ACTIVE TOPIC", "MOTION", "SAVE DATA"],
+    "forbidden": ["Externe Analytics", "Cookies", "Nutzerprofile", "Fingerprinting", "Manipulative Dringlichkeit", "Versteckter Austausch zentraler Inhalte", "Automatische Navigation"]
+  },
+  "media": {
+    "policy": "Alle Visual-Referenzen sind code-native SVG/CSS-Stilstudien.",
+    "flags": ["data-media-status=example-only", "data-generation-allowed=false", "data-example-only=true"],
+    "generatedAssets": "none",
+    "lottie": "Nur als mögliche spätere Produktionsform dokumentiert; keine Bibliothek eingebunden.",
+    "webgpu": "Dokumentierte Zukunftsoption, keine Voraussetzung."
+  },
+  "dependencies": {
+    "runtime": "Keine Frameworks, keine externen JavaScript-Bibliotheken",
+    "network": ["fonts.googleapis.com (nur Vorschau)", "fonts.gstatic.com (nur Vorschau)"]
+  }
+}
+  </script>
+
+  <!-- =====================================================
+       JAVASCRIPT · PROGRESSIVE ENHANCEMENT
+       Ohne JavaScript: alle Inhalte sichtbar, Bühne im
+       Endzustand, kein Motion-Schalter, kein Canvas.
+  ====================================================== -->
+  <script>
+    (function () {
+      "use strict";
+
+      var root = document.documentElement;
+      root.classList.add("js");
+
+      /* -----------------------------------------------------
+         Umgebungssignale
+      ----------------------------------------------------- */
+      var reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      var finePointerQuery = window.matchMedia("(pointer: fine)");
+
+      var saveData = false;
+      try {
+        var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        saveData = !!(connection && connection.saveData);
+      } catch (errConn) {
+        saveData = false;
+      }
+
+      if (saveData) {
+        root.classList.add("hs-savedata");
+      }
+
+      /* -----------------------------------------------------
+         Motion-Zustand + globaler Schalter
+      ----------------------------------------------------- */
+      var STORAGE_KEY = "vtm-hs-motion-paused";
+      var toggleButton = document.getElementById("motion-toggle");
+      var toggleState = document.getElementById("motion-toggle-state");
+      var motionListeners = [];
+
+      function readStoredChoice() {
+        try {
+          var value = window.localStorage.getItem(STORAGE_KEY);
+          if (value === "true") { return true; }
+          if (value === "false") { return false; }
+          return null;
+        } catch (errRead) {
+          return null;
+        }
+      }
+
+      function storeChoice(paused) {
+        try {
+          window.localStorage.setItem(STORAGE_KEY, String(paused));
+        } catch (errWrite) {
+          /* Ohne Speicher gilt die Wahl für diese Sitzung. */
+        }
+      }
+
+      var userChoice = readStoredChoice();
+
+      function motionPaused() {
+        if (reduceMotionQuery.matches || saveData) { return true; }
+        return userChoice === null ? false : userChoice;
+      }
+
+      function motionActive() {
+        return !motionPaused();
+      }
+
+      function renderMotionState() {
+        var paused = motionPaused();
+
+        root.classList.toggle("hs-motion-on", !paused);
+        root.classList.toggle("hs-motion-off", paused);
+
+        if (toggleButton) {
+          var label = paused ? "Bewegung aktivieren" : "Bewegung pausieren";
+          toggleButton.setAttribute("aria-label", label);
+
+          if (reduceMotionQuery.matches || saveData) {
+            toggleButton.setAttribute("aria-disabled", "true");
+          } else {
+            toggleButton.removeAttribute("aria-disabled");
+          }
+
+          var labelElement = toggleButton.querySelector(".motion-toggle-label");
+          if (labelElement) { labelElement.textContent = label; }
+        }
+
+        if (toggleState) {
+          if (reduceMotionQuery.matches) {
+            toggleState.textContent = "Systemeinstellung Reduzierte Bewegung ist aktiv; Animationen bleiben pausiert.";
+          } else if (saveData) {
+            toggleState.textContent = "Datensparmodus erkannt; Animationen bleiben reduziert.";
+          } else {
+            toggleState.textContent = paused ? "Bewegung ist pausiert." : "Bewegung ist aktiv.";
+          }
+        }
+
+        for (var i = 0; i < motionListeners.length; i += 1) {
+          motionListeners[i](!paused);
+        }
+      }
+
+      if (toggleButton) {
+        toggleButton.addEventListener("click", function () {
+          if (reduceMotionQuery.matches || saveData) {
+            renderMotionState();
+            return;
+          }
+          userChoice = !motionPaused();
+          storeChoice(userChoice);
+          renderMotionState();
+        });
+        toggleButton.hidden = false;
+      }
+
+      if (typeof reduceMotionQuery.addEventListener === "function") {
+        reduceMotionQuery.addEventListener("change", renderMotionState);
+      } else if (typeof reduceMotionQuery.addListener === "function") {
+        reduceMotionQuery.addListener(renderMotionState);
+      }
+
+      renderMotionState();
+
+      /* -----------------------------------------------------
+         Scroll-Fortschritt (passiv + rAF-gedrosselt)
+      ----------------------------------------------------- */
+      var progressBar = document.getElementById("scroll-progress-bar");
+      var progressTicking = false;
+      var lastScrollY = window.pageYOffset || 0;
+      var scrollSamples = [];
+
+      function updateProgress() {
+        progressTicking = false;
+        var doc = document.documentElement;
+        var max = Math.max(1, doc.scrollHeight - window.innerHeight);
+        var y = window.pageYOffset || doc.scrollTop || 0;
+
+        if (progressBar) {
+          progressBar.style.transform = "scaleX(" + Math.min(1, y / max) + ")";
+        }
+
+        var now = performance.now();
+        scrollSamples.push({ t: now, y: y });
+        while (scrollSamples.length > 24) { scrollSamples.shift(); }
+
+        lastScrollY = y;
+      }
+
+      window.addEventListener("scroll", function () {
+        if (!progressTicking) {
+          progressTicking = true;
+          window.requestAnimationFrame(updateProgress);
+        }
+      }, { passive: true });
+
+      updateProgress();
+
+      /* -----------------------------------------------------
+         Reveal-Beobachtung
+      ----------------------------------------------------- */
+      var supportsObserver = "IntersectionObserver" in window;
+
+      if (supportsObserver) {
+        var revealItems = document.querySelectorAll(".reveal");
+        var revealObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-in");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: "0px 0px -8% 0px", threshold: 0.1 });
+
+        revealItems.forEach(function (item) {
+          revealObserver.observe(item);
+        });
+      }
+
+      /* -----------------------------------------------------
+         Scrollytelling: Bühne folgt den Schritten
+      ----------------------------------------------------- */
+      var stageFrame = document.getElementById("stage-frame");
+      var stageLabel = document.getElementById("stage-label");
+      var stageIndex = document.getElementById("stage-index");
+      var steps = Array.prototype.slice.call(document.querySelectorAll(".story-step"));
+      var stepNames = { signal: "Signal", connect: "Connect", structure: "Structure", human: "Human", impact: "Impact" };
+      var stepOrder = ["signal", "connect", "structure", "human", "impact"];
+
+      function setStage(step) {
+        if (!stageFrame || !stepNames[step]) { return; }
+        stageFrame.setAttribute("data-step", step);
+        if (stageLabel) { stageLabel.textContent = stepNames[step]; }
+        if (stageIndex) { stageIndex.textContent = (stepOrder.indexOf(step) + 1) + " / 5"; }
+        steps.forEach(function (el) {
+          el.classList.toggle("is-active", el.getAttribute("data-step") === step);
+        });
+      }
+
+      if (supportsObserver && stageFrame && steps.length) {
+        setStage("signal");
+
+        var stepObserver = new IntersectionObserver(function (entries) {
+          var best = null;
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting && (!best || entry.intersectionRatio > best.intersectionRatio)) {
+              best = entry;
+            }
+          });
+          if (best) {
+            setStage(best.target.getAttribute("data-step"));
+          }
+        }, { rootMargin: "-30% 0px -45% 0px", threshold: [0, 0.25, 0.5, 0.75] });
+
+        steps.forEach(function (el) {
+          stepObserver.observe(el);
+        });
+      }
+
+      /* -----------------------------------------------------
+         Ebenen-Parallax im Header (nur feiner Pointer)
+      ----------------------------------------------------- */
+      var headerElement = document.getElementById("knowledge-header");
+      var planes = Array.prototype.slice.call(document.querySelectorAll(".plane"));
+      var pointerTarget = { x: 0, y: 0 };
+      var pointerCurrent = { x: 0, y: 0 };
+      var parallaxRunning = false;
+
+      function parallaxFrame() {
+        pointerCurrent.x += (pointerTarget.x - pointerCurrent.x) * 0.06;
+        pointerCurrent.y += (pointerTarget.y - pointerCurrent.y) * 0.06;
+
+        planes.forEach(function (plane) {
+          var depth = parseFloat(plane.getAttribute("data-depth") || "0.3");
+          plane.style.translate =
+            (pointerCurrent.x * depth * -18) + "px " +
+            (pointerCurrent.y * depth * -12) + "px";
+        });
+
+        if (Math.abs(pointerTarget.x - pointerCurrent.x) > 0.001 ||
+            Math.abs(pointerTarget.y - pointerCurrent.y) > 0.001) {
+          window.requestAnimationFrame(parallaxFrame);
+        } else {
+          parallaxRunning = false;
+        }
+      }
+
+      if (headerElement && finePointerQuery.matches) {
+        headerElement.addEventListener("pointermove", function (event) {
+          if (!motionActive()) { return; }
+          var rect = headerElement.getBoundingClientRect();
+          pointerTarget.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+          pointerTarget.y = ((event.clientY - rect.top) / rect.height) * 2 - 1;
+          if (!parallaxRunning) {
+            parallaxRunning = true;
+            window.requestAnimationFrame(parallaxFrame);
+          }
+        }, { passive: true });
+      }
+
+      /* -----------------------------------------------------
+         WebGL: Informationslinien und Datenpunkte
+         Direkte Implementierung ohne Bibliothek.
+         Fallback: das SVG darunter bleibt immer sichtbar.
+      ----------------------------------------------------- */
+      var glState = null;
+
+      function createShader(gl, type, source) {
+        var shader = gl.createShader(type);
+        gl.shaderSource(shader, source);
+        gl.compileShader(shader);
+        if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+          gl.deleteShader(shader);
+          return null;
+        }
+        return shader;
+      }
+
+      function initKnowledgeGl() {
+        var canvas = document.getElementById("knowledge-canvas");
+        if (!canvas || !headerElement) { return null; }
+
+        var gl = null;
+        try {
+          gl = canvas.getContext("webgl", { alpha: true, antialias: true, powerPreference: "low-power" });
+        } catch (errGl) {
+          gl = null;
+        }
+        if (!gl) {
+          canvas.hidden = true;
+          return null;
+        }
+
+        var vertexSource = [
+          "attribute vec3 aPos;",
+          "uniform vec2 uPointer;",
+          "uniform float uScroll;",
+          "uniform float uTime;",
+          "varying float vDepth;",
+          "void main() {",
+          "  vec3 p = aPos;",
+          "  float depth = p.z;",
+          "  p.x += uPointer.x * depth * 0.05;",
+          "  p.y -= uPointer.y * depth * 0.04;",
+          "  p.y += uScroll * depth * 0.10;",
+          "  p.x += sin(uTime * 0.4 + depth * 9.0) * 0.006 * depth;",
+          "  p.y += cos(uTime * 0.3 + depth * 7.0) * 0.006 * depth;",
+          "  vDepth = depth;",
+          "  gl_Position = vec4(p.x, p.y, 0.0, 1.0);",
+          "  gl_PointSize = 1.5 + depth * 4.5;",
+          "}"
+        ].join("\n");
+
+        var pointFragment = [
+          "precision mediump float;",
+          "uniform vec4 uColor;",
+          "varying float vDepth;",
+          "void main() {",
+          "  vec2 c = gl_PointCoord - vec2(0.5);",
+          "  float d = length(c);",
+          "  if (d > 0.5) { discard; }",
+          "  float alpha = smoothstep(0.5, 0.18, d) * uColor.a * (0.35 + vDepth * 0.65);",
+          "  gl_FragColor = vec4(uColor.rgb, alpha);",
+          "}"
+        ].join("\n");
+
+        var lineFragment = [
+          "precision mediump float;",
+          "uniform vec4 uColor;",
+          "varying float vDepth;",
+          "void main() {",
+          "  gl_FragColor = vec4(uColor.rgb, uColor.a * (0.25 + vDepth * 0.5));",
+          "}"
+        ].join("\n");
+
+        function buildProgram(fragmentSource) {
+          var vs = createShader(gl, gl.VERTEX_SHADER, vertexSource);
+          var fs = createShader(gl, gl.FRAGMENT_SHADER, fragmentSource);
+          if (!vs || !fs) { return null; }
+          var program = gl.createProgram();
+          gl.attachShader(program, vs);
+          gl.attachShader(program, fs);
+          gl.linkProgram(program);
+          if (!gl.getProgramParameter(program, gl.LINK_STATUS)) { return null; }
+          return program;
+        }
+
+        var pointProgram = buildProgram(pointFragment);
+        var lineProgram = buildProgram(lineFragment);
+        if (!pointProgram || !lineProgram) {
+          canvas.hidden = true;
+          return null;
+        }
+
+        /* Geringe Geometrieanzahl: 84 Punkte, rechte Bildhälfte betont */
+        var POINTS = 84;
+        var positions = new Float32Array(POINTS * 3);
+        var seed = 7;
+
+        function pseudoRandom() {
+          seed = (seed * 16807) % 2147483647;
+          return (seed - 1) / 2147483646;
+        }
+
+        for (var p = 0; p < POINTS; p += 1) {
+          var biasRight = pseudoRandom();
+          positions[p * 3] = -0.2 + biasRight * 1.15 + pseudoRandom() * 0.05;
+          positions[p * 3 + 1] = -0.85 + pseudoRandom() * 1.7;
+          positions[p * 3 + 2] = 0.2 + pseudoRandom() * 0.8;
+        }
+
+        /* Nachbarschaftslinien (max. 2 je Punkt, kurze Distanzen) */
+        var lineIndices = [];
+        for (var a = 0; a < POINTS; a += 1) {
+          var connections = 0;
+          for (var b = a + 1; b < POINTS && connections < 2; b += 1) {
+            var dx = positions[a * 3] - positions[b * 3];
+            var dy = positions[a * 3 + 1] - positions[b * 3 + 1];
+            if (dx * dx + dy * dy < 0.055) {
+              lineIndices.push(a, b);
+              connections += 1;
+            }
+          }
+        }
+
+        var positionBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+        gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+
+        var indexBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+        gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(lineIndices), gl.STATIC_DRAW);
+
+        gl.enable(gl.BLEND);
+        gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+        function resize() {
+          var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+          var width = Math.floor(canvas.clientWidth * dpr);
+          var height = Math.floor(canvas.clientHeight * dpr);
+          if (canvas.width !== width || canvas.height !== height) {
+            canvas.width = width;
+            canvas.height = height;
+            gl.viewport(0, 0, width, height);
+          }
+        }
+
+        return {
+          canvas: canvas,
+          gl: gl,
+          pointProgram: pointProgram,
+          lineProgram: lineProgram,
+          positionBuffer: positionBuffer,
+          indexBuffer: indexBuffer,
+          lineCount: lineIndices.length,
+          pointCount: POINTS,
+          resize: resize
+        };
+      }
+
+      function drawKnowledgeGl(state, time, pointer, scrollOffset) {
+        var gl = state.gl;
+        state.resize();
+        gl.clearColor(0, 0, 0, 0);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+
+        function useProgram(program) {
+          gl.useProgram(program);
+          var loc = gl.getAttribLocation(program, "aPos");
+          gl.bindBuffer(gl.ARRAY_BUFFER, state.positionBuffer);
+          gl.enableVertexAttribArray(loc);
+          gl.vertexAttribPointer(loc, 3, gl.FLOAT, false, 0, 0);
+          gl.uniform2f(gl.getUniformLocation(program, "uPointer"), pointer.x, pointer.y);
+          gl.uniform1f(gl.getUniformLocation(program, "uScroll"), scrollOffset);
+          gl.uniform1f(gl.getUniformLocation(program, "uTime"), time);
+          return program;
+        }
+
+        var lineProgram = useProgram(state.lineProgram);
+        gl.uniform4f(gl.getUniformLocation(lineProgram, "uColor"), 0.14, 0.41, 0.91, 0.30);
+        gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, state.indexBuffer);
+        gl.drawElements(gl.LINES, state.lineCount, gl.UNSIGNED_SHORT, 0);
+
+        var pointProgram = useProgram(state.pointProgram);
+        gl.uniform4f(gl.getUniformLocation(pointProgram, "uColor"), 0.07, 0.25, 0.65, 0.85);
+        gl.drawArrays(gl.POINTS, 0, state.pointCount);
+      }
+
+      var glRunning = false;
+      var glVisible = true;
+      var glRafId = 0;
+
+      function glFrame(now) {
+        if (!glRunning || !glState) { return; }
+        var scrollOffset = Math.min(1, (window.pageYOffset || 0) / Math.max(1, window.innerHeight)) * 0.6;
+        drawKnowledgeGl(glState, now * 0.001, pointerCurrent, scrollOffset);
+        glRafId = window.requestAnimationFrame(glFrame);
+      }
+
+      function syncGlRunning() {
+        var shouldRun = !!glState && glVisible && motionActive() && !document.hidden;
+        if (shouldRun && !glRunning) {
+          glRunning = true;
+          glRafId = window.requestAnimationFrame(glFrame);
+        } else if (!shouldRun && glRunning) {
+          glRunning = false;
+          window.cancelAnimationFrame(glRafId);
+        }
+      }
+
+      if (!reduceMotionQuery.matches && !saveData) {
+        glState = initKnowledgeGl();
+        if (glState && supportsObserver) {
+          var headerObserver = new IntersectionObserver(function (entries) {
+            glVisible = entries.length ? entries[0].isIntersecting : true;
+            syncGlRunning();
+          }, { threshold: 0 });
+          headerObserver.observe(headerElement);
+        }
+        if (glState && !motionActive()) {
+          /* Statisches Einzelbild als reduzierte Darstellung */
+          drawKnowledgeGl(glState, 0, { x: 0, y: 0 }, 0);
+        }
+      } else {
+        var idleCanvas = document.getElementById("knowledge-canvas");
+        if (idleCanvas) { idleCanvas.hidden = true; }
+      }
+
+      document.addEventListener("visibilitychange", syncGlRunning);
+      motionListeners.push(function () { syncGlRunning(); });
+      syncGlRunning();
+
+      /* -----------------------------------------------------
+         Intent-Awareness · nur lokale Sitzung
+      ----------------------------------------------------- */
+      var intentInput = document.getElementById("intent-input");
+      var intentReading = document.getElementById("intent-reading");
+      var intentTopic = document.getElementById("intent-topic");
+      var intentMotion = document.getElementById("intent-motion");
+      var intentSaveData = document.getElementById("intent-savedata");
+      var intentNextLink = document.getElementById("intent-next-link");
+
+      var topicLabels = {
+        system: "System",
+        narrativ: "Narrativ",
+        motivwelten: "Motivwelten",
+        levels: "Experience Levels",
+        intent: "Intent",
+        machine: "Machine"
+      };
+
+      var topicNext = {
+        system: { href: "#story", label: "Weiter zum Motion Narrative" },
+        narrativ: { href: "#worlds", label: "Weiter zu den Motivwelten" },
+        motivwelten: { href: "#levels", label: "Weiter zu den Experience Levels" },
+        levels: { href: "#intent", label: "Weiter zur Intent-Awareness" },
+        intent: { href: "#machine", label: "Weiter zur Machine Experience" },
+        machine: { href: "#top", label: "Zurück zum Anfang" }
+      };
+
+      var topicVisits = {};
+
+      function setIntentValue(element, value) {
+        if (element && element.textContent !== value) {
+          element.textContent = value;
+        }
+      }
+
+      function setInputMode(mode, label) {
+        root.classList.remove("input-touch", "input-pointer", "input-keyboard");
+        root.classList.add("input-" + mode);
+        setIntentValue(intentInput, label);
+      }
+
+      window.addEventListener("touchstart", function () {
+        setInputMode("touch", "Touch");
+      }, { passive: true, capture: true });
+
+      window.addEventListener("pointerdown", function (event) {
+        if (event.pointerType === "mouse" || event.pointerType === "pen") {
+          setInputMode("pointer", "Pointer");
+        }
+      }, { passive: true, capture: true });
+
+      window.addEventListener("keydown", function (event) {
+        if (event.key === "Tab" || event.key === "ArrowDown" || event.key === "ArrowUp") {
+          setInputMode("keyboard", "Tastatur");
+        }
+      }, true);
+
+      /* Lesetempo: Durchschnittsgeschwindigkeit der letzten Sekunden */
+      function evaluateReadingMode() {
+        if (scrollSamples.length < 2) { return; }
+        var first = scrollSamples[0];
+        var last = scrollSamples[scrollSamples.length - 1];
+        var dt = Math.max(80, last.t - first.t);
+        var speed = Math.abs(last.y - first.y) / dt;
+        var scanning = speed > 1.4;
+        setIntentValue(intentReading, scanning ? "Scannen" : "Lesen");
+        root.classList.toggle("intent-calm", scanning);
+      }
+
+      window.setInterval(evaluateReadingMode, 1200);
+
+      /* Aktives Thema über Kapitel-Sichtbarkeit */
+      if (supportsObserver) {
+        var topicSections = document.querySelectorAll("[data-intent-topic]");
+        var sectionMap = new Map();
+
+        var topicObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            sectionMap.set(entry.target, entry.isIntersecting ? entry.intersectionRatio : 0);
+          });
+
+          var bestTopic = null;
+          var bestRatio = 0;
+          sectionMap.forEach(function (ratio, section) {
+            if (ratio > bestRatio) {
+              bestRatio = ratio;
+              bestTopic = section.getAttribute("data-intent-topic");
+            }
+          });
+
+          if (bestTopic && topicLabels[bestTopic]) {
+            topicVisits[bestTopic] = (topicVisits[bestTopic] || 0) + 1;
+            var repeated = topicVisits[bestTopic] > 4;
+            setIntentValue(intentTopic, topicLabels[bestTopic] + (repeated ? " · vertieft" : ""));
+
+            var next = topicNext[bestTopic];
+            if (next && intentNextLink) {
+              intentNextLink.setAttribute("href", next.href);
+              intentNextLink.textContent = next.label;
+            }
+          }
+        }, { threshold: [0, 0.2, 0.4, 0.6] });
+
+        Array.prototype.forEach.call(
+          document.querySelectorAll("section[data-intent-topic]"),
+          function (section) { topicObserver.observe(section); }
+        );
+        void topicSections;
+      }
+
+      /* Motion- und Save-Data-Status im Panel spiegeln */
+      function renderIntentEnvironment() {
+        if (reduceMotionQuery.matches) {
+          setIntentValue(intentMotion, "Reduziert (System)");
+        } else {
+          setIntentValue(intentMotion, motionActive() ? "Aktiv" : "Pausiert");
+        }
+        setIntentValue(intentSaveData, saveData ? "Ein" : "Aus");
+      }
+
+      motionListeners.push(renderIntentEnvironment);
+      renderIntentEnvironment();
+    }());
+  </script>
+</body>
+</html>
